@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact us - Airport Shuttles 4 less</title>
+    <meta name="description" content="Do you have any questions or need help with your bookings? You can contact AirportShuttle4Less (AS4L) today. Our dedicated team is 24/7 available to help you with your queries, shuttle services, airport transfers, and more. Contact us now!">
+    <link rel="canonical" href="https://airportshuttles4less.com/Contact-us.html" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" >-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slick.min.css" rel="stylesheet" />
+    <link href="assets/css/slick-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="assets/css/jquery.datetimepicker.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <meta name="google-site-verification" content="Tl7-qhVrlids1md7B_yVLOvKVJpJFkidyE83GgIWUVk" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16647266454"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16647266454');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CZK7FWNT1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0CZK7FWNT1');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54676SGW');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="google-site-verification" content="UXz62i0K2PKd45QFDYhhfCW8K-Ma1vDdqL06SBXd6nQ" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16647266454"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-16647266454');</script>
+    <!-- Event snippet for Custom-Conversion-for-Contact-Raza conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) { var callback = function () { if (typeof (url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-16647266454/Rb-MCP_C0dgZEJbBhII-', 'event_callback': callback }); return false; }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54676SGW"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrapper">
+
+        <!-- header -->
+        <div id="header"></div>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                });
+        </script>
+
+        <!-- bannerSec -->
+        <section class="bannerSec position-relative">
+            <img src="assets/images/contactBg.webp" loading="lazy" alt="banner-img" class="w-100">
+        </section>
+
+        <!-- contactDetailSec -->
+        <section class="contactDetailSec blackBg ">
+            <div class="container">
+                <ul class="list-inline mb-0 d-flex justify-content-evenly align-items-center flex-wrap">
+                    <li class="position-relative py-5">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h6 class="greyText">Email Us</h6>
+                        <a class="whiteText" href="mailto:info@airportshuttles4less.com">info@airportshuttles4less.com</a>
+                    </li>
+                    <li class="position-relative py-5">
+                        <i class="fa-solid fa-phone"></i>
+                        <h6 class="greyText">Call Us 24/7</h6>
+                        <a class="whiteText" href="tel:+14433363333">+1 (443) 336-3333</a>
+                        <br>
+                        <a class="whiteText" href="tel:+18443403333">+1 (844) 340 3333</a>
+                    </li>
+                    <li class="position-relative py-5">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h6 class="greyText">Address</h6>
+                        <p class="whiteText mb-0">780 Elkridge Landing RD, <br>Linthicum MD.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- contactFormSec -->
+        <section class="contactFormSec greyBg py-5">
+            <div class="container">
+                <div class="secHead text-center mb-5">
+                    <h1 class="mb-0 text-center level5 primaryColor text-uppercase mb-3"><span class="greyBg px-1">OUR CONTACT FORM</span></h1>
+                    <p class="secondaryText mb-0">Thank you for selecting AirportShuttles4Less as your transportation solution. Whether for business, pleasure or special events; AS4L strives to make every journey stress-free. Reach out now and learn about our premium <a href="https://airportshuttles4less.com/bwi-shuttle-service.html" target="_blank" rel="noopener noreferrer">airport shuttle service</a> as well as <a href="https://airportshuttles4less.com/baltimore-airport-transportation.html" target="_blank" rel="noopener noreferrer">transportation service</a>>.Explore our versatile <a href="our-fleet.html">Fleet</a> or easily book a ride through AS4L today. Experience why AirportShuttles4Less remains <a href="https://en.wikipedia.org/wiki/Washington_metropolitan_area#:~:text=The%20Washington%20metropolitan%20area%2C%20also,capital%20of%20the%20United%20States." target="_blank" rel="noopener noreferrer"> DMV area's </a> trusted provider and let us revolutionize how you travel!</p>
+                </div>
+                <div class="secMain">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group position-relative">
+                                        <input type="text" id="name" placeholder="Full Name" class="form-control">
+                                        <i class="fa-regular fa-user position-absolute top-0 end-0 h-100 d-flex align-items-center px-3"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group position-relative">
+                                        <input type="tel" id="mobile" placeholder="Mobile Number" class="form-control">
+                                        <i class="fa-solid fa-phone position-absolute top-0 end-0 h-100 d-flex align-items-center px-3"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group position-relative">
+                                        <input type="email" id="email" placeholder="Email Address" class="form-control">
+                                        <i class="fa-regular fa-envelope position-absolute top-0 end-0 h-100 d-flex align-items-center px-3"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group position-relative">
+                                        <textarea class="form-control h-100" id="message" placeholder="Message" rows="5"></textarea>
+                                        <i class="fa-regular fa-comment position-absolute top-0 end-0 h-100 p-3"></i>
+                                    </div>
+                                </div>
+                                <button class="primaryButton text-uppercase mx-auto d-table" onclick="EnquiryMail()">Send Message Now</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="googleApi">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.2403775756084!2d-76.68532538252461!3d39.19198645141544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7e2f48d8ca1df%3A0xd885f397c8f776cb!2s780%20Elkridge%20Landing%20Rd%2C%20Linthicum%20Heights%2C%20MD%2021090%2C%20USA!5e0!3m2!1sen!2sin!4v1718109491923!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- reviewSec -->
+        <section class="reviewSec py-5">
+            <div class="container">
+                <div class="reviewSlider">
+                    <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
+                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
+                        <p class="mb-3 primaryText greyText">�I've tried several limo services in the DMV, but AS4L stands out for their exceptional customer service. The booking process is smooth, and the drivers are courteous and friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all my transportation needs!�</p>
+                        <ul class="list-inline mb-3 d-flex">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4 class="mb-0 fw-bold level4 blackText">Akos</h4>
+                    </div>
+                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
+                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
+                        <p class="mb-3 primaryText greyText">�I've tried several limo services in the DMV, but AS4L stands out for their exceptional customer service. The booking process is smooth, and the drivers are courteous and friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all my transportation needs!�</p>
+                        <ul class="list-inline mb-3 d-flex">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4 class="mb-0 fw-bold level4 blackText">Akos</h4>
+                    </div>
+                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
+                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
+                        <p class="mb-3 primaryText greyText">�I've tried several limo services in the DMV, but AS4L stands out for their exceptional customer service. The booking process is smooth, and the drivers are courteous and friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all my transportation needs!�</p>
+                        <ul class="list-inline mb-3 d-flex">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4 class="mb-0 fw-bold level4 blackText">Akos</h4>
+                    </div>
+                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
+                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
+                        <p class="mb-3 primaryText greyText">�I've tried several limo services in the DMV, but AS4L stands out for their exceptional customer service. The booking process is smooth, and the drivers are courteous and friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all my transportation needs!�</p>
+                        <ul class="list-inline mb-3 d-flex">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4 class="mb-0 fw-bold level4 blackText">Akos</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <div id="footer"></div>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+
+        <!-- whatsAppSec Icon -->
+        <section class="whatsAppSec">
+            <a href="https://api.whatsapp.com/send?phone=14433363333">
+                <img src="assets/images/whatsappIcon.webp" alt="whatsappIcon" loading="lazy" class="w-100">
+            </a>
+        </section>
+
+        <!-- fixedReservationButton  -->
+        <section class="fixedReservationButton primaryBg">
+            <a href="reservation.html#reservationPgSection" class="whiteText text-uppercase">Reservation</a>
+        </section>
+
+        <!-- fixedCallIcon -->
+        <section class="fixedCallIcon primaryBg">
+            <a href="tel:18443403333" class="whiteText"><i class="fa fa-phone"></i></a>
+        </section>
+        <!--registerModal Modal -->
+        <div class="modal fade" id="RegModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h4 class="level4 primaryColor text-center">Registration</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" id="RegFName" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" id="RegLName" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select class="form-control" id="SelGender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" id="RegPhoneNo" placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Email Adderess</label>
+                                    <input type="text" class="form-control" id="RegEmailAddress" placeholder="Email Adderess" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" id="RegPassword" placeholder="Password" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="primaryButton mx-auto d-table" onclick="Register()">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--loginModal & forgetModal Modal -->
+        <div class="modal fade" id="LoginModal" aria-hidden="true" aria-labelledby="LoginModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h4 class="level4 primaryColor text-center">Login</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Email Adderess</label>
+                                    <input type="text" id="LoginEmail" class="form-control" placeholder="Email Adderess" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" id="LoginPassword" class="form-control" placeholder="Password" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="primaryButton mx-auto d-table mb-2" onclick="Login()">Login</button>
+                                <a href="#" class="mx-auto d-table" data-bs-target="#ForgotPasswordModal" data-bs-toggle="modal" data-bs-dismiss="modal">Lost your password ?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ForgotPasswordModal" aria-hidden="true" aria-labelledby="ForgotPasswordModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h4 class="level4 primaryColor text-center">Forgot Password</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Email Adderess</label>
+                                    <input type="text" id="ForgotEmail" class="form-control" placeholder="Email Adderess" />
+                                </div>
+                            </div>
+                            <div class="form-btn col-12 mt-10 text-center">
+                                <button type="button" class="primaryButton" onclick="MailPassword()">Send Password</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <!-- <script src="assets/js/jquery.datetimepicker.min.js"></script> -->
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="Scripts/Default.js"></script>
+</body>
+</html>

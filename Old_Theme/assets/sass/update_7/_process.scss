@@ -1,0 +1,59 @@
+.skill-feature {
+    &.style3 {
+        text-align: left;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .skill-feature {
+            &_title {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                text-transform: capitalize;
+                color: $white-color;
+                margin-bottom: 8px;
+            }
+        }
+
+        &_title,
+        .progress-value {
+            font-family: $body-font;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            margin-bottom: 4px;
+            margin-top: -0.5em;
+            color: $white-color;
+        }
+
+        .progress {
+            position: relative;
+            height: 15px;
+            background-color: $body-color;
+            overflow: visible;
+            border-radius: 10px;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .progress-bar {
+            background-color: #E30D16;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            height: 15px;
+            margin: 0px;
+            border-radius: inherit;
+            overflow: visible;
+            position: relative;
+        }
+
+        .progress-value {
+            position: absolute;
+            top: -30px;
+            right: -8px;
+        }
+    }
+}

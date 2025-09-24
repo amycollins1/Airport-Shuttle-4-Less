@@ -1,0 +1,128 @@
+.hero-slider-3 {
+    .hero-style2 {
+        padding: 0 456px 0 0;
+    }
+
+}
+
+.hero-slider-3 .slick-dots,
+.hero-slider-6 .slick-dots {
+    left: unset;
+    right: 120px;
+
+    @media(max-width: 1700px) {
+        right: 35px;
+    }
+}
+.th-hero-wrapper.hero-slider-6 { 
+    overflow: hidden; 
+}
+
+@include lg {
+    .hero-slider-3 {
+        .hero-style2 {
+            padding: 0 160px 0 0;
+        }
+    }
+}
+
+@include md {
+    .hero-slider-3 {
+
+        .hero-style2 {
+            padding: 0;
+        }
+    }
+}
+.hero-slider-6 .hero-img {
+    right: unset; 
+    left: 0;  
+}
+
+.video-btn .play-btn {
+    margin: 0 0 0 25px; 
+}
+.hero-style7 {
+    .hero-subtitle {
+        margin: -0.3rem 0px 20px 0px; 
+        padding-right: 60px; 
+        &:before,
+        &:after {
+            right: 0px; 
+            left: auto;
+        }
+        &:before { 
+           right: -40px;
+           width: 30px;  
+        }
+        &:after { 
+            right: -60px;   
+            width: 50px;  
+        }
+    }
+    
+}
+.hero-slider-7 .slick-dots {
+    left: unset;
+    right: 160px; 
+    @media(max-width: 1799px) {
+        right: 60px; 
+    }
+}  
+
+.hero-9 {
+    .hero-img {
+        right: unset;
+        left: 0;
+
+        &:before {
+            background: linear-gradient(-90deg, #1B1B1B 1.56%, rgba(27, 27, 27, 0.920498) 10.26%, rgba(27, 27, 27, 0.857198) 17.55%, rgba(27, 27, 27, 0) 77.18%);
+        }
+    }
+
+    .icon-box {
+        left: unset;
+        right: 147px;
+    }
+
+    .hero-overlay {
+        left: unset;
+        right: 0;
+    }
+}
+
+.hero-style9 {
+    padding-left: 0px;
+    padding-right: 50px;
+
+    @media(max-width: 1399px) {
+        padding-right: 150px;
+    }
+
+    @include sm {
+        padding-right: 0;
+    }
+}
+
+.hero-8 {
+    .th-hero-bg {
+        &:before {
+            left: auto;
+            right: 0;
+            background: linear-gradient(-90deg, #000000 31.25%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+
+    .icon-box {
+        left: unset;
+        right: 147px;
+
+        @media(max-width: 1799px) {
+            right: 60px;
+        }
+    }
+}
+
+.title-area .sub-title.style2 img {
+    margin: 0 0 0 8px;
+}

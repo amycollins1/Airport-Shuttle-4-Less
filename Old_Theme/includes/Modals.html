@@ -1,0 +1,411 @@
+﻿<div class="modal fade" id="RegModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Registration</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="RegFName" placeholder="First Name" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="RegLName" placeholder="Last Name" />
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="SelGender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" id="RegPhoneNo" placeholder="Phone Number" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Email Adderess</label>
+                            <input type="text" class="form-control" id="RegEmailAddress" placeholder="Email Adderess" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="RegPassword" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" />
+                        </div>
+                    </div>
+                    <div class="col-md-12"> </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="Register()">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="LoginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Email Adderess</label>
+                            <input type="text" id="LoginEmail" class="form-control" placeholder="Email Adderess" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="LoginPassword" class="form-control" placeholder="Password" />
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-btn col-12 mt-10 text-center">
+                    <button type="button" class="btn btn-danger" onclick="Login()">Login</button>
+                    <p class="fs-xs mt-2 mb-0"><a class="text-reset" href="#" onclick="OpenPopup('Forget')">Lost your password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="modal fade" id="ForgotPasswordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Forgot Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Email Adderess</label>
+                            <input type="text" id="ForgotEmail" class="form-control" placeholder="Email Adderess" />
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-btn col-12 mt-10 text-center">
+                    <button type="button" class="btn btn-danger" onclick="MailPassword()">Send Password</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="bookingmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="PayAmount" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5"  id="PayAmount" >Forgot Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="tab-pane fade show active" id="Airports">
+                            <div class="trn-info-box1">
+                                <div class="table-responsive">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="PointToPoints"> </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="PaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Pay Amount</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Credit / Debit Card</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">PayPal</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="col-md-6 textright" id="Credit">
+                                    <div class="margtop15"><span class="dark">Debit/Credit Card Number:</span><span class="red">*</span></div>
+                                </div>
+                                <div class="col-md-6 text-left" id="CreditBox">
+                                    <!--<input name="text" type="text" class="form-control margtop10" id="CardsNumber" placeholder="">-->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+ 
+<div class="modal fade" id="CorporateLoginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Login / Registration</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="nav btn-nav-box">
+                            <a class="btn btn1 btn-login active" role="button" data-toggle="pill" href="#CorporateLogin">Login<i class="fas fa-key"></i></a>
+                            <a class="btn btn1 btn-reg" role="button" data-toggle="pill" href="#CorporateRegistration">Registration<i class="fas fa-user"></i></a>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="CorporateLogin">
+                                <form class="modal-form">
+                                    <div class="form-group">
+                                        <label>Email Adderess</label>
+                                        <input type="text" id="CorpEmail" class="form-control" Placeholder="Email Adderess" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" id="CorpPassword" class="form-control" Placeholder="Password" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Remember me</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-box">
+                                            <button type="button" onclick="CorporateLogin()" class="btn btn1">Login</button>
+                                        </div>
+                                    </div>
+                                    <label><a href="#">Lost your password?</a></label>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="CorporateRegistration">
+                                <form class="modal-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" Placeholder="First Name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" Placeholder="Last Name" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Adderess</label>
+                                        <input type="text" class="form-control" Placeholder="Email Adderess" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control" Placeholder="Password" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control" Placeholder="Confirm Password" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Company Name</label>
+                                                <input type="text" class="form-control" Placeholder="Company Name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Company Phone Number</label>
+                                                <input type="text" class="form-control" Placeholder="Company Phone Number" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-box">
+                                            <button type="button" class="btn btn1">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+ 
+ ﻿<div class="modal fade" id="AlertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Heading" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="Heading" align="center"></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-0" id="Message"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ ﻿<div class="modal fade" id="termsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Termsofuse" aria-hidden="true" style="z-index:999999">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="Termsofuse" align="center">Terms of use</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-0"><b>1. Bookings</b>
+                    <ul>
+                        <li>Online:<br /><a href="http://www.airportshuttles4less.com"> www.airportshuttles4less.com<br /> http://www.airportshuttles4less.com</a></li>
+                        <li>Phone: 1-443-336-3333</li>
+                        <li>- WhatsApp: 1-443-336-3333</li>
+                        <li>Email: Info@airportshuttles4less.com</li> 
+                    </ul>
+                    <b>2. Cancellations</b>
+                    <ul>
+                        <li>Sedan & SUV: Cancellations must be made at least 24 hours in advance.</li>
+                        <li>Minibus and Sprinters: Cancellations must be made at least 72 hours in advance.</li>
+                        <li>Buses & Groups: Cancellations will be evaluated on a case-by-case basis.</li>
+                        <li>50% of the total booking amount will be deducted if cancellations occur within the specified cancellation window.</li>
+                    </ul>
+                    <b>3. Changes</b>
+                    <ul>
+                        <li>No charge for changes; however, the cancellation policy applies.</li> 
+                    </ul>
+                    <b>4. Payments</b>
+                    <ul>
+                        <li>Accepted payment methods: American Express, VISA, MasterCard, Discover, and PayPal (online payment option available upon request).</li>
+                        <li>Corporate accounts available on a case-by-case basis.</li> 
+                    </ul>
+                    <b>5. Additional Charges</b>
+                    <ul>
+                        <li>Gratuity: 15%</li>
+                        <li>Fuel Surcharge: 5%</li>
+                        <li>Meet & Greet: $35.00</li>
+                        <li>Airport Fee: $5.00</li>
+                        <li>Child Seat: $20.00</li>
+                        <li>Holiday Surcharge: $20.00</li>
+                        <li>AM/PM Surcharge (10:00 PM to 5:00 AM): $35.00</li> 
+                    </ul>
+                    <b>6. Pick-up Time Allowance</b>
+                    <ul>
+                        <li>Non-Airport: 15 minutes</li>
+                        <li>Domestic Flights: 30 minutes</li>
+                        <li>International Flights: 1 hour</li>
+                        <li>Additional time will be charged at an hourly rate of $30 per hour.</li> 
+                    </ul>
+                    <b>7. Deposits</b>
+                    <ul>
+                        <li>Sedans, SUVs, and Sprinters: 100% authorization in advance is required.</li>
+                        <li>Larger equipment or group bookings: Deposit requirements start at 50%; consult with management for specifics.</li> 
+                    </ul>
+                    <b>8. Resolution Process</b>
+                    <ul>
+                        <li>All complaints must be emailed to Info@airportshuttles4less.com. A manager will respond within 24 hours on weekdays and on the following Monday if received during the weekend.</li>
+                    </ul>
+                    <b>9. Vehicle Cleaning Fees</b>
+                    <ul>
+                        <li>A minimum fee of $250.00 will be charged for any extraordinary interior cleaning required.</li> 
+                    </ul>
+                    <b>10. Guest Policy</b>
+                    <ul>
+                        <li>No smoking is permitted in the vehicle.</li>
+                        <li>Illegal drugs are not allowed in the vehicle.</li>
+                        <li>Vehicle capacity, as specified by the type and capacity of the vehicle, must not be exceeded. Customers will be liable for extra luggage charges.</li>
+                        <li>AS4L drivers have the right to terminate the contract and service without refund in case of misconduct.</li> 
+                        <li>AS4L is not liable for any personal or material damages resulting from misconduct by guests.</li>
+                        <li>No smoking is permitted in the vehicle (repeated for emphasis).</li>
+                        <li>AS4L is not responsible for mechanical issues, inclement weather, or other uncontrollable circumstances that prevent service as scheduled.</li>
+                        <li>If the requested vehicle cannot be provided, a vehicle of equal quality will be supplied.</li>
+                        <li>AS4L reserves the right to adjust rates without notice due to:
+                        <ol>
+                            <li>Changes in fuel charges.</li>
+                            <li>Destinations outside the immediate service area.</li>
+                            <li>Inclement weather.</li>
+                            <li>Road conditions.</li>
+                            <li>Increases in the number of passengers and/or luggage.</li>
+                        </ol>
+                        </li>
+                    </ul>
+                    <b>11. Reservation Booking Notice</b>
+                    <ul>
+                        <li>Notice periods vary based on availability, peak times, and weekends. Generally, a 2-hour notice is required for sedans and 24 hours for larger vehicles.</li>
+                    </ul>
+                    <b>12. Reservations and Customer Support Hours</b>
+                    <ul>
+                        <li>We operate 24/7/365, including all holidays</li>
+                        <li>Payment Privacy: At AirportShuttles4Less (AS4L), we prioritize your privacy and security. AS4L does not store any credit card information. We utilize PayPal as our trusted payment gateway provider. For further details on how your information is handled, please refer to PayPal's privacy policy.</li>
+                    </ul>
+                </p>
+            </div>  
+        </div>
+    </div>
+</div>
+ 

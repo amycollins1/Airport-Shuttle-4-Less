@@ -1,0 +1,6 @@
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://airportshuttles4less.com/sitemap.xml
+# ---------------------------

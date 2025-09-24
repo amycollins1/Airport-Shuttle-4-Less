@@ -1,0 +1,34 @@
+.hero-1 {
+    padding: 0 0 0 80px;
+
+    @media(max-width: 1399px) {
+        padding: 0 0 0 40px;
+    }
+
+    @include sm {
+        padding: 0;  
+    }
+
+    .hero-shape {
+        right: unset;
+        left: 0;
+        clip-path: polygon(100% 0, 100% calc(100% - 100px), calc(100% - 140px) 100%, 0 100%, 0 0);
+    }
+
+    .slick-dots {
+        right: unset;
+        left: 20%;
+
+        @media(max-width: 1399px) {
+            left: 10%;
+        }
+    }
+}
+
+.hero-style1 {
+    padding: 0 40px 0 0;
+
+    @media(max-width: 1399px) {
+        padding: 0 20px 0 0;
+    }
+}

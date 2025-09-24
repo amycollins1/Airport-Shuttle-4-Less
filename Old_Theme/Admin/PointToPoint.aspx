@@ -1,0 +1,337 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="PointToPoint.aspx.cs" Inherits="Frederick.Admin.PointToPoint" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../script/jquery-2.1.3.min.js"></script>
+    <link href="bootstrap/clockpicker/bootstrap-clockpicker.css" rel="stylesheet" />
+    <script src="bootstrap/clockpicker/bootstrap-clockpicker.js"></script>
+    <link href="bootstrap/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" />
+    <script src="bootstrap/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <link href="bootstrap/clockpicker/jquery-clockpicker.css" rel="stylesheet" />
+    <script src="bootstrap/clockpicker/jquery-clockpicker.js"></script>
+    <link href="bootstrap/clockpicker/jquery-clockpicker.min.css" rel="stylesheet" />
+    <script src="bootstrap/clockpicker/jquery-clockpicker.min.js"></script>
+    <link href="timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuX_jrF2mEltKATOVUuouVHdU2688XBfU"></script>
+     <script src="Scripts/AutoCompleteRoute.js"></script>
+    <script src="Scripts/Reservation.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section id="main-content">
+        <section class="wrapper">
+
+            <div class="row form-panel">
+                <div class="col-lg-12 main-chart">
+                    <div class="row">
+                        <div class="col-md-12 mb">
+                            <h3>Point To Point</h3>
+                                <button  type="button" class="btn btn-primary  btn-xs pull-right"  tooltip="Add New Customer" data-toggle="modal" data-target="#addcustomer"><i class=" fa fa-edit">Add New Customer</i></button>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb">
+                            <label for="email">Email:</label>
+
+                            <input id="txt_Email" class="form-control" list="Select_Email" autocomplete="off" />
+                            <datalist id="Select_Email"></datalist>
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Contact Number:</label>
+                            <input id="txt_ContactNumber" class="form-control" list="Select_ContactNumber" />
+                            <datalist id="Select_ContactNumber"></datalist>
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">First Name :</label>
+                            <input id="txt_FirstName" class="form-control" placeholder="First Name" />
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Last Name :</label>
+                            <input id="txt_LastName" class="form-control" placeholder="Last Name" />
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Reservation Date :</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="date" id="txt_Date" data-select="datepicker" placeholder="Reservation Date" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Passenger :</label>
+                            <input type="number" id="Passengers" class="form-control" placeholder="Passenger">
+                            <datalist id=""></datalist>
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">PickUp Time :</label>
+                            <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
+                                <input type="text" class="form-control" id="Time" value="10:00" onblur="LateNightChange()">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb">
+                            <label for="email">CC Last 4 :</label>
+                            <input id="CCLast4" class="form-control" placeholder="CC Last 4">
+                        </div>
+                        
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb">
+                            <label for="email">Pickup Address :</label>
+                            <input id="PickupLocationP2P" class="form-control" placeholder="Pickup Address">
+                        </div>
+                        <div class="col-md-6 mb">
+                            <label for="email">Drop Address:</label>
+                            <input id="DropLocationP2P" class="form-control" placeholder="Drop Address">
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Vehicle Type :</label>
+                            <select class="form-control" id="Select_Vehicle" onchange="VehicleChange()">
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb">
+                            <label for="email">Assigned To :</label>
+                            <select class="form-control" id="Select_Driver">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-md-6">
+                                <div class="col-md-4 mb">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="ChkPaid" value="option1" checked="">
+                                            Paid
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                            Collect
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            CC Payment
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="ChkChildCarSeat" onchange="ChildCarSeatChange()" value="">
+                                            Child Car Seat
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="ChkMeetAndGreet" onchange="MeetAndGreetChange()" value="">
+                                            Meet & Greet
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                           <input type="checkbox" id="ChkSpecialAssistant" onchange="SpecialAssistantChange()" value="">
+                                            Special assistant
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                             <input type="checkbox" id="ChkCurb" onchange="CurbChange()" value="">
+                                            Curb side pick up
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="ChkSanitization" onchange="SanitizationChange()" value="">
+                                            Sanitization Charges
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="ChkPet" onchange="PetChange()" value="">
+                                            Pet in cage
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-6 mb">
+                                    <label for="email">Fare :</label>
+                                    <input id="txt_Fare" class="form-control" onblur="SubTotalCalc()" placeholder="Fare" value="0.00">
+                                </div>
+                                <div class="col-md-6 mb">
+                                    <label for="email">Toll :</label>
+                                    <input id="txt_Toll" class="form-control" onblur="TollChange()" value="0" placeholder="Toll">
+                                </div>
+                                <div class="col-md-6 mb">
+                                    <label for="email">Gratuity :</label>
+                                    <select class="form-control" id="SelGratuity" onchange="CalcGratuity()">
+                                        <option value="0">--Select Gratuity --</option>
+                                        <option value="0">0%</option>
+                                        <option value="10">10%</option>
+                                        <option value="15">15%</option>
+                                        <option value="20">20%</option>
+                                        <option value="25">25%</option>
+                                        <option value="30">30%</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb">
+                                    <label for="email">Offer Code :</label>
+                                    <select class="form-control" id="SelOffer" onchange="OfferChange()">
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb">
+                                    <label for="email">Parking :</label>
+                                    <input id="txt_Parking" onblur="ParkingChange()" class="form-control" value="0" placeholder="Parking">
+                                </div>
+                                <div class="col-md-6 mb">
+                                    <label for="email">CC Type :</label>
+                                    <select class="form-control" id="CardType">
+                                        <option value="">--Select CC Type --</option>
+                                        <option value="Amex">Amex</option>
+                                        <option value="Discover">Discover</option>
+                                        <option value="Master">Master</option>
+                                        <option value="Visa">Visa</option>
+                                    </select>
+                                </div>
+                                  <div class="col-md-6 mb">
+                                   <label for="email">Late Night	 :</label>
+                            <input id="LateNightCharge" class="form-control" value="0.00" readonly>
+                                </div>
+                                <div class="col-md-12"></div>
+                                 <div class="col-md-6 mb">
+                                     <label for="email">Card Processing Fee :</label>
+                                     <input id="CardProcessingFee" class="form-control" value="0.00" readonly="" />
+                                </div>
+                                <div class="col-md-12 mb">
+                                    <label for="email">Total Fare	 :</label>
+                                     <input id="Total" class="form-control" placeholder="0.00">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb">
+                            <label for="email">Remarks :</label>
+                             <textarea id="Remark" class="form-control" placeholder="Remarks"></textarea>
+                        </div>
+                        <div class="col-md-1 mb">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="ChkEmail">
+                                    Email
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb">
+                            <button type="button" onclick="Validate()" class="btn btn-primary">ADD</button>
+                            <button type="button" class="btn btn-primary">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="timepicker/bootstrap-timepicker.min.js"></script>
+    <script>
+        // Clock pickers
+        $('#single-input').clockpicker({
+            placement: 'bottom'
+            , align: 'left'
+            , autoclose: true
+            , 'default': 'now'
+        });
+        $('.clockpicker').clockpicker({
+            donetext: 'Done'
+        ,
+        }).find('input').change(function () {
+            console.log(this.value);
+        });
+        $('#check-minutes').click(function (e) {
+            // Have to stop propagation here
+            e.stopPropagation();
+            input.clockpicker('show').clockpicker('toggleView', 'minutes');
+        });
+        if (/mobile/i.test(navigator.userAgent)) {
+            $('input').prop('readOnly', true);
+        }
+        // Colorpicker
+        $(".colorpicker").asColorPicker();
+        $(".complex-colorpicker").asColorPicker({
+            mode: 'complex'
+        });
+        $(".gradient-colorpicker").asColorPicker({
+            mode: 'gradient'
+        });
+        // Date Picker
+        jQuery('.mydatepicker, #datepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true
+            , todayHighlight: true
+        });
+        jQuery('#date-range').datepicker({
+            toggleActive: true
+        });
+        jQuery('#datepicker-inline').datepicker({
+            todayHighlight: true
+        });
+        // Daterange picker
+        $('.input-daterange-datepicker').daterangepicker({
+            buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+        });
+        $('.input-daterange-timepicker').daterangepicker({
+            timePicker: true
+            , format: 'MM/DD/YYYY h:mm A'
+            , timePickerIncrement: 30
+            , timePicker12Hour: true
+            , timePickerSeconds: false
+            , buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+        });
+        $('.input-limit-datepicker').daterangepicker({
+            format: 'MM/DD/YYYY'
+            , minDate: '06/01/2015'
+            , maxDate: '06/30/2015'
+            , buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+            , dateLimit: {
+                days: 6
+            }
+        });
+    </script>
+</asp:Content>
+

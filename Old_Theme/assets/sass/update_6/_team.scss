@@ -1,0 +1,114 @@
+/* -------------------------- Team Start ---------------------------------- */
+.team-card {
+    &.style2 {
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        z-index: 2;
+        padding-top: 30px;
+        transition: all 1s ease;
+        --space: 30px;
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 0%;
+            background-color: $theme-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 1s ease;
+        }
+
+        .team-img {
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        .team-title {
+            font-size: 20px;
+            color: $white-color;
+            text-transform: capitalize;
+            a {
+                color: inherit;
+            }
+        }
+
+        .team-desig {
+            color: $theme-color;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .team-social a {
+            background-color: transparent;
+            width: var(--icon-size, 25px);
+            height: var(--icon-size, 25px);
+            line-height: var(--icon-size, 25px);
+            color: #BDBDBD;
+            margin-top: 10px;
+            transition: all 0.4s;
+            box-shadow: none;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+
+        .team-content {
+            padding: 118px var(--space) 30px var(--space);
+            margin-top: -100px;
+            transition: all 1s ease;
+
+            &:before {
+                content: "";
+                height: 100%;
+                width: 100%;
+                background-color: $title-color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                clip-path: none;
+                z-index: -1;
+                transition: all 1s ease;
+            }
+
+            &:after {
+                clip-path: none;
+
+            }
+        }
+
+
+    }
+
+    &:hover {
+        &.style2 {
+            &:before {
+                height: 100%;
+            }
+
+            .team-title {
+                color: $title-color;
+            }
+
+            .team-desig {
+                color: $body-color;
+            }
+
+            .team-social a {
+                color: $body-color;
+            }
+            .team-content {
+                &:before {
+                    background-color: $theme-color;
+                }
+            }
+        }
+
+        
+    }
+}
+
+/* -------------------------- Team End ---------------------------------- */

@@ -1,0 +1,254 @@
+/* Banner start --------------------- */
+.hero-subtitle2 {
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: $theme-color;
+    background-color: $white-color;
+    padding: 6px 12px 6px 0px;
+    border-radius: 5px;
+
+    @include xs {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    i {
+        background: $theme-color;
+        border-radius: 5px;
+        color: $white-color;
+        padding: 8px;
+        margin-right: 6px;
+
+    }
+
+}
+
+.hero-style11 {
+    position: relative;
+    padding: 227px 0;
+
+    @media(max-width: 1199px) {
+        padding: 150px 0 80px;
+        max-width: 750px;
+    }
+
+    @include sm {
+        max-width: 500px;
+    }
+
+    @media(max-width: 480px) { 
+        max-width: 280px;
+    }
+    @include vxs {
+        padding: 120px 0 80px;
+    }
+
+    .hero-title {
+        font-weight: 600;
+        font-size: 74px;
+        line-height: 84px;
+        text-transform: uppercase;
+        color: $white-color;
+        margin-top: 23px;
+        margin-bottom: 26px;
+
+        @media(max-width: 1399px) {
+            font-size: 64px;
+            line-height: 74px;
+        }
+
+        @include sm {
+            font-size: 44px;
+            line-height: 54px;
+        }
+
+        @include xs {
+            font-size: 34px;
+            line-height: 44px;
+        }
+
+        @include vxs {
+            font-size: 24px;
+            line-height: 34px;
+        }
+
+        img {
+            width: 164px;
+            height: 51px;
+            border-radius: 50px;
+            object-fit: cover;
+
+            @include vxs {
+                display: none;
+            }
+        }
+    }
+
+    .play-btn {
+        @include sm {
+            --icon-size: 30px;
+        }
+
+        &:after,
+        &:before {
+            background-color: $white-color;
+        }
+
+        >i {
+            width: var(--icon-size, 30px);
+            height: var(--icon-size, 30px);
+            line-height: var(--icon-size, 30px);
+            background-color: $white-color;
+            color: $theme-color;
+            font-size: 16px;
+        }
+    }
+
+    .btn-group {
+        gap: 30px;
+
+        .call-btn {
+            .btn-title {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 34px;
+                color: $white-color;
+
+                @include sm {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    .hero-social {
+        &-wrapp {
+            position: absolute;
+            top: 38%;
+            left: -18.5%;
+            background: $white-color;
+            border-radius: 50px;
+            width: 49px;
+            height: 201px;
+            line-height: 201px;
+            display: block;
+            text-align: center;
+
+            @media(max-width: 1499px) {
+                left: -14%;
+            }
+
+            @media(max-width: 1299px) {
+                display: none;
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border-radius: 50px;
+            color: $title-color;
+            font-size: 20px;
+            padding: 23.5px 0;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                background: #E30D16;
+                border-radius: 50px;
+                color: $white-color;
+            }
+
+        }
+
+    }
+}
+
+.hero-img-1 {
+    position: relative;
+    text-align: right;
+    margin-right: -20px;
+    z-index: 2;
+
+    @media(max-width: 1499px) {
+        margin-right: 0;
+        text-align: left;
+    }
+
+    @media(max-width: 1199px) {
+        margin-bottom: 80px;
+    }
+
+    .thumb {
+        position: relative;
+
+        img {
+            clip-path: path("M245.46 4.66025C254.742 -0.698732 266.178 -0.698728 275.46 4.66026L505.701 137.59C514.983 142.949 520.701 152.853 520.701 163.571V429.43C520.701 440.147 514.983 450.051 505.701 455.41L275.46 588.34C266.178 593.699 254.742 593.699 245.46 588.34L15.2193 455.41C5.93729 450.051 0.21933 440.147 0.21933 429.43V163.57C0.21933 152.853 5.9373 142.949 15.2193 137.59L245.46 4.66025Z");
+
+            @media(max-width: 480px) {
+                clip-path: none;
+            } 
+        }
+    }
+
+    .hero-shape {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        z-index: -1;
+        animation: dance2 4s alternate infinite;
+
+        @media(max-width: 1499px) {
+            left: -20px;
+        }
+    }
+
+    .hero-shape2 {
+        position: absolute;
+        width: 601px;
+        height: 647.4px;
+        top: -25px;
+        right: -60px;
+        z-index: -1;
+
+        @media(max-width: 1499px) {
+            right: 0;
+        }
+
+        @media(max-width: 1199px) {
+            right: unset;
+            left: 0;
+        }
+
+        @include sm {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// slidemenu 
+.hero-slidemenu {
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 200px);
+    top: 100px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+
+}

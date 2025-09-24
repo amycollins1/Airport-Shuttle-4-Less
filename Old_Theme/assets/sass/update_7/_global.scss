@@ -1,0 +1,189 @@
+.title-area {
+    &.style3 {
+        .sec-title {
+            margin-top: 18px;
+        }
+    }
+}
+
+.driver-portfolio-menu {
+    .icon-menu {
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        right: 60px;
+        bottom: 0;
+        z-index: 3;
+        top: 35%;
+        opacity: 1;
+        transition: opacity 0.3s;
+        transform: translateY(-50%);
+
+        @media(max-width: 1699px) {
+            right: 20px;
+        }
+
+        @media(max-width: 1499px) {
+            right: 5px;
+        }
+
+        @include vxs {
+            top: 30%;
+        }
+
+
+        .icon-box {
+            background-color: $body-color;
+            width: 56px;
+            height: 56px;
+            list-style: none;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+            margin: 15px 0;
+            border-radius: 50%;
+
+            @include xs {
+                width: 46px;
+                height: 46px;
+            }
+
+            i {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                display: block;
+                text-align: center;
+                top: 20px;
+                color: $white-color;
+                pointer-events: none;
+
+                @include xs {
+                    top: 15px;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 0;
+                width: 56px;
+                height: 56px;
+
+                @include xs {
+                    width: 46px;
+                    height: 46px;
+                }
+
+                &:hover {
+                    .menu-text {
+                        opacity: 1;
+                        right: 27px;
+                        margin: 0;
+                        text-align: center;
+                        border-radius: 30px 0 0 30px;
+                    }
+                }
+            }
+
+            .menu-text {
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                right: 0;
+                opacity: 0;
+                color: #fff;
+                line-height: 56px;
+                font-weight: 500;
+                transition: all .3s;
+                border-radius: 100px;
+                text-transform: capitalize;
+                background-color: $theme-color;
+                font-family: $body-font;
+                font-weight: 400;
+                font-size: 16px;
+                padding: 0px 40px 0px 25px;
+                height: 56px;
+
+            }
+
+            &.active,
+            &:hover {
+                background-color: $theme-color;
+            }
+        }
+    }
+
+}
+
+
+.no-transform {
+    transform: none !important;
+}
+
+.gallery-card {
+    &.style3 {
+        border-radius: 20px;
+
+        .gallery-img {
+            overflow: hidden;
+            border-radius: 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+                transition: 0.4s ease-in-out;
+
+            }
+        }
+
+        .gallery-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 27, 27, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: inherit;
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.4s ease-in-out;
+        }
+
+        .gallery-title {
+            color: $white-color;
+            display: block;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 40px;
+            margin-bottom: 0;
+
+        }
+
+        .gallery-text {
+            font-family: $body-font;
+            color: $white-color;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            display: block;
+        }
+
+        &:hover {
+            .gallery-content {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

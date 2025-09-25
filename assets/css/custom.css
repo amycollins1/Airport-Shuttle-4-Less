@@ -1,11 +1,10 @@
 .contact-page-section-01 {
   background-image: url(https://airportshuttles4less.com/assets/images/contactBg.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding: 80px 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 80px 20px;
 }
-
 .quote-form-container {
   background-color: rgb(255 255 255 / 50%);
   color: #000;
@@ -14,20 +13,17 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .quote-form-container h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
-
 .quote-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-
 .quote-form input,
 .quote-form select {
   width: 100%;
@@ -38,18 +34,15 @@
   border-radius: 3px;
   font-size: 1rem;
 }
-
 .quote-form input::placeholder,
 .quote-form select option {
   color: #777;
 }
-
 .quote-form .full-width {
-  grid-column: 1 / 3;
+  grid-column: 1/3;
   display: flex;
   justify-content: center;
 }
-
 .quote-form button {
   background-color: #000;
   color: #fff;
@@ -60,85 +53,72 @@
   border-radius: 3px;
   transition: background-color 0.3s ease;
 }
-
 .quote-form button:hover {
   background-color: #333;
 }
-
 .process p,
 .slick-next {
-  right: -50px
+  right: -50px;
 }
-
 body {
-  padding: 0 !important
+  padding: 0 !important;
 }
-
 * {
-  outline: 0
+  outline: 0;
 }
-
 a {
-  text-decoration: none
+  text-decoration: none;
 }
-
 .form-group {
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
-
 .form-group label {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: #000;
-  font-size: 17px
+  font-size: 17px;
 }
-
 .form-control,
 .form-select {
   height: 40px;
-  background-color: transparent !important
+  background-color: transparent !important;
 }
-
 .form-control:focus,
 .form-select:focus {
   box-shadow: none;
   outline: 0;
-  border-color: #e30d16
+  border-color: #e30d16;
 }
-
 textare {
-  resize: none
+  resize: none;
 }
-
 .checkbox-form-group input {
   padding: 0;
   height: initial;
   width: initial;
   margin-bottom: 0;
   display: none;
-  cursor: pointer
+  cursor: pointer;
 }
-
 .checkbox-form-group label {
   position: relative;
-  cursor: pointer
+  cursor: pointer;
 }
-
 .checkbox-form-group label:before {
   content: "";
   -webkit-appearance: none;
   background-color: transparent;
   border: 2px solid #e30d16;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .05), inset 0 -15px 10px -12px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 10px;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   cursor: pointer;
   margin-right: 5px;
-  top: -3px
+  top: -3px;
 }
-
-.checkbox-form-group input:checked+label:after {
+.checkbox-form-group input:checked + label:after {
   content: "";
   display: block;
   position: absolute;
@@ -148,224 +128,184 @@ textare {
   height: 14px;
   border: solid #e30d16;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg)
+  transform: rotate(45deg);
 }
-
 .nav-pills {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
-
 .nav-pills .nav-link {
   background: #000;
   color: #fff;
   margin: 0 1rem 0 0;
   font-size: 18px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
-
 .nav-pills:last-child .nav-link {
-  margin: 0
+  margin: 0;
 }
-
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+.nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #e30d16
+  background-color: #e30d16;
 }
-
 .slick-next,
 .slick-prev {
   width: 40px;
   height: 40px;
   background: #000;
   border-radius: 50%;
-  transition: .5s
+  transition: 0.5s;
 }
-
 .primaryBg,
 .slick-next:focus,
 .slick-next:hover,
 .slick-prev:focus,
 .slick-prev:hover {
-  background: #e30d16
+  background: #e30d16;
 }
-
 .slick-prev {
-  left: -50px
+  left: -50px;
 }
-
 .accordion-button:not(.collapsed) {
   color: #e30d16;
   background-color: #f7f7f7;
-  box-shadow: none
+  box-shadow: none;
 }
-
 .accordion-button:focus {
-  box-shadow: none
+  box-shadow: none;
 }
-
 .secondaryBg {
-  background: #1b1b1b
+  background: #1b1b1b;
 }
-
 .blackBg {
-  background: #000
+  background: #000;
 }
-
 .whiteBg {
-  background: #fff
+  background: #fff;
 }
-
 .bookRideDetSec,
 .greyBg,
 .travelingDetail {
-  background: #f7f7f7
+  background: #f7f7f7;
 }
-
 .ashGreyBg {
-  background: #efefef
+  background: #efefef;
 }
-
 .skyBlueBg {
-  background: #cff4fc
+  background: #cff4fc;
 }
-
 .greenBg {
-  background: #d1e6dd
+  background: #d1e6dd;
 }
-
 .contactDetailSec li a:hover,
 .footerContactList li a:hover,
 .form-counter label,
 .locationCard .location:hover a,
 .primaryColor,
 .quicklist li a:hover {
-  color: #e30d16
+  color: #e30d16;
 }
-
 .secondaryColor {
-  color: #1b1b1b
+  color: #1b1b1b;
 }
-
 .bookRide .primaryButton:disabled:hover,
 .fixedCallIcon a:hover,
 .fixedReservationButton a:hover,
 .whiteText {
-  color: #fff
+  color: #fff;
 }
-
 .announcementSec a:hover,
 .blackText,
 header .dropdown-item {
-  color: #000
+  color: #000;
 }
-
 .greyText {
-  color: #74787c
+  color: #74787c;
 }
-
 .greenText {
-  color: #2f4636
+  color: #2f4636;
 }
-
 .poisonText {
-  color: #045157
+  color: #045157;
 }
-
 .ashGreyText {
-  color: #efefef
+  color: #efefef;
 }
-
 .yellowText {
-  color: #fec624
+  color: #fec624;
 }
-
 .primaryButton,
 .secondaryButton {
   color: #fff;
   border-radius: 5px;
   display: inline-block;
   width: max-content;
-  transition: .5s;
-  font-weight: 700
+  transition: 0.5s;
+  font-weight: 700;
 }
-
 .level1 {
   font-size: 50px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .level2 {
   font-size: 45px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .level3 {
   font-size: 30px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .level4 {
   font-size: 24px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .level5 {
   font-size: 20px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .level6 {
   font-size: 14px;
-  font-weight: 700
+  font-weight: 700;
 }
-
 .primaryText {
   font-size: 16px;
-  line-height: 24px
+  line-height: 24px;
 }
-
 .secondaryText {
   font-size: 18px;
-  line-height: 30px
+  line-height: 30px;
 }
-
 .primaryButton {
   background: #e30d16;
-  padding: .6rem 1rem;
+  padding: 0.6rem 1rem;
   border: 1px solid #e30d16;
-  line-height: normal
+  line-height: normal;
 }
-
 .primaryButton:hover,
 .secondaryButton:hover {
   background: #fff;
-  color: #000
+  color: #000;
 }
-
 .dropdown-item.active,
 .dropdown-item:active,
 .dropdown-item:focus,
 .dropdown-item:hover,
 header.sticky {
-  background-color: #000
+  background-color: #000;
 }
-
 .secondaryButton {
   background: #000;
-  padding: .6rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border: 1px solid #000;
-  line-height: normal
+  line-height: normal;
 }
-
 .secHead h5 {
   width: max-content;
   position: relative;
   z-index: 1;
-  margin: 0 auto
+  margin: 0 auto;
 }
-
 .secHead h5:before {
   position: absolute;
   content: "";
@@ -374,9 +314,8 @@ header.sticky {
   width: 120%;
   background: #e30d16;
   height: 1px;
-  z-index: -1
+  z-index: -1;
 }
-
 .secHead h5:after {
   position: absolute;
   content: "";
@@ -385,22 +324,19 @@ header.sticky {
   width: 130%;
   background: #e30d16;
   height: 1px;
-  z-index: -1
+  z-index: -1;
 }
-
 .headerSocial li a,
 .process,
 .quicklist li a,
 .topBarAddressList li a,
 .topBarAddressList li span {
-  transition: .5s
+  transition: 0.5s;
 }
-
 .topBarAddressList li {
   position: relative;
-  padding: 0 .5rem
+  padding: 0 0.5rem;
 }
-
 .topBarAddressList li:after {
   position: absolute;
   content: "";
@@ -408,56 +344,48 @@ header.sticky {
   right: 0;
   width: 2px;
   height: 100%;
-  background: #fff
+  background: #fff;
 }
-
 .col-lg-3:nth-child(2n):last-child .process:after,
 .steps li:last-child:after,
 .topBarAddressList li:last-child:after,
 header .navbar .nav-item .dropdown-menu {
-  display: none
+  display: none;
 }
-
 .headerSocial li a i:hover,
 .topBarAddressList li a:hover,
 .topBarAddressList li span:hover {
   color: #1b1b1b;
-  cursor: pointer
+  cursor: pointer;
 }
-
 header.sticky {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-  z-index: 99
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 99;
 }
-
 header .navbar-brand img {
-  width: 90px
+  width: 90px;
 }
-
 header .dropdown-item,
 header .nav-link {
   font-family: Inter, sans-serif;
   font-size: 16px;
   color: #fff !important;
-  padding: .5rem 1.5rem !important;
+  padding: 0.5rem 1.5rem !important;
   font-weight: 500;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
-
 header .dropdown-menu li a {
   position: relative;
-  transition: .5s
+  transition: 0.5s;
 }
-
 header .dropdown-menu li a:hover {
   padding-left: 2.5rem !important;
-  transition: .5s
+  transition: 0.5s;
 }
-
 header .dropdown-menu li a:before {
   font-family: "Font Awesome 5 Free";
   content: "\f1b9";
@@ -467,54 +395,44 @@ header .dropdown-menu li a:before {
   top: 8px;
   color: #fff;
   opacity: 0;
-  transition: .5s
+  transition: 0.5s;
 }
-
 header .dropdown-menu li a:hover:before {
-  opacity: 1
+  opacity: 1;
 }
-
 header .dropdown-menu {
-  min-width: 300px
+  min-width: 300px;
 }
-
 header .dropdown-menu li a svg {
   width: 35px;
   border-radius: 5px;
-  padding: 2px
+  padding: 2px;
 }
-
 header .navbar .nav-item:hover .dropdown-menu {
   display: block;
   background: #e30d16;
-  padding: 0
+  padding: 0;
 }
-
 .bannerCntnt {
-  background: rgb(0 0 0 / 60%)
+  background: rgb(0 0 0 / 60%);
 }
-
 .bannerInnerText.p-4 {
-  transform: translate(0, -50%)
+  transform: translate(0, -50%);
 }
-
 .bannerButton {
   position: absolute;
   top: 350px;
   left: 0;
-  right: 0
+  right: 0;
 }
-
 .announcementSec a {
-  border-bottom: 1px solid #fff
+  border-bottom: 1px solid #fff;
 }
-
 .pickupSec,
 .servicesSec,
 .transportSec {
-  padding: 5rem 0
+  padding: 5rem 0;
 }
-
 .steps li {
   width: 100%;
   position: relative;
@@ -523,16 +441,14 @@ header .navbar .nav-item:hover .dropdown-menu {
   display: table;
   display: flex;
   flex-direction: column;
-  text-align: center
+  text-align: center;
 }
-
 .rideImg,
 .steps li h6 {
   align-items: center;
   background: #fff;
-  display: flex
+  display: flex;
 }
-
 .steps li:after {
   position: absolute;
   content: "";
@@ -541,9 +457,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   width: 100%;
   height: 1px;
   background: #000;
-  transform: translate(185px, 0)
+  transform: translate(185px, 0);
 }
-
 .steps li h6 {
   width: 30px;
   height: 30px;
@@ -553,133 +468,111 @@ header .navbar .nav-item:hover .dropdown-menu {
   border: 1px solid #000;
   border-radius: 50%;
   margin: 0 auto;
-  z-index: 1
+  z-index: 1;
 }
-
 .steps li.active h6 {
   background: #e30d16;
   color: #fff;
-  border-color: #e30d16
+  border-color: #e30d16;
 }
-
 .rideCard {
   position: relative;
-  margin-top: 5rem
+  margin-top: 5rem;
 }
-
 .process p,
 .rideImg {
   margin: 0 auto;
-  left: 0
+  left: 0;
 }
-
 .rideImg {
   width: 130px;
   height: 130px;
   justify-content: center;
-  padding: .8rem;
+  padding: 0.8rem;
   border: 2px solid #000;
   border-radius: 50%;
   position: absolute;
   top: -50px;
-  right: 0
+  right: 0;
 }
-
 .aboutImg,
 .bookingDetail ul li,
 .fleetCard,
 .processSec {
-  position: relative
+  position: relative;
 }
-
 .rideDetail {
-  -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
-  -moz-box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
-  box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
+  -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
   padding: 5rem 1rem 1rem;
-  border-radius: 10px
+  border-radius: 10px;
 }
-
 .rideDetail ul li i {
   min-width: 20px;
   color: #e30d16;
-  text-align: center
+  text-align: center;
 }
-
 .bookingDetail ul li {
   padding-left: 2rem;
   margin-bottom: 1rem;
-  padding-right: 1rem
+  padding-right: 1rem;
 }
-
 .bookingDetail ul li i {
   position: absolute;
   top: 5px;
   left: 0;
-  font-size: 20px
+  font-size: 20px;
 }
-
 .travelingDetail .travelingList {
-  border: 1px solid #ccc
+  border: 1px solid #ccc;
 }
-
 .travelingDetail .listDiv {
   border-bottom: 1px solid #ccc;
   padding: 1rem;
   position: relative;
-  z-index: 1
+  z-index: 1;
 }
-
 .travelingDetail .listDiv p {
-  padding-left: 1rem
+  padding-left: 1rem;
 }
-
 .travelingDetail .listDiv:last-child {
-  border: 0
+  border: 0;
 }
-
 .travelingDetail .code-group button {
-  padding: .5rem 1rem;
-  border-radius: 0 5px 5px 0
+  padding: 0.5rem 1rem;
+  border-radius: 0 5px 5px 0;
 }
-
 .bookRide .primaryButton:disabled {
   background: #ccc;
-  border-color: #ccc
+  border-color: #ccc;
 }
-
-.reviewTrip .checkbox-form-group input:checked+label:after {
-  top: 5px
+.reviewTrip .checkbox-form-group input:checked + label:after {
+  top: 5px;
 }
-
 .aboutSec,
 .fleetSec {
-  margin-bottom: 5rem
+  margin-bottom: 5rem;
 }
-
 .fleetCard {
   padding: 3rem 1rem;
   border: 1px solid #000;
   border-radius: 10px;
-  transition: .5s
+  transition: 0.5s;
 }
-
 .fleetCard:hover {
-  border: 1px solid #e8383f
+  border: 1px solid #e8383f;
 }
-
 .fleetCard:hover .fleetImg {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
-
 .fleetCard .fleetImg {
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .5s
+  transition: 0.5s;
 }
-
 .fleetCard .callIcon {
   width: 50px;
   height: 50px;
@@ -693,24 +586,20 @@ header .navbar .nav-item:hover .dropdown-menu {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  transition: .5s
+  transition: 0.5s;
 }
-
 .process i,
 .process p {
   align-items: center;
-  transition: .5s;
-  display: flex
+  transition: 0.5s;
+  display: flex;
 }
-
 .fleetCard:hover .callIcon {
-  background: #e8383f
+  background: #e8383f;
 }
-
 .aboutImg {
-  z-index: 1
+  z-index: 1;
 }
-
 .aboutImg:after {
   position: absolute;
   content: "";
@@ -719,9 +608,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   right: -1rem;
   width: 90%;
   height: 90%;
-  z-index: -1
+  z-index: -1;
 }
-
 .col-lg-3:nth-child(2n) .process:after,
 .col-lg-3:nth-child(odd) .process:after {
   right: 0;
@@ -730,27 +618,22 @@ header .navbar .nav-item:hover .dropdown-menu {
   background: #ccc;
   position: absolute;
   content: "";
-  top: 0
+  top: 0;
 }
-
 .servicesSec .service img {
   height: 200px;
-  object-fit: cover
+  object-fit: cover;
 }
-
 .processSec {
   padding: 5rem 0;
-  background: url(../images/processBg.jpg) center/cover
+  background: url(../images/processBg.jpg) center/cover;
 }
-
 .col-lg-3:nth-child(odd) .process:after {
-  transform: rotate(20deg) translate(110px, 50px)
+  transform: rotate(20deg) translate(110px, 50px);
 }
-
 .col-lg-3:nth-child(2n) .process:after {
-  transform: rotate(-20deg) translate(70px, 65px)
+  transform: rotate(-20deg) translate(70px, 65px);
 }
-
 .process p {
   width: 40px;
   height: 40px;
@@ -760,9 +643,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   background: #e30d16;
   color: #fff;
   position: absolute;
-  top: -20px
+  top: -20px;
 }
-
 .process i {
   width: 130px;
   height: 130px;
@@ -772,59 +654,48 @@ header .navbar .nav-item:hover .dropdown-menu {
   justify-content: center;
   font-size: 40px;
   color: #000;
-  margin: 0 auto 1rem
+  margin: 0 auto 1rem;
 }
-
 .process:hover p {
   background: #000;
-  border-color: #000
+  border-color: #000;
 }
-
 .locationCard:hover,
 .process:hover i {
-  border-color: #e30d16
+  border-color: #e30d16;
 }
-
 .process:hover i {
   background: #e30d16;
-  color: #fff
+  color: #fff;
 }
-
 .unlockSec {
-  background: url("../images/reviewBg.jpg") center/cover;
-  padding: 5rem 0
+  background: url(../images/reviewBg.jpg) center/cover;
+  padding: 5rem 0;
 }
-
 .locationSec {
-  background: url("../images/locationBg.jpg") center/cover;
-  padding: 5rem 0
+  background: url(../images/locationBg.jpg) center/cover;
+  padding: 5rem 0;
 }
-
 .locationCard {
   border: 1px solid #000;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
 }
-
 .locationCard .location {
   background: rgb(0 0 0 / 50%);
-  transition: .5s;
-  padding: .5rem;
-  text-align: center
+  transition: 0.5s;
+  padding: 0.5rem;
+  text-align: center;
 }
-
 .locationCard .location:hover {
-  background: rgb(0 0 0 / 65%)
+  background: rgb(0 0 0 / 65%);
 }
-
 .reviewSec {
-  background: url("../images/reviewBg.jpg") center/cover
+  background: url(../images/reviewBg.jpg) center/cover;
 }
-
 .ctaLogo {
   padding: 0 2rem 0 0;
-  border-right: 1px solid #e30d16
+  border-right: 1px solid #e30d16;
 }
-
 .footerContactList li i {
   background: #e30d16;
   width: 25px;
@@ -834,9 +705,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px
+  font-size: 12px;
 }
-
 .socialList li a {
   width: 40px;
   height: 40px;
@@ -848,34 +718,29 @@ header .navbar .nav-item:hover .dropdown-menu {
   align-items: center;
   justify-content: center;
   color: #adadad;
-  transition: .5s
+  transition: 0.5s;
 }
-
 .socialList li a:hover {
   background: #e30d16;
   color: #fff;
   border-color: #e30d16;
-  transform: rotate(360deg)
+  transform: rotate(360deg);
 }
-
 .whatsAppSec {
   width: 50px;
   height: 50px;
   position: fixed;
   bottom: 20px;
   left: 20px;
-  transition: .5s;
-  z-index: 99
+  transition: 0.5s;
+  z-index: 99;
 }
-
 .whatsAppSec:hover {
-  transform: scale(1.3)
+  transform: scale(1.3);
 }
-
 .contactDetailSec li {
-  padding-left: 3rem
+  padding-left: 3rem;
 }
-
 .contactDetailSec li:first-child:before {
   position: absolute;
   content: "";
@@ -884,9 +749,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   width: 1px;
   height: 170px;
   background: #2e3341;
-  transform: translate(-80px, 0)
+  transform: translate(-80px, 0);
 }
-
 .contactDetailSec li:after,
 .contactDetailSec li:first-child:after {
   width: 1px;
@@ -894,19 +758,16 @@ header .navbar .nav-item:hover .dropdown-menu {
   transform: translate(80px, 0);
   position: absolute;
   content: "";
-  right: 0
+  right: 0;
 }
-
 .contactDetailSec li:first-child:after {
   top: -10px;
-  height: 170px
+  height: 170px;
 }
-
 .contactDetailSec li:after {
   top: 0;
-  height: 100%
+  height: 100%;
 }
-
 .contactDetailSec li i {
   position: absolute;
   top: 50px;
@@ -918,27 +779,23 @@ header .navbar .nav-item:hover .dropdown-menu {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: #fff
+  color: #fff;
 }
-
 .alertSec .alertCntnt {
-  -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
-  -moz-box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
-  box-shadow: 0 0 20px -10px rgba(0, 0, 0, .75);
-  border-top: 5px solid #e30d16
+  -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.75);
+  border-top: 5px solid #e30d16;
 }
-
 .chooseSec {
   padding: 5rem 0;
-  background: url("../images/chooseBg.jpg") center/cover
+  background: url(../images/chooseBg.jpg) center/cover;
 }
-
 .accordion-area h3 {
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  position: relative
+  position: relative;
 }
-
 .accordion-area h3:before {
   position: absolute;
   content: "";
@@ -946,9 +803,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #ccc
+  background: #ccc;
 }
-
 .accordion-area h3:after {
   position: absolute;
   content: "";
@@ -956,9 +812,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   left: 0;
   width: 50px;
   height: 2px;
-  background: red
+  background: red;
 }
-
 .modal-body li:before,
 .serviceAreaSec ul li:before {
   font-family: "Font Awesome 5 Free";
@@ -966,9 +821,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   font-weight: 900;
   color: #e30d16;
   position: absolute;
-  left: 0
+  left: 0;
 }
-
 .accordion-button {
   background: #f7f7f7;
   padding: 0 0 0 1rem;
@@ -976,9 +830,8 @@ header .navbar .nav-item:hover .dropdown-menu {
   font-weight: 700;
   font-size: 18px;
   color: #000;
-  border-radius: 0 0 20px
+  border-radius: 0 0 20px;
 }
-
 .accordion-card .accordion-button:after {
   content: "\f078";
   font-family: "Font Awesome 5 Free";
@@ -990,30 +843,25 @@ header .navbar .nav-item:hover .dropdown-menu {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
-
 .accordion-card .accordion-button:not(.collapsed):after {
   content: "\f077";
   -webkit-transform: rotate(0);
   -ms-transform: rotate(0);
-  transform: rotate(0)
+  transform: rotate(0);
 }
-
 .areaPg .locationSec {
   background: 0 0;
-  padding-bottom: 0
+  padding-bottom: 0;
 }
-
 .innerServicesSec {
   background: url(../images/reviewBg.jpg) center/cover;
-  padding: 5rem 0
+  padding: 5rem 0;
 }
-
 .innerServiceDet {
-  position: relative
+  position: relative;
 }
-
 .innerServiceDet:after {
   position: absolute;
   content: "";
@@ -1022,43 +870,36 @@ header .navbar .nav-item:hover .dropdown-menu {
   width: 100%;
   height: 2px;
   background: #ccc;
-  transform: translate(0, 70px)
+  transform: translate(0, 70px);
 }
-
 .innerServicesSec i {
-  font-size: 50px
+  font-size: 50px;
 }
-
 .helpSec a.primaryButton {
   position: absolute;
   bottom: -20px;
   left: 0;
   right: 0;
-  margin: 0 auto
+  margin: 0 auto;
 }
-
 .serviceAreaSec ul li {
   position: relative;
   padding-left: 1.8rem;
-  padding-right: 1rem
+  padding-right: 1rem;
 }
-
 .serviceAreaSec ul li:before {
-  top: 0
+  top: 0;
 }
-
 .generalCntntSec .locationCard {
   border-radius: 20px;
-  overflow: hidden
+  overflow: hidden;
 }
-
 .generalCntntSec .locationCard img {
   height: 250px;
-  object-fit: cover
+  object-fit: cover;
 }
-
 button.btn-close {
-  padding: .5rem;
+  padding: 0.5rem;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1067,25 +908,21 @@ button.btn-close {
   top: 10px;
   right: 10px;
   opacity: 1;
-  font-size: 10px
+  font-size: 10px;
 }
-
 .modal-body li {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: .3rem
+  margin-bottom: 0.3rem;
 }
-
 .modal-body li:before {
-  top: 3px
+  top: 3px;
 }
-
 .counter {
   position: relative;
   width: 70%;
-  margin: 0 auto
+  margin: 0 auto;
 }
-
 .counter span {
   width: 30px;
   height: 30px;
@@ -1096,37 +933,33 @@ button.btn-close {
   justify-content: center;
   line-height: normal;
   border-radius: 3px;
-  font-size: 24px
+  font-size: 24px;
 }
-
 .counter span.down {
   position: absolute;
   top: 5px;
-  left: 5px
+  left: 5px;
 }
-
 .counter span.up {
   position: absolute;
   top: 5px;
-  right: 5px
+  right: 5px;
 }
-
 .fixedReservationButton {
   border-radius: 5px 5px 0 0;
   position: fixed;
   top: 0;
   right: 0;
   transform: rotate(-90deg) translate(-50vh, 40px);
-  padding: .5rem;
-  z-index: 99
+  padding: 0.5rem;
+  z-index: 99;
 }
-
 .fixedCallIcon {
   position: fixed;
   top: 0;
   left: 0;
   transform: rotate(-90deg) translate(-50vh, 0);
-  padding: .7rem;
+  padding: 0.7rem;
   border-radius: 0 0 20px 20px;
-  z-index: 99
+  z-index: 99;
 }

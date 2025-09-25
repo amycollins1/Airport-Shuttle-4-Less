@@ -85,10 +85,10 @@ namespace Frederick.Admin.Handler
                 ////sb.Append("          <td colspan='2' width='100%' class='heading'><b>AirportShuttles4Less (AS4L)</b></td>");
                 //sb.Append("        </tr>");
                 ////sb.Append("        <tr>");
-                ////sb.Append("          <td colspan='2' width='100%'><a href='http://www.airportshuttles4less.com'>http://www.airportshuttles4less.com<</a></td>");
+                ////sb.Append("          <td colspan='2' width='100%'><a href='https://www.airportshuttles4less.com'>https://www.airportshuttles4less.com<</a></td>");
                 ////sb.Append("        </tr>");
                 //sb.Append("        <tr>");
-                //sb.Append("          <td colspan='3' width='100%'><a href='http://www.airportshuttles4less.com<'>http://www.airportshuttles4less.com<</a></td>");
+                //sb.Append("          <td colspan='3' width='100%'><a href='https://www.airportshuttles4less.com<'>https://www.airportshuttles4less.com<</a></td>");
                 //sb.Append("        </tr>");
                 //sb.Append("        <tr>");
                 //sb.Append("          <td colspan='3' width='100%'><a href='mailto:airportshuttle4less@gmail.com'>airportshuttle4less@gmail.com</a></td>");
@@ -330,7 +330,7 @@ namespace Frederick.Admin.Handler
                 //sbDriver.Append("      <table width='100%'>");
                 //sbDriver.Append("        <tbody><tr>");
                 //sbDriver.Append("        <tr>");
-                //sbDriver.Append("          <td colspan='3' width='100%'><a href='http://www.airportshuttles4less.com<'>http://www.airportshuttles4less.com<</a></td>");
+                //sbDriver.Append("          <td colspan='3' width='100%'><a href='https://www.airportshuttles4less.com<'>https://www.airportshuttles4less.com<</a></td>");
                 //sbDriver.Append("        </tr>");
                 //sbDriver.Append("        <tr>");
                 //sbDriver.Append("          <td colspan='3' width='100%'><a href='mailto:airportshuttle4less@gmail.com'>airportshuttle4less@gmail.com</a></td>");
@@ -656,7 +656,7 @@ namespace Frederick.Admin.Handler
                     sb.Append("          <td colspan='2' width='100%' class='heading'><b>Limo All Around Service</b></td>");
                     sb.Append("        </tr>");
                     sb.Append("        <tr>");
-                    sb.Append("          <td colspan='2' width='100%'><a href='http://www.airportshuttles4less.com'>http://www.airportshuttles4less.com<</a></td>");
+                    sb.Append("          <td colspan='2' width='100%'><a href='https://www.airportshuttles4less.com'>https://www.airportshuttles4less.com<</a></td>");
                     sb.Append("        </tr>");
                     sb.Append("        <tr>");
                     sb.Append("          <td colspan='2' width='100%'><a href='mailto:info@airportshuttles4less.com'>info@airportshuttles4less.com</a></td>");
@@ -833,7 +833,7 @@ namespace Frederick.Admin.Handler
                     sbDriver.Append("          <td colspan='2' width='100%' class='heading'><b>Limo All Around Service</b></td>");
                     sbDriver.Append("        </tr>");
                     sbDriver.Append("        <tr>");
-                    sbDriver.Append("          <td colspan='2' width='100%'><a href='http://www.airportshuttles4less.com'>http://www.airportshuttles4less.com<</a></td>");
+                    sbDriver.Append("          <td colspan='2' width='100%'><a href='https://www.airportshuttles4less.com'>https://www.airportshuttles4less.com<</a></td>");
                     sbDriver.Append("        </tr>");
                     sbDriver.Append("        <tr>");
                     sbDriver.Append("          <td colspan='2' width='100%'><a href='mailto:info@airportshuttles4less.com'>info@airportshuttles4less.com</a></td>");

@@ -69,7 +69,7 @@ namespace Frederick.BL
             sb.Append("        <tbody><tr>");
             sb.Append("        </tr>");
             sb.Append("        <tr>");
-            sb.Append("          <td width='100%'><a href='http://www.airportshuttles4less.com'>http://www.airportshuttles4less.com</a></td>");
+            sb.Append("          <td width='100%'><a href='https://www.airportshuttles4less.com'>https://www.airportshuttles4less.com</a></td>");
             sb.Append("        </tr>");
             sb.Append("        <tr>");
             sb.Append("          <td width='100%'><a href='mailto:info@airportshuttles4less.com'>info@airportshuttles4less.com</a></td>");
@@ -166,7 +166,7 @@ namespace Frederick.BL
             sb.Append("<tr><td colspan = '2'>Airport Shuttles 4 Less Worldwide, Sedan, SUVs, VANS & Buses</td></tr>");
             sb.Append("<tr><td colspan = '2'>A Subsidiary of RnH Transportation Worldwide Chauffeured Transportation Service</td></tr>");
             sb.Append("<tr><td colspan = '2'>info@airportshuttles4less.com</td></tr>");
-            sb.Append("<tr><td colspan = '2'>http://www.airportshuttles4less.com</td></tr>");
+            sb.Append("<tr><td colspan = '2'>https://www.airportshuttles4less.com</td></tr>");
             sb.Append("<tr><td colspan = '2'>Direct: 443-336-3333 Toll Free: 1-844-340-3333</td></tr>");
             sb.Append("<tr><td colspan = '2'>Like us on Facebook: https://www.facebook.com/Airportshuttles4less </td></tr>");
             sb.Append("<tr><td colspan = '2'>Leave a Review on Google! https://g.page/r/CVwlSWDkn9ohEBM/review </td></tr>");

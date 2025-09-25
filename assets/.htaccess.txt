@@ -80,4 +80,4 @@ Redirect 301 /arlington.va.html /arlington-va-shuttle-service.html
 Redirect 301 /baltimore.html /baltimore-shuttle-service.html
 Redirect 301 /gaithersburg.html /gaithersburg-md-shuttle-service.html
 Redirect 301 /About-us.html /about-us.html
-
+Redirect 301 /dmv-areas.html /dmv-shuttle-service.html

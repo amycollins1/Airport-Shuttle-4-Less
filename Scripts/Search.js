@@ -600,7 +600,7 @@ function localData() {
         Hours: 0,
         IsHalt: false,
         Passengers: "2",
-        ReservationDate: "07-31-2024",
+        ReservationDate: "07-31-2025",
         RetAirlines: "",
         RetDate: "",
         RetFlightNo: "",

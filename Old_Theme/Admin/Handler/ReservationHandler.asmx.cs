@@ -57,7 +57,7 @@ namespace Frederick.Admin.Handler
                 //StringBuilder sb = new StringBuilder();
                 //StringBuilder sbDriver = new StringBuilder();
 
-                #region Email commented on 28-09-2024 & using centralized system
+                #region Email commented on 28-09-2025 & using centralized system
                 #region Customer Mail
                 //sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=windows-1252'>");
                 //sb.Append("<title>www.bwishuttleservice.com- Customer Receipt</title>  ");

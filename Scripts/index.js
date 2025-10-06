@@ -445,7 +445,7 @@ function CheckTimeBefore24_New(tm) {
         return false;
 }
 
-//This function has not been in use since 3-Sept-2024.
+//This function has not been in use since 3-Sept-2025.
 function isMoreThan24HoursAhead(tm) {
     // Parse the provided date string into a Date object
     var resDate = ReservationDate + ' ' + tm;

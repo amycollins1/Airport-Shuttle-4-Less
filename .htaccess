@@ -1,3 +1,82 @@
-# Legacy URL redirects (Apache)
-RedirectMatch 301 (?i)^/dmv-areas\.html$ /dmv-shuttle-service.html
-RedirectMatch 301 (?i)^/index\.html$ /
+# Protect against clickjacking
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# Prevent MIME type sniffing
+Header set X-Content-Type-Options "nosniff"
+
+# Enforce secure connections (HSTS)
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+# Set a secure referrer policy
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Basic Content Security Policy (CSP) – customize as needed
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none';"
+
+# Optional: XSS protection (for older browsers)
+Header set X-XSS-Protection "1; mode=block"
+
+Redirect 301 /washington-dc-point-to-point-limo-service.html /point-to-point-limo-service.html
+Redirect 301 /baltimore-sedan-car-service.html /hourly-limo-service.html
+Redirect 301 /phl-philadelphia-international-airport-limos-service.html /phl-limo-service-phl-car-service.html
+Redirect 301 /bwi-airport-transfers-limos-service.html /bwi-shuttle-service-bwi-limo-service.html
+Redirect 301 /dca-airport-transfers-limos-service.html /dca-shuttle-service-dca-car-service.html
+Redirect 301 /iad-dulles-international-airport-limos-service.html /iad-limo-service-dulles-car-service.html
+Redirect 301 /school-transportation-shuttle-service.html /private-school-transportation.html
+Redirect 301 /corporate-limo-service.html /corporate-transportation-services.html
+Redirect 301 /luxury-wine-tour-limousine-transportation-service.html /winery-and-city-tours.html
+Redirect 301 /airport-limo-service.html /baltimore-airport-transportation.html
+Redirect 301 /exclusive-shuttle-service.html /bwi-shuttle-service.html
+Redirect 301 /hourly-limo-service.html /baltimore-hourly-limo-service.html
+Redirect 301 /limousine-party-services.html /baltimore-d.C-party-limo-service.html
+Redirect 301 /limos-wedding-services.html /baltimore-wedding-limo-services.html
+Redirect 301 /exotic-car-rental.html /baltimore-exotic-car-rental.html
+Redirect 301 /private-school-transportation.html /baltimore-private-school-transportation.html
+Redirect 301 /washington-dc-tour-limo-service.html /sprinter-vans-buses-group-transportation.html
+Redirect 301 /black-limo-motor-coaches.html /baltimore-bus-charter-rental.html
+Redirect 301 /tyson-va-shuttle-service.html /tyson-va-shuttle-service.html
+Redirect 301 /columbia-md.html /columbia-md-shuttle-service.html
+Redirect 301 /private-school-transportation.html /baltimore-private-school-transportation.html
+Redirect 301 /Our-limo-services.html /our-limo-partners.html
+Redirect 301 /silver.spring.html /silver.spring-md-shuttle-service.html
+Redirect 301 /tyson-va-shuttle-service.html /tysons-va-shuttle-service.html
+Redirect 301 /limos-transportation-service-local-areas.html /dmv-shuttle-service.html
+Redirect 301 /dmv-areas.html /dmv-shuttle-service.html
+Redirect 301 /mcleaan-shuttle-service.html /mclean-shuttle-service.html
+Redirect 301 /washington-dc-tour-limo-service.html /sprinter-vans-buses-group-transportation.html
+Redirect 301 /Luxury-wine-tour-limousine-transportation-service.html /winery-and-city-tours.html
+Redirect 301 /Alexandra-VA.html /alexandria-va-shuttle-service.html
+Redirect 301 /Washinton-D.Cl /washington-d.c-shuttle-service.html
+Redirect 301 /iad-dulles-international-airport-limos-service.html /iad-limo-service-dulles-car-service.html
+Redirect 301 /Dca-airport-transfers-limos-service.html /dca-shuttle-service-dca-car-service.html
+Redirect 301 /limousine-party-services.html /baltimore-d.c-party-limo-service.html
+Redirect 301 /limos-wedding-services.html /baltimore-wedding-limo-services.html
+Redirect 301 /corporate-limo-service.html /corporate-transportation-services.html
+Redirect 301 /exotic-car-rental.html /baltimore-exotic-car-rental.html
+Redirect 301 /school-transportation-shuttle-service.html /baltimore-private-school-transportation.html
+Redirect 301 /Iad-limo-service-dulles-car-service.html /iad-limo-service-dulles-car-service
+Redirect 301 /Baltimore-D.C-party-limo-service.html /baltimore-d.c-party-limo-service.html
+Redirect 301 /BWI-Airport-Sedan-service.html /bwi-airport-sedan-service.html
+Redirect 301 /Baltimore-56-passenger-bus.html /baltimore-56-passenger-bus.html
+Redirect 301 /BWI-large-group-van-service.html /bwi-large-group-van-service.html
+Redirect 301 /Baltimore-Airport-Suv-limo.html /baltimore-airport-suv-limo.html
+Redirect 301 /Our-limo-partners.html /our-limo-partners.html
+Redirect 301 /About-us.html /about-us.html
+Redirect 301 /Baltimore-party-Limousine-service.html /baltimore-party-limousine-service.html
+Redirect 301 /Our-fleet.html /our-fleet.html
+Redirect 301 /iad-limo-service-dulles-car-service.html /Iad-limo-service-dulles-car-service.html
+Redirect 301 /leesburg.html /leesburg-shuttle-service.html
+Redirect 301 /great-falls-va.html /great-falls-va-shuttle-service.html
+Redirect 301 /annandale-va.html /annandale-va-shuttle-service.html
+Redirect 301 /annapolis.html /annapolis-shuttle-service.html
+Redirect 301 /tyson-va-shuttle-service.html /tysons-va-shuttle-service.html
+Redirect 301 /silver-spring-md.html /silver.spring-md-shuttle-service.html
+Redirect 301 /washington-d.c.html /washington-d.c-shuttle-service.html
+Redirect 301 /columbia-md.html /columbia-md-shuttle-service.html
+Redirect 301 /oxon-hills-md.html /oxon-hills-md-shuttle-service.html
+Redirect 301 /springfield-VA.html /springfield-va-shuttle-service.html
+Redirect 301 /alexandria-va.html /alexandria-va-shuttle-service.html
+Redirect 301 /arlington.va.html /arlington-va-shuttle-service.html
+Redirect 301 /baltimore.html /baltimore-shuttle-service.html
+Redirect 301 /gaithersburg.html /gaithersburg-md-shuttle-service.html
+Redirect 301 /About-us.html /about-us.html

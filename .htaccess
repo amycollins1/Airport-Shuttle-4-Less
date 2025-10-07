@@ -1,0 +1,3 @@
+# Legacy URL redirects (Apache)
+RedirectMatch 301 (?i)^/dmv-areas\.html$ /dmv-shuttle-service.html
+RedirectMatch 301 (?i)^/index\.html$ /

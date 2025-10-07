@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs  | Airport Shuttles 4 Less</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .blog-card {
+            background: #fafbfc;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px #0001;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s;
+        }
+        .blog-card:hover {
+            box-shadow: 0 4px 16px #0002;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .blog-card-body {
+            padding: 1.2rem;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-title {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #e30d16;
+            margin-bottom: 0.5em;
+        }
+        .blog-excerpt {
+            color: #444;
+            margin-bottom: 1.2em;
+            flex: 1 1 auto;
+        }
+        .blog-date {
+            color: #888;
+            font-size: 0.95em;
+            margin-bottom: 0.8em;
+        }
+        .read-more-btn {
+            background: #e30d16;
+            color: #fff;
+            border: none;
+            padding: 0.6em 1.2em;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            align-self: flex-start;
+            transition: background 0.2s;
+        }
+        .read-more-btn:hover {
+            background: #b90a12;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <!-- header -->
+    <div id="header"></div>
+    <script>
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+        });
+    </script>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Latest Blog Posts</h1> 
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <div class="blog-card">
+                <img src="/blog/images/airport-shuttle-benefits.jpg" alt="Why Is Airport Shuttle Service So Useful?">
+                <div class="blog-card-body">
+                    <div class="blog-date">May 10, 2024</div>
+                    <div class="blog-title">Why Is Airport Shuttle Service So Useful?</div>
+                    <div class="blog-excerpt">
+                        Discover how airport shuttle services can make your travel stress-free, dependable, and cost-effective. Learn why more travelers are choosing shuttles for comfort and peace of mind.
+                    </div>
+                    <a href="/blog/why-is-airport-shuttle-service-so-useful.html" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+            <!-- Blog Card 2 -->
+            <div class="blog-card">
+                <img src="/blog/images/airport-transfer-tips.jpg" alt="Top 5 Tips for Stress-Free Airport Transfers">
+                <div class="blog-card-body">
+                    <div class="blog-date">April 22, 2024</div>
+                    <div class="blog-title">Top 5 Tips for Stress-Free Airport Transfers</div>
+                    <div class="blog-excerpt">
+                        Make your next airport transfer smooth and hassle-free with these expert tips. From planning ahead to choosing the right service, we've got you covered.
+                    </div>
+                    <a href="/blog/2024-04-22-top-5-tips.html" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+            <!-- Blog Card 3 -->
+            <div class="blog-card">
+                <img src="/blog/images/group-travel-shuttle.jpg" alt="Group Travel: Choosing the Right Shuttle">
+                <div class="blog-card-body">
+                    <div class="blog-date">March 15, 2024</div>
+                    <div class="blog-title">Group Travel: Choosing the Right Shuttle</div>
+                    <div class="blog-excerpt">
+                        Traveling with a group? Find out how to select the best shuttle service for your needs, ensuring everyone arrives together and on time.
+                    </div>
+                    <a href="/blog/2024-03-15-group-travel.html" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+            <!-- Add more blog cards as needed -->
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        });
+    </script>
+  </div>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

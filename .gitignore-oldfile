@@ -1,0 +1,30 @@
+# Ignore admin-related folders
+Admin/Handler/
+Admin/Scripts/
+
+# Ignore corporate admin folders
+AdminCorporate/Handler/
+AdminCorporate/Scripts/
+
+# Ignore build and binary folders
+bin/
+obj/
+
+# Ignore backend logic layers
+BL/
+DL/
+
+# Ignore customer-related folders
+Customer/Handler/
+Customer/Scripts/
+
+# Ignore dispatcher scripts
+Dispatcher/Scripts/
+
+# Ignore global script folder
+Scripts/
+
+# Ignore invoice-related files
+InvoicePrint.aspx
+InvoicePrint.aspx.cs
+InvoicePrint.aspx.designer.cs

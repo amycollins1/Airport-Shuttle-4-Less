@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbfrederick" Class="DBHelperDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=A2NWPLSK14SQL-v01.shr.prod.iad2.secureserver.net;Initial Catalog=dbfrederick;Persist Security Info=True;User ID=dbfrederick" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Frederick_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_AD_CH_BaggageFrederick" Member="tbl_AD_CH_BaggageFredericks">
+    <Type Name="tbl_AD_CH_BaggageFrederick">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdultRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ChildRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BaggageRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Airlines" Member="tbl_Airlines">
+    <Type Name="tbl_Airline">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IATA" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ICAO" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_AirportFredrick" Member="tbl_AirportFredricks">
+    <Type Name="tbl_AirportFredrick">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Comments" Member="tbl_Comments">
+    <Type Name="tbl_Comment">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CorpLogin" Member="tbl_CorpLogins">
+    <Type Name="tbl_CorpLogin">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyPhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CorpReservation" Member="tbl_CorpReservations">
+    <Type Name="tbl_CorpReservation">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Passenger" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReservationDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PickupAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DropAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Service" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReservationNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsCreditCard" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CorpReservationDetail" Member="tbl_CorpReservationDetails">
+    <Type Name="tbl_CorpReservationDetail">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReservationNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Airline" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlightNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Fredrick" Member="tbl_Fredricks">
+    <Type Name="tbl_Fredrick">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_HourlySetting" Member="tbl_HourlySettings">
+    <Type Name="tbl_HourlySetting">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehInfoId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MinHours" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaxHours" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PerHourDiscount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Login" Member="tbl_Logins">
+    <Type Name="tbl_Login">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Offer" Member="tbl_Offers">
+    <Type Name="tbl_Offer">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Percents" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_RateFredrick" Member="tbl_RateFredricks">
+    <Type Name="tbl_RateFredrick">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FredrickId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AirportId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VehicleId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VehicleRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_SnowCharges" Member="tbl_SnowCharges">
+    <Type Name="tbl_SnowCharge">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Percentage" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_VehInfo" Member="tbl_VehInfos">
+    <Type Name="tbl_VehInfo">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehMakeId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VehTypeId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegistrationYear" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MinCapacity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaxCapacity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MinBaggage" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaxBaggage" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BaseCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PerMile" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MinHours" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PerHour" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_VehMake" Member="tbl_VehMakes">
+    <Type Name="tbl_VehMake">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_VehType" Member="tbl_VehTypes">
+    <Type Name="tbl_VehType">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Reservation" Member="tbl_Reservations">
+    <Type Name="tbl_Reservation">
+      <Column Name="Sid" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReservationId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Service" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReservationDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Destination" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Passenger" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlightNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Airlines" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VehicleId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AltPhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VehicleRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BaseCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsMeetAndGreet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSanitization" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsLateNight" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OfferDetail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gratuity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adults" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdultCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Childs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChildCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExtraBags" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExtraBagCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fare" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalFare" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CardType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CardLast4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Distance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="P2PLocation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Toll" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Parking" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverPercent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsHalt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HourlySettingID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="HaltingHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HaltingDiscount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsSnow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Snow" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Stops" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsChildSeat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ChildSeatType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChildSeatCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsPetInCage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PetInCageCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CardProcessingFee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

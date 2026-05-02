@@ -1,0 +1,42 @@
+.about-counter {
+    border: 1px solid #E7E7E7;
+    border-radius: 10px;
+    padding: 18px 17px;
+    text-align: center;
+
+    &_number {
+        font-family: $title-font;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 44px;
+        color: $white-color;
+        margin-top: -0.3rem;
+        margin-bottom: 0;
+
+        .text {
+            color: $theme-color;
+        }
+
+    }
+
+    &_text {
+        margin-bottom: -0.3rem;
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; 
+
+        @media(max-width: 1299px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @include xs {
+            grid-template-columns: repeat(1, 1fr); 
+            max-width: 400px;
+        }
+    }
+}

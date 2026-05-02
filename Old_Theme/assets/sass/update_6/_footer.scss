@@ -1,0 +1,21 @@
+/* footer area ------------------ */
+.footer-layout10 {
+    .widget-area {
+        padding-top: 120px;
+        padding-bottom: 75px;
+    }
+    .footer-shape {
+        position: absolute;
+        top: 20%;
+        left: 47px;
+        @media(max-width: 1699px) {
+            display: none;
+        }
+    }
+
+    .footer-shape2 {
+        position: absolute;
+        left: 0;
+        bottom: 73px;
+    }
+}

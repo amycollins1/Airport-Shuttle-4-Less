@@ -1,0 +1,107 @@
+/* -------------------------- Contact Start ---------------------------------- */
+.contact-form5 {
+    background-color: $title-color;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+
+    @include md {
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+    @include vxs {
+        padding: 30px 20px;
+    }
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        border: 1px solid #2F2F2F;
+        color: $body-color;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .th-btn {
+        border-radius: 10px;
+    }
+}
+
+.contact-item {
+    padding: 20px 36px;
+    border: 1px solid #E7E7E7;
+    border-radius: 10px;
+    text-align: center;
+
+    @media(max-width: 1499px) {
+        padding: 20px;
+    }
+
+    &:first-child {
+        @include vxs {
+            margin-bottom: 20px;
+        }
+    }
+
+    &-wrapp {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        @include vxs {
+            display: block;
+        }
+    }
+
+    .box-title {
+        color: $white-color;
+        margin-bottom: 0;
+    }
+
+    .box-text {
+        margin-bottom: -0.3rem;
+    }
+}
+
+
+.contact-social {
+    position: relative;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 350px;
+        height: 1px;
+        border-bottom: 1px solid rgba(231, 231, 231, 0.2);
+        @include vxs {
+            display: none;
+        }
+    }
+
+    .th-social {
+        &.style3 {
+            a {
+                border-radius: 6px;
+                font-size: 20px;
+
+                &:not(:hover) {
+                    background-color: $title-color;
+                }
+            }
+        }
+    }
+}
+
+.contact-shape {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* -------------------------- Contact End ---------------------------------- */

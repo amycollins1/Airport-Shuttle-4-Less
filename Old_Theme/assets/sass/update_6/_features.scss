@@ -1,0 +1,62 @@
+/* ------------------------------- Feature Start ---------------------------------- */
+/* feature area -------------------*/
+.about-feature {
+    &.style2 {
+        max-width: 491px;
+        margin-bottom: 20px !important;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        @media(max-width: 1199px) { 
+            max-width: 100%;
+        }
+
+        .about_icon {
+            position: relative;
+            font-family: var(--title-font);
+            color: var(--title-color);
+            display: block;
+            text-align: center;
+            width: 72px;
+            height: 49px;
+            line-height: 49px;
+            box-sizing: content-box;
+            background-color: var(--theme-color);
+            border-radius: 30px;
+            margin: 0 10px 25px auto;
+
+            @media(max-width: 375px) {
+                margin: 0 10px 15px 0;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -6px;
+                left: -11px;
+                width: 95px;
+                height: 63px;
+                background-color: #FFC000;
+                opacity: 0.2;
+                border-radius: inherit;
+
+
+            }
+        }
+
+        .about_title {
+            text-transform: math-auto;
+            margin-bottom: 0px;
+        }
+
+        .about_text {
+            margin-bottom: 0;
+
+        }
+    }
+
+}
+
+/* ------------------------------- Feature End ---------------------------------- */

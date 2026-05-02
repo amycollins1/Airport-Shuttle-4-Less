@@ -1,0 +1,108 @@
+.img-box2 {
+    .img2 {
+        text-align: left;
+    }
+
+    .play-btn {
+        right: unset;
+        left: 12%;
+    }
+}
+
+.app-mockup {
+    right: unset;
+    left: 12%;
+
+    @media(max-width: 1700px) {
+        left: 10%;
+    }
+
+    @media(max-width: 1499px) {
+        left: 0%; 
+        max-width: 43%;
+    }
+}
+
+.img-box1 {
+    .img2 {
+        left: unset;
+        right: -88px;
+    }
+
+    .info-card {
+        right: unset;
+        left: 16%;
+    }
+}
+
+.dots-list li {
+    padding: 0 17px 0 0;
+
+    &:before {
+        left: unset;
+        right: 0;
+        margin: 0 0 0 10px;
+    }
+}
+
+.testi-box_review {
+    right: unset;
+    left: 0px;
+}
+
+.testi-box_icon {
+    right: unset;
+    left: -30px;
+
+    @include vxs {
+        left: -12px;
+    }
+}
+
+.img-box7 {
+    .img2 {
+        right: unset;
+        left: -22px;
+    }
+
+    .journey-box {
+        right: unset;
+        left: -22px;
+    }
+}
+
+.icon-box .slick-arrow:first-child {
+    margin: 0 0 0 5px;
+}
+
+.img-box4 {
+    .th-experience {
+        right: unset;
+        left: 15px;
+    }
+
+    .img2 {
+        text-align: left;
+    }
+}
+
+.img-box8 {
+    .year-counter {
+        left: auto;
+        right: -25%;
+
+        @include md {
+            right: -20%;
+        }
+    }
+
+}
+
+.about-call-text {
+    .about-call-btn {
+        margin: 0 0 0 25px;
+    }
+}
+.about-profile .avater {
+    margin: 0 0 0 20px; 
+}

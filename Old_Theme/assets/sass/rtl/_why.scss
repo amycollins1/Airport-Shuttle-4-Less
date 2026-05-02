@@ -1,0 +1,125 @@
+.booking-form.style2 {
+    .booking-select-class {
+        position: relative;
+
+        input[type="radio"]~label {
+            padding: 13px 44px 13px 33px;
+
+            &:before {
+                left: auto;
+                right: 20px;
+            }
+        }
+    }
+}
+
+.cta-bg-shape {
+    right: unset;
+    left: 0;
+}
+
+.newsletter-wrap {
+    padding: 0 25px 0 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid var(--theme-color);
+}
+
+.tab-menu4 button:not(:last-child):after {
+    margin: 0 10px 0 0;
+}
+
+.taxi-item_feature img {
+    margin: 0 0 0 10px;
+}
+
+.download-image {
+    margin: -50px 30px 0px -36px;
+
+    @include lg {
+        text-align: center;
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+.feature-video {
+    margin: 0 -70% 0 0;
+
+    @include lg {
+        margin: 0 0 60px 0;
+    }
+}
+
+.brand-title {
+    &:before {
+        margin-left: 0;
+        margin-right: -26.9rem;
+    }
+
+    &:after {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+}
+
+.testi-box-area {
+    .testi-box-img {
+        margin: 0 20px 0 -60px;
+    }
+
+    &:before {
+        background: linear-gradient(-90deg, rgba(247, 244, 237, 0) 48.96%, #545D7E 100%);
+    }
+}
+
+.booking-image {
+    left: unset;
+    right: 0px;
+
+    &:before {
+        left: unset;
+        right: 0px;
+    }
+}
+
+.booking-content {
+    left: unset;
+    right: -10%;
+}
+
+.booking-image-wrapper {
+    .booking-img {
+        margin: -101px -100px 0 0px;
+    }
+}
+
+.taxi-image {
+    margin: 0 0 0 -50%;
+    padding: 0 40px 0 0;
+}
+
+.price-card.style2 .price-taxi {
+    right: unset;
+    left: 0px;
+
+    @include xl {
+        left: -30px;
+    }
+}
+
+.contact-card.style2 .info-card .border-line {
+    right: unset;
+    left: -15px;
+}
+
+.counter-box-wrap:not(:last-of-type) {
+    border-right: 1px solid transparent;
+    border-left: 1px solid rgba(255, 255, 255, 0.3); 
+
+    @include lg {
+        border-left: none;  
+    }
+}
+
+.download-area {
+    background-position: right bottom;
+}

@@ -1,0 +1,10 @@
+.hero-2 {
+    .icon-box {
+        right: unset;
+        left: 115px;
+
+        @media(max-width: 1399px) {
+            left: 40px; 
+        }
+    }
+}

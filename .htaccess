@@ -1,0 +1,17 @@
+# Protect against clickjacking
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# Prevent MIME type sniffing
+Header set X-Content-Type-Options "nosniff"
+
+# Enforce secure connections (HSTS)
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+# Set a secure referrer policy
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Basic Content Security Policy (CSP) – customize as needed
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none';"
+
+# Optional: XSS protection (for older browsers)
+Header set X-XSS-Protection "1; mode=block"

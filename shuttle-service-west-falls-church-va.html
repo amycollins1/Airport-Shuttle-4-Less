@@ -51,6 +51,8 @@
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-54676SGW');
   </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuX_jrF2mEltKATOVUuouVHdU2688XBfU&libraries=places"></script>
+    <script src="Scripts/AutocompleteRoute.js"></script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -70,82 +72,753 @@
         });
     </script>
 
-    <!-- Banner Section -->
-    <section class="bannerSec position-relative">
-      <img src="images/West-falls-church/West-falls-church-main.webp" height="400px" loading="lazy" alt="West-falls-church" class="w-100" />
-    </section>
+        <!-- bannerSec -->
+        <section class="bannerSec position-relative">
+            <img src="images/West-falls-church/West-falls-church-main.webp" loading="lazy"  alt="point to point shuttle service" class="w-100" 
+            style="height: 500px; object-fit: cover; object-position: center bottom;">
+            <div class="bannerCntnt position-absolute top-0 left-0 d-flex align-items-center justify-content-center w-100 h-100 text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
+                            <div class="bannerInnerText p-2">
+                                <h1 class="text-center mb-0 level1 whiteText">
+                                   Transportation Service West Falls Church, VA
+                                </h1>
+                            </div>
+                            <div class="bannerButtons">
+                                <a href="reservation.html#reservationPgSection" class="primaryButton text-uppercase">Instant Online Reservation</a>
+                                <a href="tel:+14433363333" class="primaryButton text-uppercase">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- transportSec -->
+        <section class="transportSec py-4">
+            <div class="container">
+                <div class="row flex-row-reverse align-items-center">
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12 quote-form-container">
+                        <h3>Personalized Quote Request</h3>
+                        <p>Submit your details for a custom quote. Our team will review and get back to you promptly.</p>
+                        <p>If you prefer instant pricing and immediate reservations, please <b><a href="reservation.html#reservationPgSection"> click here</a></b>.</p>
+                        <form class="quote-form" >
+                            <!-- First Name -->
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" required />
+                            <!-- Last Name -->
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required />
+
+                            <!-- Phone -->
+                            <input type="tel" name="phone" id="phone" placeholder="Phone" required />
+                            <!-- Email -->
+                            <input type="email" name="email" id="emailid" placeholder="Email" required />
+    
+                            <!-- Pick Up Date -->
+                            <input type="date" name="pick_up_date" id="pick_up_date" required />
+                            <!-- Pick Up Time -->
+                            <input type="time" name="pick_up_time" id="pick_up_time" required />
+    
+                            <!-- Pick Up Location -->
+                            <input type="text" name="pick_up_location" id="pick_up_location"  placeholder="Pick Up Location" autocomplete="off"  required /> 
+                            <!-- Destination -->
+                            <input type="text" name="destination" id="destination" placeholder="Destination" autocomplete="off" required />
+    
+                            <!-- Type of Service -->
+                            <select name="service_type" id="service_type" required>
+                                <option value="" disabled selected>Type of Service</option>
+                                <option value="point-to-point">Point to Point</option>
+                                <option value="airport">Airport Transfer</option>
+                                <option value="hourly-limo-service">Hourly Limo</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+    
+                            <!-- Vehicle Types -->
+                            <select name="vehicle_type" id="vehicle_type" required>
+                                <option value="" disabled selected>Vehicle Types</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="limo">Limousine</option>
+                                <option value="bus">Mini Bus</option>
+                                <option value="sprinter-van">Sprinter Van</option>
+                                <option value="motor-coaches">Motor Coaches</option>
+                            </select>
+    
+                            <!-- # Hours -->
+                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required />
+                            <!-- Passengers -->
+                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required />
+
+                            <!-- Message / Note -->
+                            <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"></textarea>
+    
+                            <!-- Submit Button -->
+                            <div class="full-width">
+                                <button type="button" onclick="QuoteMail()">GET YOUR QUOTE</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-7 col-md-12 col-sm-12 col-12">
+                        <h2 class="mb-3 level3 primaryColor text-uppercase">West Falls Church, VA’s World-Class Shuttle & Transportation Services</h2>
+                        <p class="mb-3 secondaryText greyText">West Falls Church, VA, is a lively community with easy access to Washington, D.C., and the surrounding communities. Whether commuting for work, attending a special event, or traveling to the airport, an efficient <a href="https://en.wikipedia.org/wiki/West_Falls_Church,_Virginia" target="_blank">West Falls Church VA</a> <b>Shuttle Service</b> is needed for smooth transportation.</p>
+                        <p class="mb-3 secondaryText greyText">Here at AirportShuttles4Less, we provide the best <b>West Falls Church VA Shuttle Service</b> available for comfortable and seamless travel through Virginia, Maryland, and Washington, D.C. Ditch the parking frustrations and road traffic, travel in style and comfort with our expert transportation services.</p>
+                        <h2 class="mb-3 level3 primaryColor text-uppercase">Explore West Falls Church with Our Premium Transportation Services</h2>
+                        <p class="mb-3 secondaryText greyText">West Falls Church boasts quaint neighborhoods, great dining, and top attractions like Cherry Hill Park and Eden Center. Whatever your cultural experience, corporate event, or day of exploring the city, our <b>Shuttle Service in West Falls Church</b> provides a comfortable, stylish ride.</p>
+                        <p class="mb-3 secondaryText greyText">With our luxurious fleet, you can effortlessly explore nearby areas or indulge in a <b>West Falls Church Wine Tour</b>. No matter if you're traveling with colleagues, family, or friends, we offer luxury sedans, SUVs, and motorcoaches for an unparalleled transportation experience. Book now and travel in style with <a href="https://airportshuttles4less.com/Our-fleet.html" target="_blank">Our Fleet!</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+        <div class="container">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-698eb9d4-5822-4c89-92fb-70391ef229b1" style="margin-bottom: 30px;"></div>
+        </div>
 
     <!-- Transportation Section -->
-    <section class="transportSec">
+    <section class="transportSec py-4">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-            <img src="images/West-falls-church/West-falls-church-1.webp" height="400px" width="300px"  class="w-100 mb-3 topSecImg" alt="West-falls-church-Transport" loading="lazy" />
+            <img src="images/West-falls-church/West-falls-church-1.webp" height="500px" width="300px"  class="w-100 mb-3 topSecImg" alt="West-falls-church-Transport" loading="lazy" />
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-            <h1 class="mb-3 level3 primaryColor text-uppercase">West Falls Church, VA’s World-Class Shuttle & Transportation Services </h1>
-             <p class="mb-3 secondaryText greyText">West Falls Church, VA, is a lively community with easy access to Washington, D.C., and the surrounding communities. Whether commuting for work, attending a special event, or traveling to the airport, an efficient <a href="https://en.wikipedia.org/wiki/West_Falls_Church,_Virginia" target="_blank">West Falls Church VA</a> <b>Shuttle Service</b> is needed for smooth transportation.</p>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-            <p class="mb-3 secondaryText greyText">Here at AirportShuttles4Less, we provide the best <b>West Falls Church VA Shuttle Service</b> available for comfortable and seamless travel through Virginia, Maryland, and Washington, D.C. Ditch the parking frustrations and road traffic, travel in style and comfort with our expert transportation services.</p>
+            <h3 class="mb-3 level3 primaryColor text-uppercase">Stress-Free Airport Shuttles in West Falls Church, VA</h3>
+            <p class="mb-3 secondaryText greyText">Flying can be tiresome, but your ground transportation doesn't need to be. Our <a href="https://airportshuttles4less.com/shuttle-service-baltimore-md.html" target="_blank">West Falls Church Airport Transportation</a> provides punctual and stress-free airport transfers from and to BWI, DCA, and IAD. Whether you're a single traveler, a group of families, or a corporate group, we have the perfect vehicle to suit your requirements.</p>
+            <h3 class="mb-3 level3 primaryColor text-uppercase">Reliable Airport Transfers to BWI</h3>
+            <p class="mb-3 secondaryText greyText">Baltimore/Washington International Thurgood Marshall Airport is an important travel center, and our <a href="https://airportshuttles4less.com/bwi-shuttle-service-bwi-limo-service.html" target="_blank">BWI Airport Transfers</a> <b>to West Falls Church</b> offer convenient pickups and drop-offs. Opt for our <b>BWI Sedan service</b> for a comfortable, hassle-free ride, or reserve our <b>BWI Sedan Service</b> for travel with a group. Prefer to arrive in style? Our <b>BWI Limo Service</b> provides a luxurious travel experience.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Transportation Details Section -->
-    <section class="transportSec pt-0">
+    <section class="transportSec pt-0 pb-4">
       <div class="container">
-        <div class="row flex-row-reverse">
+        <div class="row flex-row-reverse align-items-center">
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-            <img src="images/West-falls-church/West-falls-church-2.webp" class="w-100 mb-3" height="450" width="300" alt="west-falls-church-va-shuttle-service" loading="lazy" />
+            <img src="images/West-falls-church/West-falls-church-2.webp" class="w-100 mb-3" height="500" width="300" alt="west-falls-church-va-shuttle-service" loading="lazy" />
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-            <h2 class="mb-3 level3 primaryColor text-uppercase">Explore West Falls Church with Our Premium Transportation Services</h2>
-            <p class="mb-3 secondaryText greyText">West Falls Church boasts quaint neighborhoods, great dining, and top attractions like Cherry Hill Park and Eden Center. Whatever your cultural experience, corporate event, or day of exploring the city, our <b>Shuttle Service in West Falls Church</b> provides a comfortable, stylish ride.</p>
-            <p class="mb-3 secondaryText greyText">With our luxurious fleet, you can effortlessly explore nearby areas or indulge in a <b>West Falls Church Wine Tour</b>. No matter if you're traveling with colleagues, family, or friends, we offer luxury sedans, SUVs, and motorcoaches for an unparalleled transportation experience. Book now and travel in style with <a href="https://airportshuttles4less.com/Our-fleet.html" target="_blank">Our Fleet!</a></p>
-           </div>                    
-            <h3 class="mb-3 level3 primaryColor text-uppercase">Stress-Free Airport Shuttles in West Falls Church, VA</h3>
-            <p class="mb-3 secondaryText greyText">Flying can be tiresome, but your ground transportation doesn't need to be. Our <a href="https://airportshuttles4less.com/shuttle-service-baltimore-md.html" target="_blank">West Falls Church Airport Transportation</a> provides punctual and stress-free airport transfers from and to BWI, DCA, and IAD. Whether you're a single traveler, a group of families, or a corporate group, we have the perfect vehicle to suit your requirements.</p>
-            <h3 class="mb-3 level3 primaryColor text-uppercase">Reliable Airport Transfers to BWI</h3>
-            <p class="mb-3 secondaryText greyText">Baltimore/Washington International Thurgood Marshall Airport is an important travel center, and our <a href="https://airportshuttles4less.com/bwi-shuttle-service-bwi-limo-service.html" target="_blank">BWI Airport Transfers</a> <b>to West Falls Church</b> offer convenient pickups and drop-offs. Opt for our <b>BWI Sedan service</b> for a comfortable, hassle-free ride, or reserve our <b>BWI Sedan Service</b> for travel with a group. Prefer to arrive in style? Our <b>BWI Limo Service</b> provides a luxurious travel experience.</p>
             <h3 class="mb-3 level3 primaryColor text-uppercase">Airport Transportation to Washington Dulles International Airport</h3>
             <p class="mb-3 secondaryText greyText">Traveling to or from IAD? Our <b>West Falls Church VA</b> <a href="https://airportshuttles4less.com/Iad-limo-service-dulles-car-service.html" target="_blank">IAD Airport Transportation</a> service offers a hassle-free and on-time ride. Business travelers can choose our <b>IAD sedan service</b>, while groups of more than five people can utilize our <b>IAD shuttle service</b>. For an upscale experience, reserve our <b>IAD Limo Service</b> to West Falls Church VA and arrive in style.</p>
             <h3 class="mb-3 level3 primaryColor text-uppercase">Seamless Transfers to Ronald Reagan Washington National Airport</h3>
-            <p class="mb-3 secondaryText greyText">DCA is one of the most convenient airports in the region, and our <a href="https://airportshuttles4less.com/dca-shuttle-service-dca-car-service.html" target="_blank">DCA airport shuttle</a> service promises a hassle-free experience. If you require a privately driven car in West Falls Church VA or a group transfer service, we have just the right car for you. Experience more comfort with our <b>DCA limo service</b> or <b>DCA Sedan Service</b> for VIP accommodations.</p>
-
-
-    <!-- Image Section -->
-    <section>
-      <img src="images/West-falls-church/West-falls-church-3.webp" loading="lazy" height="700px" class="w-100 mb-3" alt="West-falls-church-Transport" />
-           </div>
+            <p class="mb-3 secondaryText greyText">DCA is one of the most convenient airports in the region, and our <a href="https://airportshuttles4less.com/dca-shuttle-service-dca-car-service.html" target="_blank">DCA airport shuttle</a> service promises a hassle-free experience. If you require a privately driven car in West Falls Church VA or a group transfer service, we have just the right car for you. Experience more comfort with our <b>DCA limo service</b> or <b>DCA Sedan Service</b> for VIP accommodations.</p> 
+           </div>                    
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Specialized Services Section -->
-    <section>
-      <div class="container">
-        <h4 class="mb-3 level3 primaryColor text-uppercase">Specialized West Falls Church VA Transportation Services</h4>
-        <p class="mb-3 secondaryText greyText">At AirportShuttles4Less, we don't just transport you; we give you a luxury travel experience. Our varied fleet consists of sedans, SUVs, and motorcoaches that can be customized for any event.</p>
-        <h4 class="mb-3 level4 blackText text-uppercase">Perfect Wedding Transportation in West Falls </h4>
-        <p class="mb-3 secondaryText greyText">Your wedding day demands perfect transport. Our <a href="https://airportshuttles4less.com/baltimore-wedding-limo-services.html" target="_blank">West Falls Church Wedding Limo Service</a>  offers a stylish and memorable arrival for you and your guests. Celebrating in a luxurious venue or an intimate location, our refined fleet promises a high-end experience.</p>
-        <h4 class="mb-3 level3 primaryColor text-uppercase">Professional Corporate Car Service</h4>
-        <p class="mb-3 secondaryText greyText">Impress clients and coworkers with our <a href="https://airportshuttles4less.com/corporate-transportation-services.html" target="_blank">West Falls Church Corporate Car Service</a>. Perfect for business professionals, airport transportation, and corporate gatherings, our service guarantees punctuality, professionalism, and comfort throughout.</p>
-        <h4 class="mb-3 level3 primaryColor text-uppercase">Concert & Event Transportation in West Falls Church</h4>
-        <p class="mb-3 secondaryText greyText">Planning to go to a <b>Concert</b> at The Anthem or a big event in D.C.? Our <b>Group Car Transportation</b> and <b>Bus Rental</b> to West Falls Church ensure stress-free and comfortable journeys. You watch the show while we do the driving and parking.</p>
-        <h4 class="mb-3 level4 blackText text-uppercase">Relaxing West Falls Church Wine Tours</h4>
-        <p class="mb-3 secondaryText greyText">Relax with a <a href="https://airportshuttles4less.com/winery-and-city-tours.html" target="_blank">West Falls Church Wine Tour</a> and tour famous wineries in Northern Virginia. Sip, relax, and take in the beautiful scenery while we give you a luxurious ride to your destination.</p>
-        <h4 class="mb-3 level4 blackText text-uppercase">Convenient Bus Charter & Rental Services</h4>  
-        <p class="mb-3 secondaryText greyText">For groups, our <a href="https://airportshuttles4less.com/baltimore-bus-charter-rental.html" target="_blank">West Falls Church VA Bus Charter/Rental service</a> provides spacious and comfortable vehicles. Whether for corporate outings, school excursions, or social events, we provide a seamless and pleasant group travel experience.</p>
-        <h4 class="mb-3 level4 blackText text-uppercase">Discover West Falls Church with Hourly Limo & City Tours</h4>
-        <p class="mb-3 secondaryText greyText">Discover the finest of West Falls Church with our <a href="https://airportshuttles4less.com/baltimore-hourly-limo-service.html" target="_blank">Hourly Limo Service</a> to West Falls Church VA. Go out to visit local landmarks, dine at upscale restaurants, or shop, all in the comfort of a luxury car.</p>
-       
-        <h3 class="mb-3 level3 primaryColor text-uppercase">Book Your West Falls Church VA Shuttle Service Today</h3>
-        <p class="mb-3 secondaryText greyText">Ready for a hassle-free and luxurious travel experience? Whether you require airport transport, corporate travel or event transport, our West Falls Church VA Shuttle Service is at your service.</p>
-        <p class="mb-3 secondaryText greyText">Why wait? <a href="https://airportshuttles4less.com/contact-us.html" target="_blank">Call us</a> today at <b>(443) 336-3333</b> to personalize your West Falls Church VA Shuttle Service. <a href="https://airportshuttles4less.com/reservation.html#reservationPgSection" target="_blank">Reserve your ride</a> now with AirportShuttles4Less and experience the best combination of convenience, luxury, and reliability!</p>
-      </div>
-    </section>
+        <!-- mapsec -->
+        <section class="transportSec py-0">
+            <div class="container">
+                <div class="row flex-row-reverse align-items-center">
+                    <div class="col-lg-7 col-md-12 col-sm-12 col-12">
+                        <h4 class="mb-3 level3 primaryColor text-uppercase">Specialized West Falls Church VA Transportation Services</h4>
+                        <p class="mb-3 secondaryText greyText">At AirportShuttles4Less, we don't just transport you; we give you a luxury travel experience. Our varied fleet consists of sedans, SUVs, and motorcoaches that can be customized for any event.</p>
+                        <h4 class="mb-3 level4 blackText text-uppercase">Perfect Wedding Transportation in West Falls </h4>
+                        <p class="mb-3 secondaryText greyText">Your wedding day demands perfect transport. Our <a href="https://airportshuttles4less.com/baltimore-wedding-limo-services.html" target="_blank">West Falls Church Wedding Limo Service</a>  offers a stylish and memorable arrival for you and your guests. Celebrating in a luxurious venue or an intimate location, our refined fleet promises a high-end experience.</p>
+                        <h4 class="mb-3 level3 primaryColor text-uppercase">Professional Corporate Car Service</h4>
+                        <p class="mb-3 secondaryText greyText">Impress clients and coworkers with our <a href="https://airportshuttles4less.com/corporate-transportation-services.html" target="_blank">West Falls Church Corporate Car Service</a>. Perfect for business professionals, airport transportation, and corporate gatherings, our service guarantees punctuality, professionalism, and comfort throughout.</p>
+                        <h4 class="mb-3 level3 primaryColor text-uppercase">Concert & Event Transportation in West Falls Church</h4>
+                        <p class="mb-3 secondaryText greyText">Planning to go to a <b>Concert</b> at The Anthem or a big event in D.C.? Our <b>Group Car Transportation</b> and <b>Bus Rental</b> to West Falls Church ensure stress-free and comfortable journeys. You watch the show while we do the driving and parking.</p>
+                        <h4 class="mb-3 level4 blackText text-uppercase">Relaxing West Falls Church Wine Tours</h4>
+                        <p class="mb-3 secondaryText greyText">Relax with a <a href="https://airportshuttles4less.com/winery-and-city-tours.html" target="_blank">West Falls Church Wine Tour</a> and tour famous wineries in Northern Virginia. Sip, relax, and take in the beautiful scenery while we give you a luxurious ride to your destination.</p>
+                        <h4 class="mb-3 level4 blackText text-uppercase">Convenient Bus Charter & Rental Services</h4>  
+                        <p class="mb-3 secondaryText greyText">For groups, our <a href="https://airportshuttles4less.com/baltimore-bus-charter-rental.html" target="_blank">West Falls Church VA Bus Charter/Rental service</a> provides spacious and comfortable vehicles. Whether for corporate outings, school excursions, or social events, we provide a seamless and pleasant group travel experience.</p>
+                        <h4 class="mb-3 level4 blackText text-uppercase">Discover West Falls Church with Hourly Limo & City Tours</h4>
+                        <p class="mb-3 secondaryText greyText">Discover the finest of West Falls Church with our <a href="https://airportshuttles4less.com/baltimore-hourly-limo-service.html" target="_blank">Hourly Limo Service</a> to West Falls Church VA. Go out to visit local landmarks, dine at upscale restaurants, or shop, all in the comfort of a luxury car.</p>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.0427249258246!2d-76.68284969999999!3d39.1918472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x491e57b32309a987%3A0x21da9fe46049255c!2sAirport%20Shuttles%204%20Less!5e1!3m2!1sen!2sus!4v1760477590615!5m2!1sen!2sus" 
+                                width=100% height="1100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- helpSec -->
+        <section class="helpSec secondaryBg py-5 my-4">
+            <div class="container">
+                <div class="helpDetail">
+                    <h5 class="level4 text-center whiteText mb-3">Book Your West Falls Church VA Shuttle Service Today</h5>
+                    <div class="helpCall whiteBg p-5 position-relative">
+                        <p class="text-center">
+                            Ready for a hassle-free and luxurious travel experience? Whether you require airport transport, corporate travel or event transport, our West Falls Church VA Shuttle Service is at your service.
+                            <br>Why wait? <a href="https://airportshuttles4less.com/contact-us.html" target="_blank">Call us</a> today to personalize your West Falls Church VA Shuttle Service. <a href="https://airportshuttles4less.com/reservation.html#reservationPgSection" target="_blank">Reserve your ride</a> now with AirportShuttles4Less and experience the best combination of convenience, luxury, and reliability!
+                        </p>
+                        <a href="tel:+14433363333" class="text-center primaryColor mx-auto d-table secondaryText">+1 (443) 336-3333</a>
+                        <a href="reservation.html" class="primaryButton text-uppercase">Online Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- fleetSec -->
+        <section class="fleetSec mb-3">
+            <div class="container">
+                <div class="secHead mb-5">
+                    <h5 class="mb-0 text-center level5 primaryColor text-uppercase"><span class="whiteBg px-1">Our Fleet</span></h5>
+                    <p class="mb-0 text-center level2 blackText">Preferred Vehicles</p>
+                </div>
+                <div class="secMain">
+                    <div class="fleetSlider">
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-1.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center">LUXURY <br> MERCEDES S550</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">3</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">3</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-2.webp"  loading="lazy" alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Exclusive <br> Sedan</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">3</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">3</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-3.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Exclusive <br> suv</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">6</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">6</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-4.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Sprinter <br> VAN</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-phone me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Call for Rates</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-5.webp" loading="lazy" alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Hummer  <br> Limo</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-phone me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Call for Rates</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-6.webp"  loading="lazy" alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Party <br> Bus</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-phone me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Call for Rates</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-7.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Luxury <br> Suv</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">5</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">5</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-8.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Premium  <br> Suv</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">5</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">5</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-9.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Coach <br> Bus</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">56</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">60</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-10.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Executive <br> Mini Bus</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">27</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">27</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-11.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Jet - <br> sprinter</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">8</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">0</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-12.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Mercedes Benz <br> Maybach s680</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">2</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">0</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-13.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Mercedes Executive<br> Sprinter</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">12</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">12</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-14.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Mercedes Limo<br> Sprinter</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">13</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">12</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-15.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Lincoln MKT<br> Limousine</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">8</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">0</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-16.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Party<br> Bus</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">25</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">0</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-17.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Rolls Royce<br> Phantom</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">2</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">0</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="fleetCard mx-2">
+                            <div class="fleetImg">
+                                <img src="assets/images/fleet-18.webp" loading="lazy"  alt="mercedes" class="w-100">
+                            </div>
+                            <div class="fleetDet">
+                                <p class="mb-3 level4 primaryColor text-center text-uppercase">Premium <br> Sedan</p>
+                                <ul class="list-inline mb-0 d-flex align-items-center justify-content-evenly">
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-user me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">2</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-suitcase me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">2</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-wifi me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fa fa-newspaper me-2 primaryColor"></i>
+                                        <span class="primaryText fw-bold">Yes</span>
+                                    </li>
+                                </ul>
+                                <a href="tel:+14434740732" class="callIcon"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- servicesSec -->
+        <section class="servicesSec greyBg">
+            <div class="container">
+                <div class="secHead mb-5">
+                    <h5 class="mb-0 text-center level5 primaryColor text-uppercase">
+                        <span class="greyBg px-1">
+                            SERVICES WE
+                            OFFER
+                        </span>
+                    </h5>
+                    <p class="pt-2 text-center"> 
+                        We make getting around simple and stress-free, whether you’re riding solo or with a group. Our drivers show up on time, the vehicles are clean and comfy, and every trip feels easy from start to finish.
+                    </p>
+                </div>
+                <div class="secMain">
+                    <div class="row">
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 whiteBg">
+                                <img src="assets/images/airportlimoBg.webp" class="w-100 mb-3" alt="IAD Airport Transportation Service by AS4L" loading="lazy">
+                                <p class="mb-0 level5 text-uppercase">Airport Limo</p>
+                                <a href="shuttle-service-baltimore-md.html" class="d-flex align-items-center primaryColor" aria-label="Read more about airport limo service">
+                                    Read more about Airport Transportation Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 secondaryBg">
+                                <img src="assets/images/point-to-point-limo.webp" class="w-100 mb-3" alt="Point to Point Transportation By AS4L" loading="lazy">
+                                <p class="mb-0 level5 text-uppercase whiteText">point-to-point</p>
+                                <a href="point-to-point-limo-service.html" class="d-flex align-items-center primaryColor">
+                                    Read more about Point to Point Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 whiteBg">
+                                <img src="assets/images/sedanNCarBg.webp" class="w-100 mb-3" alt="Sedan Car Service in DMV Areas" loading="lazy">
+                                <h5 class="mb-0 level5 text-uppercase">SEDAN & Car SERVICE</h5>
+                                <a href="baltimore-hourly-limo-service.html" class="d-flex align-items-center primaryColor">
+                                    Read more about SEDAN & Car Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 secondaryBg">
+                                <img src="assets/images/washingtonDcBg.webp" class="w-100 mb-3" alt="Airport Limo" loading="lazy">
+                                <p class="mb-0 level5 text-uppercase whiteText">GROUP TRANSPORTATION</p>
+                                <a href="sprinter-vans-buses-group-transportation.html" class="d-flex align-items-center primaryColor">
+                                    Read more about Group Transportation Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 whiteBg">
+                                <img src="assets/images/coorporateBg.webp" class="w-100 mb-3" alt="Men Opening the Back Door of A Sedan Car" loading="lazy">
+                                <p class="mb-0 level5 text-uppercase">corporate service</p>
+                                <a href="corporate-transportation-services.html" class="d-flex align-items-center primaryColor">
+                                    Read more about Corporate Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-0">
+                            <div class="service p-5 secondaryBg">
+                                <img src="assets/images/motorCoachesBg.webp" class="w-100 mb-3" alt="Airport Limo" loading="lazy">
+                                <p class="mb-0 level5 text-uppercase whiteText">BUS CHARTER | RENTAL</p>
+                                <a href="baltimore-bus-charter-rental.html" class="d-flex align-items-center primaryColor">
+                                    Read more about Bus charter Services<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Partners Section -->
     <section class="partnerSec py-5">
@@ -187,70 +860,6 @@
                 <img src="assets/images/partnerLogo-6.webp" loading="lazy" alt="Breeze" class="w-100" />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="reviewSec py-5">
-      <div class="container">
-        <div class="reviewSlider">
-          <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
-            <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-            <p class="mb-3 primaryText greyText">
-              “AS4L has redefined what I expect from a transportation service. The drivers are not only skilled but also incredibly polite, ensuring every ride is comfortable and timely. Their attention to detail and knowledge of the best routes make them a standout choice. Booking with AS4L is a breeze, and they’ve consistently exceeded my expectations for professional limo services in the DMV area!”
-            </p>
-            <ul class="list-inline mb-3 d-flex">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <p class="mb-0 fw-bold level4 blackText">Akos</p>
-          </div>
-          <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
-            <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-            <p class="mb-3 primaryText greyText">
-              “When it comes to limo services in the DMV, AS4L is unmatched. The booking process is quick and efficient, and their drivers are both friendly and highly professional. They ensure on-time arrivals and make every trip smooth and enjoyable. Whether it’s for business or leisure, AS4L has become my trusted choice for dependable transportation!”
-            </p>
-            <ul class="list-inline mb-3 d-flex">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <p class="mb-0 fw-bold level4 blackText">Steve</p>
-          </div>
-          <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
-            <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-            <p class="mb-3 primaryText greyText">
-              “I’ve used multiple limo services in the DMV area, but AS4L sets the standard for excellence. Their booking process is seamless, and the drivers are always punctual and courteous. Whether it’s an airport transfer or a special event, they ensure a stress-free ride with unmatched professionalism. If you’re looking for a reliable, top-tier transportation service, AS4L is the way to go!”
-            </p>
-            <ul class="list-inline mb-3 d-flex">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <p class="mb-0 fw-bold level4 blackText">Jenny</p>
-          </div>
-          <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
-            <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-            <p class="mb-3 primaryText greyText">
-              “I've tried several limo services in the DMV, but AS4L stands out for their exceptional customer service. The booking process is smooth, and the drivers are courteous and friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all my transportation needs!”
-            </p>
-            <ul class="list-inline mb-3 d-flex">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <p class="mb-0 fw-bold level4 blackText">Johnson</p>
           </div>
         </div>
       </div>
@@ -410,5 +1019,6 @@
   <script src="assets/js/slick.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="Scripts/Default.js"></script>
 </body>
 </html>

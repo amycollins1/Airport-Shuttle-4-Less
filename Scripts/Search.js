@@ -3,7 +3,7 @@
     if (MyList != "" && MyList != null) {
         MySearch = JSON.parse(MyList);
         //MySearch.Tab = 1;       
-        var isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+        var isLocal = window.location.hostname === "localhost";
         if (isLocal) {
             // Directly show vehicle select tab (step 2)            
             $(".rideInfo").hide();

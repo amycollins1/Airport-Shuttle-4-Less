@@ -1,48 +1,4 @@
-﻿$(document).on(
-    "click",
-    ".secondaryButton",
-    function () {
-        window.onbeforeunload = null;
-        hideProcessingSpinner();
-        cleanupModalState();
-        $(".bookingActionBtn")
-            .prop("disabled", false)
-            .removeClass("disabledBtn");
-        // Return to ride selection screen
-        $(".rideInfo").hide();
-        $(".selectRide").show();
-        $(".bookRide").hide();
-    }
-);
-
-// Ensures modal overlays and pointer events are always reset
-function cleanupModalState() {
-    $('.modal-backdrop').remove();
-    $('body').removeClass('modal-open');
-    $('body').css('padding-right', '');
-    $('body').css('overflow', '');
-    $('body').css('pointer-events', '');
-}
-
-// Update the payment amount display in the popup
-function updatePayAmountDisplay() {
-    $('#PayAmount').text("Total Amount: $ " + CalculateFinalPaymentAmount());
-}
-
-// Listen for modal hidden events (Bootstrap 4/5)
-$(document).on('hidden.bs.modal', function () {
-    cleanupModalState();
-});
-
-// Fallback: listen for PayPal/Credit Card popup window focus/blur
-window.addEventListener('focus', function () {
-    // If no modal is open, clean up overlays
-    if ($('.modal.show').length === 0) {
-        cleanupModalState();
-    }
-});
-
-function OnLoadBookingHtml() {
+﻿function OnLoadBookingHtml() {
     // Ensure DOM is ready before switching tabs
     $(function() {
         $(".rideInfo").hide();
@@ -64,23 +20,6 @@ function OnLoadBookingHtml() {
         }
     }
 } 
-
-function ResetBookingState() {
-
-    ReservationId = "";
-
-    RetReservationId = "";
-
-    DataArr = {};
-
-    RetDataArr = {};
-
-    $("#ReservationIdConf").empty();
-
-    $("#backToHomeBtn").remove();
-
-    $('#bookingConfirmationModal').modal('hide');
-}
 function loadGratuity() {
     const gratuityOptions = [15, 20, 25, 30, 35, 40, 50];
     const $selGratuity = $("#SelGratuity");
@@ -100,9 +39,9 @@ let ExtraBags = 0, ExtraBagCharge = 0, RetExtraBagCharge = 0.0;
 const LateNightFixCharges = 10;
 let ExtraAdult = 0, ExtraAdultCharge = 0, ExtraChild = 0, ExtraChildCharge = 0;
 let BaggageRate = 0, AdultRate = 0, ChildRate = 0, CardProcessingPercent = 3.0, CardProcessingAmount = 0;
-let IsChildSeat = false, ChildSeatCharge = 0, IsPetInCage = false, PetInCageCharge = 0, ChildSeatType = "";
+let IsChildSeat = false, ChildSeatCharge = 0, IsPetinCage = false, PetinCageCharge = 0, ChildSeatType = "";
 const MailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-let ExtraBag = 0; 
+let ExtraBag = 0;
 
 function AD_CH_BaggageFrederick() {
     $.ajax({
@@ -211,6 +150,7 @@ function LoadData() {
         if (MySearch.ChkRetReservation) {
             ShowHideDiv('DivRetSubTotal');
             IsLateNightRet = LateNightClac(MySearch.RetTime);
+            IsLateNightRet = LateNightClac(MySearch.RetTime);
 
             ReturnLateNightCharge =
                 IsLateNightRet ? LateNightFixCharges : 0;
@@ -230,7 +170,7 @@ function LoadData() {
                 ).toFixed(2);
             }
             if (MySearch.Tab === 1) {
-                $retSubTotal.text("$ " + (MySearch.RetSubTotal || MySearch.SubTotal));
+                $retSubTotal.text("$ " + MySearch.SubTotal);
                 Total = (parseFloat(MySearch.SubTotal) + parseFloat(Total)).toFixed(2);
                 $retPickupLocation.text(MySearch.Destination);
                 $retDropLocation.text(MySearch.Source);
@@ -240,13 +180,7 @@ function LoadData() {
                 const Dist = parseFloat(MySearch.TotalDistance) + parseFloat(MySearch.TotalDistanceRet);
                 $distance.text(Dist.toFixed(2) + " Miles");
                 $retSubTotal.text("$ " + MySearch.RetSubTotal);
-                Total =
-                    (
-                        parseFloat(MySearch.SubTotal)
-                        + parseFloat(OutboundLateNightCharge || 0)
-                        + parseFloat(ReturnLateNightCharge || 0)
-                        + parseFloat(MySearch.RetSubTotal)
-                    ).toFixed(2);
+                Total = (parseFloat(MySearch.SubTotal) + LateNightCharge + parseFloat(MySearch.RetSubTotal)).toFixed(2);
                 $retPickupLocation.text(MySearch.sourceP2PRet);
                 $retDropLocation.text(MySearch.destinationP2PRet);
                 $retPickupLocationDiv.show();
@@ -325,22 +259,15 @@ function LoadData() {
                 ).toFixed(2);
             }
             if (MySearch.Tab === 1) {
-                $retSubTotal.text("$ " + (MySearch.RetSubTotal || MySearch.SubTotal));
+                $retSubTotal.text("$ " + MySearch.SubTotal);
                 Total = (parseFloat(MySearch.SubTotal) + parseFloat(Total)).toFixed(2);
                 $retPickupLocation.text(MySearch.Destination);
                 $retDropLocation.text(MySearch.Source);
                 $retPickupLocationDiv.show();
                 $retDropLocationDiv.show();
             } else {
-                $retSubTotal.text("$ " + (MySearch.RetSubTotal || MySearch.SubTotal));
-
-                Total =
-                    (
-                        parseFloat(MySearch.SubTotal)
-                        + parseFloat(OutboundLateNightCharge || 0)
-                        + parseFloat(ReturnLateNightCharge || 0)
-                        + parseFloat(MySearch.RetSubTotal)
-                    ).toFixed(2);
+                $retSubTotal.text("$ " + MySearch.SubTotal);
+                Total = (parseFloat(MySearch.SubTotal) + LateNightCharge + parseFloat(MySearch.RetSubTotal)).toFixed(2);
                 $retPickupLocation.text(MySearch.sourceP2PRet);
                 $retDropLocation.text(MySearch.destinationP2PRet);
                 $retPickupLocationDiv.show();
@@ -362,8 +289,7 @@ function LoadData() {
     // Set gratuity to 15% by default
     $("#SelGratuity").val("15");
     CalcGratuity();
-    /*$total.text("$ " + (+Total).toFixed(2));*/
-    $total.text("$ " + CalcTotal());
+    $total.text("$ " + (+Total).toFixed(2));
     GetAllSnow();
 }
 
@@ -389,86 +315,87 @@ function LateNightClac(CurrentTime) {
 }
 
 function MeetAndGreetChange() {
-
-    IsMeetAndGreet =
-        $("#ChkMeetAndGreet").is(":checked");
-
-    let meetCharge = 0;
-
-    if (IsMeetAndGreet) {
-
-        // Apply only once
-        meetCharge = 30;
+    IsMeetAndGreet = $("#ChkMeetAndGreet").is(":checked")
+    if (IsMeetAndGreet) { 
+        if (MySearch.ChkRetReservation == true) {
+            $("#MeetAndGreet").text("$ 60") 
+            Total = (parseFloat(Total) + parseFloat(50)).toFixed(2);
+        }
+        else {
+            $("#MeetAndGreet").text("$ 30") 
+            Total = (parseFloat(Total) + parseFloat(30)).toFixed(2);
+        }
     }
-
-    $("#MeetAndGreet").text(
-        "$ " + meetCharge
-    );
-
-    $("#Total").text(
-        "$ " + CalcTotal()
-    );
+    else { 
+        if (MySearch.ChkRetReservation == true) {
+            $("#MeetAndGreet").text("$ 0")
+            Total = (parseFloat(Total) - parseFloat(60)).toFixed(2);
+        }
+        else {
+            $("#MeetAndGreet").text("$ 0")
+            Total = (parseFloat(Total) - parseFloat(30)).toFixed(2);
+        }
+    } 
+    $("#Total").text("$ " + CalcTotal())
 }
 
 function ChildSeatChange() {
-
-    ChildSeatType = $("#drpChildSeat").val();
-
+    ChildSeatType = $("#drpChildSeat").val(); 
     if (ChildSeatType == "-") {
-
-        $("#ChkChildSeat").prop("checked", false);
-
-        IsChildSeat = false;
-
+        $("#ChkChildSeat").prop("checked", false) 
         ChildSeatType = "";
-
-        ChildSeatCharge = 0;
-
-        $("#ChildSeat").text("$ 0");
     }
     else {
-
-        $("#ChkChildSeat").prop("checked", true);
-
-        IsChildSeat = true;
-
+        $("#ChkChildSeat").prop("checked", true) 
+    }
+    IsChildSeat = $("#ChkChildSeat").is(":checked")
+    if (IsChildSeat) {
         if (MySearch.ChkRetReservation == true) {
-
-            ChildSeatCharge = parseFloat(40).toFixed(2);
-
-            $("#ChildSeat").text("$ 40");
+            $("#ChildSeat").text("$ 40")
+            ChildSeatCharge = parseFloat(40).toFixed(2);  
         }
         else {
-
-            ChildSeatCharge = parseFloat(20).toFixed(2);
-
-            $("#ChildSeat").text("$ 20");
+            $("#ChildSeat").text("$ 20")
+            ChildSeatCharge = parseFloat(20).toFixed(2); 
         }
     }
+    else {
+        if (MySearch.ChkRetReservation == true) {
+            $("#ChildSeat").text("$ 0") 
+        }
+        else {
+            $("#ChildSeat").text("$ 0") 
 
-    $("#Total").text("$ " + CalcTotal());
+        }
+        ChildSeatCharge = 0;
+    } 
+    $("#Total").text("$ " + CalcTotal())
 }
 
 function PetInCageChange() {
-    IsPetInCage = $("#ChkPetInCage").is(":checked")
-    if (IsPetInCage) {
+    IsPetinCage = $("#ChkPetInCage").is(":checked")
+    if (IsPetinCage) {
         if (MySearch.ChkRetReservation == true) {
             $("#PetInCage").text("$ 50")
-            PetInCageCharge = parseFloat(50).toFixed(2);
+            PetinCageCharge = parseFloat(50).toFixed(2);
+            Total = (parseFloat(Total) + parseFloat(50)).toFixed(2);
         }
         else {
             $("#PetInCage").text("$ 25")
-            PetInCageCharge = parseFloat(25).toFixed(2);
+            PetinCageCharge = parseFloat(25).toFixed(2);
+            Total = (parseFloat(Total) + parseFloat(25)).toFixed(2);
         }
     }
     else {
         if (MySearch.ChkRetReservation == true) {
             $("#PetInCage").text("$ 0")
+            Total = (parseFloat(Total) - parseFloat(50)).toFixed(2);
         }
         else {
             $("#PetInCage").text("$ 0")
+            Total = (parseFloat(Total) - parseFloat(25)).toFixed(2);
         }
-        PetInCageCharge = 0;
+        PetinCageCharge = 0;
     } 
     $("#Total").text("$ " + CalcTotal())
 }
@@ -478,7 +405,7 @@ function ApplyOffer() {
         return false;
     var OfferCode = $("#Offer").val()
     if (OfferCode == '') {
-        alert('Please Enter Offer Code');
+        alert('Please Enter Offer Code')
         return false;
     }
     var data = { Code: OfferCode }
@@ -503,20 +430,15 @@ function ApplyOffer() {
                     $("#OfferAmount").text("- $ " + ((parseFloat(OfferAmount) + parseFloat(RetOfferAmount))).toFixed(2))
                 }
                 else {
-                    OfferAmount =
-                        (parseFloat(MySearch.SubTotal || 0)
-                            * parseFloat(OfferDetails.Percents)
-                            / 100
-                        ).toFixed(2);
-
-                    OfferDetails =
-                        OfferDetails.Code
-                        + "^"
-                        + OfferDetails.Percents
-                        + "^"
-                        + OfferAmount;
-
-                    $("#OfferAmount").text("- $ " + OfferAmount);
+                    if (MySearch.ChkRetReservation) {
+                        OfferAmount = (((parseFloat(MySearch.SubTotal) / 100) * parseFloat(OfferDetails.Percents)).toFixed(2)) * 2;
+                        OfferDetails = OfferDetails.Code + "^" + OfferDetails.Percents + "^" + (OfferAmount / 2)
+                    }
+                    else {
+                        OfferAmount = ((parseFloat(MySearch.SubTotal) / 100) * parseFloat(OfferDetails.Percents)).toFixed(2);
+                         OfferDetails = OfferDetails.Code + "^" + OfferDetails.Percents + "^" + OfferAmount
+                    }
+                    $("#OfferAmount").text("- $ " + OfferAmount)
                 }
 
                 //$("#SubTotal").text("$ " + SubTotal)
@@ -536,176 +458,80 @@ function ApplyOffer() {
     });
 }
 
-
 function CalcGratuity() {
-
-    GratuityPercent = $("#SelGratuity option:selected").val();
-
-    SubTotal = parseFloat(MySearch.SubTotal || 0);
-
-    RetSubTotal = parseFloat(MySearch.RetSubTotal || MySearch.SubTotal || 0);
-
-    // RESET
-    GratuityAmount = 0;
-    RetGratuityAmount = 0;
-
-    // TAB 2 = separate fares
-    if (MySearch.Tab == 2 && MySearch.ChkRetReservation)
-    {
-
-        GratuityAmount = (SubTotal * parseFloat(GratuityPercent) / 100).toFixed(2);
-
-        RetGratuityAmount = (RetSubTotal * parseFloat(GratuityPercent) / 100).toFixed(2);
-    }
-    else {
-
-        // Combined gratuity
-        let totalFareForGratuity =
-            parseFloat(SubTotal || 0)
-            + (
-                MySearch.ChkRetReservation
-                    ? parseFloat(RetSubTotal || 0)
-                    : 0
-            );
-
-        let totalGratuity =
-            (
-                totalFareForGratuity
-                * parseFloat(GratuityPercent)
-                / 100
-            );
-
-        // Split by ratios if roundtrip
-        if (MySearch.ChkRetReservation) {
-
-            let ratios = GetFareRatios();
-
-            GratuityAmount = (totalGratuity * ratios.OutRatio).toFixed(2);
-
-            RetGratuityAmount = (totalGratuity * ratios.RetRatio).toFixed(2);
+    GratuityPercent = $("#SelGratuity option:selected").val()
+    if (MySearch.Tab == 2 && MySearch.ChkRetReservation == true) {
+        SubTotal = parseFloat(MySearch.SubTotal);
+        RetSubTotal = parseFloat(MySearch.RetSubTotal);
+        var TotalSnow = 0;
+        if (IsSnow) {
+            SnowAmount = ((parseFloat(SubTotal) / 100) * parseFloat(SnowPercentage)).toFixed(2); 
+            RetSnowAmount = ((parseFloat(RetSubTotal) / 100) * parseFloat(SnowPercentage)).toFixed(2); 
         }
         else {
-
-            GratuityAmount = totalGratuity.toFixed(2);
-
-            RetGratuityAmount = 0;
+            SnowAmount = 0;
+            RetSnowAmount = 0;
+        } 
+        GratuityAmount = ((parseFloat(SubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        RetGratuityAmount = ((parseFloat(RetSubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        var TotalGratuityAmount = parseFloat(GratuityAmount) + parseFloat(RetGratuityAmount);
+        TotalSnow = parseFloat(SnowAmount) + parseFloat(RetSnowAmount)
+        $("#GratuityAmount").text("$ " + TotalGratuityAmount)
+    }
+    else {
+        SubTotal = parseFloat(MySearch.SubTotal);
+        
+        GratuityAmount = ((parseFloat(SubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        if (MySearch.ChkRetReservation) {
+            GratuityAmount = parseFloat(GratuityAmount) + parseFloat(GratuityAmount);
         }
+             Total = (parseFloat(SubTotal) + parseFloat(GratuityAmount) + parseFloat(SnowAmount)).toFixed(2);
+        $("#GratuityAmount").text("$ " + GratuityAmount)
+        $("#SnowLbl").text("$ " + parseFloat(SnowAmount).toFixed(2))
     }
 
-    // DISPLAY TOTAL
-    let displayGratuity = parseFloat(GratuityAmount || 0) + parseFloat(RetGratuityAmount || 0);
-
-    $("#GratuityAmount").text("$ " + displayGratuity.toFixed(2));
-    $("#Total").text("$ " + CalcTotal());
-    updatePayAmountDisplay();
+    $("#Total").text("$ " + CalcTotal())
 }
-
 
 function CalcSnowCharges() {
-
-    IsSnow = $("#ChkSnow").is(":checked");
-
-    SubTotal =
-        parseFloat(MySearch.SubTotal || 0);
-
-    RetSubTotal =
-        parseFloat(
-            MySearch.RetSubTotal
-            || MySearch.SubTotal
-            || 0
-        );
-
-    // RESET
-    SnowAmount = 0;
-    RetSnowAmount = 0;
-
-    // NO SNOW
-    if (!IsSnow) {
-
-        $("#SnowLbl").text("$ 0.00");
-
-        $("#Total").text("$ " + CalcTotal());
-
-        return;
-    }
-
-    // TAB 2 = separate snow
-    if (
-        MySearch.Tab == 2
-        && MySearch.ChkRetReservation
-    ) {
-
-        SnowAmount =
-            (
-                SubTotal
-                * parseFloat(SnowPercentage)
-                / 100
-            ).toFixed(2);
-
-        RetSnowAmount =
-            (
-                RetSubTotal
-                * parseFloat(SnowPercentage)
-                / 100
-            ).toFixed(2);
-    }
-    else {
-
-        // Combined snow
-        let totalFareForSnow =
-            parseFloat(SubTotal || 0)
-            + (
-                MySearch.ChkRetReservation
-                    ? parseFloat(RetSubTotal || 0)
-                    : 0
-            );
-
-        let totalSnow =
-            (
-                totalFareForSnow
-                * parseFloat(SnowPercentage)
-                / 100
-            );
-
-        // Split by ratios if roundtrip
-        if (MySearch.ChkRetReservation) {
-
-            let ratios = GetFareRatios();
-
-            SnowAmount =
-                (
-                    totalSnow
-                    * ratios.OutRatio
-                ).toFixed(2);
-
-            RetSnowAmount =
-                (
-                    totalSnow
-                    * ratios.RetRatio
-                ).toFixed(2);
+    IsSnow = $("#ChkSnow").is(":checked")
+    if (MySearch.Tab == 2 && MySearch.ChkRetReservation == true) {
+        SubTotal = parseFloat(MySearch.SubTotal);
+        RetSubTotal = parseFloat(MySearch.RetSubTotal);
+        var TotalSnow = 0;
+        if (IsSnow) {
+            SnowAmount = ((parseFloat(SubTotal) / 100) * parseFloat(SnowPercentage)).toFixed(2); 
+            RetSnowAmount = ((parseFloat(RetSubTotal) / 100) * parseFloat(SnowPercentage)).toFixed(2); 
         }
         else {
-
-            SnowAmount =
-                totalSnow.toFixed(2);
-
+            SnowAmount = 0;
             RetSnowAmount = 0;
+        } 
+        GratuityAmount = ((parseFloat(SubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        RetGratuityAmount = ((parseFloat(RetSubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        var TotalGratuityAmount = parseFloat(GratuityAmount) + parseFloat(RetGratuityAmount);
+        TotalSnow = parseFloat(SnowAmount) + parseFloat(RetSnowAmount)
+         $("#GratuityAmount").text("$ " + TotalGratuityAmount)
+        $("#SnowLbl").text("$ " + TotalSnow)
+    }
+    else {
+        SubTotal = parseFloat(MySearch.SubTotal);
+        RetSubTotal = parseFloat(MySearch.RetSubTotal);
+         if (IsSnow) {
+            SnowAmount = ((parseFloat(SubTotal) / 100) * parseFloat(SnowPercentage)).toFixed(2);
         }
+        else
+            SnowAmount = 0;
+        GratuityAmount = ((parseFloat(SubTotal) / 100) * parseFloat(GratuityPercent)).toFixed(2);
+        if (MySearch.ChkRetReservation) {
+            SnowAmount = parseFloat(SnowAmount) + parseFloat(SnowAmount);
+            GratuityAmount = parseFloat(GratuityAmount) + parseFloat(GratuityAmount);            
+        } 
+        $("#SnowLbl").text("$ " + SnowAmount)
     }
 
-    // DISPLAY TOTAL
-    let displaySnow =
-        parseFloat(SnowAmount || 0)
-        + parseFloat(RetSnowAmount || 0);
-
-    $("#SnowLbl").text(
-        "$ " + displaySnow.toFixed(2)
-    );
-
-    $("#Total").text("$ " + CalcTotal());
-    updatePayAmountDisplay();
+    $("#Total").text("$ " + CalcTotal())
 }
-
 
 function CalcExtraBag() {
     ExtraBags = $("#SelExtraBag").val();
@@ -713,15 +539,14 @@ function CalcExtraBag() {
 
     if (MySearch.Tab == 2 && MySearch.ChkRetReservation == true) {
         SubTotal = parseFloat(MySearch.SubTotal);
-        RetSubTotal = parseFloat(MySearch.RetSubTotal);
+        RetSubTotal = parseFloat(MySearch.SubTotal);
 
-        ExtraBagCharge = (parseFloat(ExtraBags) * 5).toFixed(2);
-        RetExtraBagCharge = (parseFloat(ExtraBags) * 5).toFixed(2);
-
+        ExtraBagCharge = (parseFloat(SubTotal) + (parseFloat(ExtraBags) * 5)).toFixed(2);
+        RetExtraBagCharge = (parseFloat(RetSubTotal) * parseFloat(ExtraBags) * 5).toFixed(2);
         var TotalExtraBagCharge = parseFloat(ExtraBagCharge) + parseFloat(RetExtraBagCharge);
-        $("#ExtraBagAmount").text("$ " + TotalExtraBagCharge)
+        $("#ExtraBagAmount").text(TotalExtraBagCharge)
     }
-    else if (MySearch.Tab == 5) {
+    if (MySearch.Tab == 5) {
         ExtraBags = $("#SelExtraBag").val()
         ExtraBagCharge = 0;
         if (ExtraBags > MySearch.MinBaggage) {
@@ -738,7 +563,7 @@ function CalcExtraBag() {
             $("#ExtraBagAmount").text("$ " + ExtraBagCharge)
         }
 
-       /* $("#Total").text("$ " + CalcTotal())*/
+        $("#Total").text("$ " + CalcTotal())
     }
     else {
         SubTotal = parseFloat(MySearch.SubTotal);
@@ -754,294 +579,101 @@ function CalcExtraBag() {
         }
     }
     $("#Total").text("$ " + CalcTotal())
-    updatePayAmountDisplay();
 }
 
 function CalcTotal() {
     ResetCalculation()
-    
+    if (IsLateNight)
+        Total = parseFloat(Total) + parseFloat(LateNightFixCharges);
+    if (IsLateNightRet)
+        Total = parseFloat(Total) + parseFloat(LateNightFixCharges);
+    //Covid 19
+    if (IsSanitization) {
+        Total = parseFloat((parseFloat(Total) + parseFloat(5)).toFixed(2));
+        if (MySearch.ChkRetReservation)
+            Total = parseFloat(Total) + parseFloat(5);
+    }
+
     // Card Processing Fee
-    let baseTotal = parseFloat(Total || 0);
+    CardProcessingAmount = ((parseFloat(Total) / 100) * parseFloat(CardProcessingPercent)).toFixed(2);
 
-    CardProcessingAmount =( (baseTotal / 100) * parseFloat(CardProcessingPercent)).toFixed(2);
+    $("#CardProcessingFee").text("$ " + CardProcessingAmount)
+    Total = parseFloat(Total) + parseFloat(CardProcessingAmount);
 
-    $("#CardProcessingFee").text("$ " + CardProcessingAmount);
-
-    return (baseTotal + parseFloat(CardProcessingAmount)).toFixed(2);
+    return Total.toFixed(2);
 }
 
 function ResetCalculation() {
 
-    var nSnowText = $("#SnowLbl")[0].innerText;
-    var nSnowCharge = nSnowText.replace(/[^0-9.]/g, '');
-
-    var nGratuityText = $("#GratuityAmount")[0].innerText;
-    var nGratuityCharge = nGratuityText.replace(/[^0-9.]/g, '');
-
-    var nExtraBagText = $("#ExtraBagAmount")[0].innerText;
-    var nExtraBagCharge = nExtraBagText.replace(/[^0-9.]/g, '');
-
-    var nExtraAdultText = $("#ExtraAdultAmount")[0].innerText;
-    var nExtraAdultCharge = nExtraAdultText.replace(/[^0-9.]/g, '');
-
-    var nExtraChildText = $("#ExtraChildAmount")[0].innerText;
-    var nExtraChildCharge = nExtraChildText.replace(/[^0-9.]/g, '');
-
-    var nOfferText = $("#OfferAmount")[0].innerText;
-    var nOfferCharge = nOfferText.replace(/[^0-9.]/g, '');
-
-    var nChildSeatText = $("#ChildSeat")[0].innerText;
-    var nChildSeatCharge = nChildSeatText.replace(/[^0-9.]/g, '');
-
-    var nPetInCageText = $("#PetInCage")[0].innerText;
-    var nPetInCageCharge = nPetInCageText.replace(/[^0-9.]/g, '');
-
-    var nMeetAndGreetText = $("#MeetAndGreet")[0].innerText;
-    var nMeetAndGreetCharge = nMeetAndGreetText.replace(/[^0-9.]/g, '');
-
-    nSnowCharge = parseFloat(nSnowCharge || 0);
-    nGratuityCharge = parseFloat(nGratuityCharge || 0);
-    nExtraBagCharge = parseFloat(nExtraBagCharge || 0);
-    nExtraAdultCharge = parseFloat(nExtraAdultCharge || 0);
-    nExtraChildCharge = parseFloat(nExtraChildCharge || 0);
-    nOfferCharge = parseFloat(nOfferCharge || 0);
-    nChildSeatCharge = parseFloat(nChildSeatCharge || 0);
-    nPetInCageCharge = parseFloat(nPetInCageCharge || 0);
-    nMeetAndGreetCharge = parseFloat(nMeetAndGreetCharge || 0);
-
-    let sanitizationCharge = 0;
-
-    if (IsSanitization) {
-        sanitizationCharge = MySearch.ChkRetReservation ? 10 : 5;
-    }
-
-    let lateNightTotal = parseFloat(OutboundLateNightCharge || 0) + parseFloat(ReturnLateNightCharge || 0);
-
+    var nSnowText = $("#SnowLbl")[0].innerText
+    var nSnowCharge = nSnowText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nGratuityText = $("#GratuityAmount")[0].innerText
+    var nGratuityCharge = nGratuityText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nExtraBagText = $("#ExtraBagAmount")[0].innerText
+    var nExtraBagCharge = nExtraBagText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nExtraAdultText = $("#ExtraAdultAmount")[0].innerText
+    var nExtraAdultCharge = nExtraAdultText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nExtraChildText = $("#ExtraChildAmount")[0].innerText
+    var nExtraChildCharge = nExtraChildText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nOfferText = $("#OfferAmount")[0].innerText
+    var nOfferCharge = nOfferText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nChildSeatText = $("#ChildSeat")[0].innerText
+    var nChildSeatCharge = nChildSeatText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nPetInCageText = $("#PetInCage")[0].innerText
+    var nPetInCageCharge = nPetInCageText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
+    var nMeetAndGreetText = $("#MeetAndGreet")[0].innerText
+    var nMeetAndGreetCharge = nMeetAndGreetText.replace(/[^0-9.]/g, '').split(".").filter(item => item !== "").map((item, index) => (index === 0) ? item + '.' : item).join('')
     if (MySearch.ChkRetReservation) {
-
-        let returnSubTotal =parseFloat( MySearch.RetSubTotal || MySearch.SubTotal || 0);
-
-        Total =
-            (
-                parseFloat(SubTotal || 0)
-                + returnSubTotal
-                + lateNightTotal
-                + nSnowCharge
-                + nGratuityCharge
-                + nExtraBagCharge
-                + nExtraAdultCharge
-                + nExtraChildCharge
-                + nChildSeatCharge
-                + nPetInCageCharge
-                + nMeetAndGreetCharge
-                + sanitizationCharge
-            )   - nOfferCharge;
+        Total = ((parseFloat(SubTotal) * 2) + parseFloat(nSnowCharge) + parseFloat(nGratuityCharge) + parseFloat(nExtraBagCharge) + parseFloat(nExtraAdultCharge) + parseFloat(nExtraChildCharge) + parseFloat(nChildSeatCharge) + parseFloat(nPetInCageCharge) + parseFloat(nMeetAndGreetCharge)) - parseFloat(nOfferCharge);
     }
     else {
-
-        Total =
-            (
-                parseFloat(SubTotal || 0)
-                + lateNightTotal
-                + nSnowCharge
-                + nGratuityCharge
-                + nExtraBagCharge
-                + nExtraAdultCharge
-                + nExtraChildCharge
-                + nChildSeatCharge
-                + nPetInCageCharge
-                + nMeetAndGreetCharge
-                + sanitizationCharge
-            )  - nOfferCharge;
+        Total = (parseFloat(SubTotal) + parseFloat(nSnowCharge) + parseFloat(nGratuityCharge) + parseFloat(nExtraBagCharge) + parseFloat(nExtraAdultCharge) + parseFloat(nExtraChildCharge) + parseFloat(nChildSeatCharge) + parseFloat(nPetInCageCharge) + parseFloat(nMeetAndGreetCharge)) - parseFloat(nOfferCharge);
     }
-
-    Total = parseFloat(Total || 0).toFixed(2);
 }
 
 var TotalRet = 0;
- 
-
-function SplitSharedCharge(amount, ratio) {
-
-    amount = parseFloat(amount || 0);
-
-    return (amount * ratio).toFixed(2);
-}
-
-function GetFareRatios() {
-
-    let outFare =
-        parseFloat(MySearch.SubTotal || 0);
-
-    let retFare =
-        parseFloat(MySearch.RetSubTotal || MySearch.SubTotal || 0);
-
-    let totalFare =
-        outFare + retFare;
-
-    if (totalFare <= 0) {
-
-        return {
-            OutRatio: 0.5,
-            RetRatio: 0.5
-        };
-    }
-
-    return {
-        OutRatio: outFare / totalFare,
-        RetRatio: retFare / totalFare
-    };
-}
-
-function CalculateOutboundLegTotal(
-    outGratuity,
-    outSnow,
-    outExtraBagCharge,
-    outAdultCharge,
-    outChildCharge,
-    outChildSeatCharge,
-    outPetCharge,
-    outCardFee
-) {
-    let ratios = GetFareRatios();
-    let outboundTotal = 0;
-
-    outboundTotal += parseFloat(MySearch.SubTotal || 0);
-
-    if (IsLateNight)
-        outboundTotal += parseFloat(LateNightFixCharges);
-
-    outboundTotal += parseFloat(outGratuity || 0);
-
-    outboundTotal += parseFloat(outSnow || 0);
-
-    outboundTotal += parseFloat(outExtraBagCharge || 0);
-
-    outboundTotal += parseFloat(outAdultCharge || 0);
-
-    outboundTotal += parseFloat(outChildCharge || 0);
-
-    outboundTotal += parseFloat(outChildSeatCharge || 0);
-
-    outboundTotal += parseFloat(outPetCharge || 0);
-
-    let actualOffer =
-        MySearch.ChkRetReservation && MySearch.Tab != 2
-            ? (
-                parseFloat(OfferAmount || 0)
-                * ratios.OutRatio
-            )
-            : parseFloat(OfferAmount || 0);
-
-    if (IsMeetAndGreet)
-        outboundTotal += 30;
-
-    outboundTotal -= actualOffer;
-     
-
-    let fee = parseFloat(outCardFee || 0);
-
-    return (
-        outboundTotal + fee
-    ).toFixed(2);
-}
-
-function CalculateReturnLegTotal(
-    retGratuity,
-    retSnow,
-    retExtraBagCharge,
-    retAdultCharge,
-    retChildCharge,
-    retChildSeatCharge,
-    retPetCharge,
-    retCardFee
-) {
-
-    let returnTotal = 0;
-
-    returnTotal += parseFloat(
-        MySearch.RetSubTotal
-        || MySearch.SubTotal
-        || 0
-    );
-
-    if (IsLateNightRet)
-        returnTotal += parseFloat(
-            LateNightFixCharges || 0
-        );
-
-    returnTotal += parseFloat(retGratuity || 0);
-
-    returnTotal += parseFloat(retSnow || 0);
-
-    returnTotal += parseFloat(retExtraBagCharge || 0);
-
-    returnTotal += parseFloat(retAdultCharge || 0);
-
-    returnTotal += parseFloat(retChildCharge || 0);
-
-    returnTotal += parseFloat(retChildSeatCharge || 0);
-
-    returnTotal += parseFloat(retPetCharge || 0);
-
-    // RETURN OFFER
-    let ratios = GetFareRatios();
-
-    let actualRetOffer =
-        MySearch.ChkRetReservation
-            && MySearch.Tab != 2
-            ? (
-                parseFloat(OfferAmount || 0)
-                * ratios.RetRatio
-            )
-            : parseFloat(RetOfferAmount || 0);
-
-    returnTotal -= parseFloat(actualRetOffer || 0);
-
-    let fee =
-        parseFloat(retCardFee || 0);
-
-    return (
-        returnTotal + fee
-    ).toFixed(2);
-}
-
 function ReservationData() {
-    let ratios = GetFareRatios();
-
-    let outExtraBagCharge =
-        SplitSharedCharge(
-            ExtraBagCharge,
-            ratios.OutRatio
-        );
-
-    let outAdultCharge =
-        SplitSharedCharge(
-            ExtraAdultCharge,
-            ratios.OutRatio
-        );
-
-    let outChildCharge =
-        SplitSharedCharge(
-            ExtraChildCharge,
-            ratios.OutRatio
-        );
-
-    let outChildSeatCharge =
-        SplitSharedCharge(
-            ChildSeatCharge,
-            ratios.OutRatio
-        );
-
-    let outPetCharge =
-        SplitSharedCharge(
-            PetInCageCharge,
-            ratios.OutRatio
-        );
-
     if (MySearch.Tab == 5)
         ExtraBags = ExtraBag;
-     
+
+    // For round trip, calculate each leg's total independently
+    if (MySearch.ChkRetReservation) {
+        // Outbound leg
+        let outboundTotal = calculateLegTotal({
+            SubTotal: parseFloat(MySearch.SubTotal),
+            LateNight: LateNightClac(MySearch.Time) ? LateNightFixCharges : 0,
+            Gratuity: GratuityAmount,
+            Snow: SnowAmount,
+            ExtraBag: ExtraBagCharge,
+            ExtraAdult: ExtraAdultCharge,
+            ExtraChild: ExtraChildCharge,
+            ChildSeat: ChildSeatCharge,
+            PetinCage: PetinCageCharge,
+            MeetAndGreet: IsMeetAndGreet ? 30 : 0,
+            Offer: OfferAmount,
+            Sanitization: IsSanitization ? 5 : 0,
+            CardProcessingPercent: CardProcessingPercent
+        });
+        Total = outboundTotal;
+
+        // Return leg
+        let returnTotal = calculateLegTotal({
+            SubTotal: parseFloat(MySearch.RetSubTotal || MySearch.SubTotal),
+            LateNight: LateNightClac(MySearch.RetTime) ? LateNightFixCharges : 0,
+            Gratuity: RetGratuityAmount || GratuityAmount,
+            Snow: RetSnowAmount || SnowAmount,
+            ExtraBag: RetExtraBagCharge || ExtraBagCharge,
+            ExtraAdult: ExtraAdultCharge,
+            ExtraChild: ExtraChildCharge,
+            ChildSeat: ChildSeatCharge,
+            PetinCage: PetinCageCharge,
+            MeetAndGreet: IsMeetAndGreet ? 30 : 0,
+            Offer: RetOfferAmount || OfferAmount,
+            Sanitization: IsSanitization ? 5 : 0,
+            CardProcessingPercent: CardProcessingPercent
+        });
+        TotalRet = returnTotal;
+    }
     IsMeetGreet = IsMeetAndGreet;
     
     var IsHalt = false, HourlySettingID = 0, HaltingHours = 0, HaltingDiscount = 0;
@@ -1050,24 +682,15 @@ function ReservationData() {
         HourlySettingID = MySearch.HourlySettingID;
         HaltingHours = MySearch.HaltingHours;
         HaltingDiscount = MySearch.HaltingDiscount;
-    }    
-    
-    let totalCardFee =
-        (
-            parseFloat(CardProcessingAmount || 0)
-        );
-
-    let outCardFee =
-        (
-            totalCardFee * ratios.OutRatio
-        ).toFixed(2);
-
-    let outGratuity =
-        parseFloat(GratuityAmount || 0).toFixed(2);
-
-    let outSnow =
-        parseFloat(SnowAmount || 0).toFixed(2);
-   
+    }
+    //if (MySearch.ChkRetReservation)
+    //{
+    //    ChildSeatCharge = (parseFloat(ChildSeatCharge) / 2).toFixed(2);
+    //    PetinCageCharge= (parseFloat(PetinCageCharge) / 2).toFixed(2);
+    //    ExtraBagCharge= (parseFloat(ExtraBagCharge) / 2).toFixed(2);
+    //    ExtraAdultCharge = (parseFloat(ExtraAdultCharge) / 2).toFixed(2);
+    //    ExtraChildCharge=(parseFloat(ExtraChildCharge) / 2).toFixed(2);
+    //}
     DataArr = {
         ReservationId: GenReservationId(Fname, Lname),
         Source: MySearch.Source,
@@ -1097,27 +720,18 @@ function ReservationData() {
         IsMeetAndGreet: IsMeetGreet,
         IsChildSeat: IsChildSeat,
         ChildSeatType: ChildSeatType,
-        ChildSeatCharge: outChildSeatCharge,
-        IsPetInCage: IsPetInCage,
-        PetInCageCharge: outPetCharge,
+        ChildSeatCharge: ChildSeatCharge,
+        IsPetinCage: IsPetinCage,
+        PetinCageCharge: PetinCageCharge,
         IsLateNight: IsLateNight,
-        Gratuity: outGratuity + "^" + GratuityPercent,
+        Gratuity: GratuityAmount + "^" + GratuityPercent,
         ExtraBags: ExtraBags,
-        ExtraBagCharge: outExtraBagCharge,
+        ExtraBagCharge: ExtraBagCharge,
         Adults: ExtraAdult,
-        AdultCharge: outAdultCharge,
+        AdultCharge: ExtraAdultCharge,
         Childs: ExtraChild,
-        ChildCharge: outChildCharge,
-        TotalFare: CalculateOutboundLegTotal(
-            outGratuity,
-            outSnow,
-            outExtraBagCharge,
-            outAdultCharge,
-            outChildCharge,
-            outChildSeatCharge,
-            outPetCharge,
-            outCardFee
-        ),
+        ChildCharge: ExtraChildCharge,
+        TotalFare: parseFloat(Total || 0).toFixed(2),
         OfferDetail: OfferDetails,
         IsPaid: true,
 
@@ -1128,13 +742,13 @@ function ReservationData() {
         //Covid 19
         IsSanitization: IsSanitization,
         IsSnow: IsSnow,
-        Snow: outSnow + "^" + SnowPercentage,
+        Snow: SnowAmount + "^" + SnowPercentage,
         Stops: MySearch.Stops,
         IsHalt: IsHalt,
         HourlySettingID: HourlySettingID,
         HaltingHours: HaltingHours,
         HaltingDiscount: HaltingDiscount,
-        CardProcessingFee: outCardFee + "^" + CardProcessingPercent
+        CardProcessingFee: calculateCardProcessingFee(false)
     }
     if (MySearch.Tab == 5) {
         DataArr.Service = 'Frederick-' + MySearch.Service; 
@@ -1145,55 +759,8 @@ function ReservationData() {
 }
 
 function RetReservationData() {
-    let ratios = GetFareRatios();
 
-    let retExtraBagCharge =
-        SplitSharedCharge(
-            ExtraBagCharge,
-            ratios.RetRatio
-        );
-
-    let retAdultCharge =
-        SplitSharedCharge(
-            ExtraAdultCharge,
-            ratios.RetRatio
-        );
-
-    let retChildCharge =
-        SplitSharedCharge(
-            ExtraChildCharge,
-            ratios.RetRatio
-        );
-
-    let retChildSeatCharge =
-        SplitSharedCharge(
-            ChildSeatCharge,
-            ratios.RetRatio
-        );
-
-    let retPetCharge =
-        SplitSharedCharge(
-            PetInCageCharge,
-            ratios.RetRatio
-        );
-
-    let retSnow =
-        parseFloat(RetSnowAmount || 0).toFixed(2);
-
-    let retGratuity =
-        parseFloat(RetGratuityAmount || 0).toFixed(2);
-
-    let totalCardFee =
-        (
-            parseFloat(CardProcessingAmount || 0)
-        );
-
-    let retCardFee =
-        (
-            totalCardFee * ratios.RetRatio
-        ).toFixed(2); 
-
-    RetDataArr = {
+    DataArr = {
         ReservationId: GenReservationId(Fname, Lname),
         Source: MySearch.Destination,
         Destination: MySearch.Source,
@@ -1216,33 +783,24 @@ function RetReservationData() {
         VehicleId: MySearch.VehicleId,
         VehicleRate: MySearch.VehicleRate,
         BaseCharge: parseFloat(MySearch.BaseCharge || 0),
-        Distance: MySearch.TotalDistanceRet || MySearch.TotalDistance,
+        Distance: MySearch.TotalDistance,
         Fare: MySearch.RetSubTotal || MySearch.SubTotal,
         IsMeetAndGreet: IsMeetGreetRet,
         IsChildSeat: IsChildSeat,
         ChildSeatType: ChildSeatType,
-        ChildSeatCharge: retChildSeatCharge,
-        IsPetInCage: IsPetInCage,
-        PetInCageCharge: retPetCharge,
+        ChildSeatCharge: ChildSeatCharge,
+        IsPetinCage: IsPetinCage,
+        PetinCageCharge: PetinCageCharge,
         IsLateNight: IsLateNightRet,
-        Gratuity: retGratuity + "^" + GratuityPercent,
+        Gratuity: GratuityAmount + "^" + GratuityPercent,
         ExtraBags: ExtraBags,
-        ExtraBagCharge: retExtraBagCharge,
+        ExtraBagCharge: ExtraBagCharge,
         Adults: ExtraAdult,
-        AdultCharge: retAdultCharge,
+        AdultCharge: ExtraAdultCharge,
         Childs: ExtraChild,
-        ChildCharge: retChildCharge,
-        TotalFare: CalculateReturnLegTotal(
-            retGratuity,
-            retSnow,
-            retExtraBagCharge,
-            retAdultCharge,
-            retChildCharge,
-            retChildSeatCharge,
-            retPetCharge,
-            retCardFee
-        ),
-        OfferDetail: RetOfferDetails || OfferDetails,
+        ChildCharge: ExtraChildCharge,
+        TotalFare: parseFloat(TotalRet || 0).toFixed(2),
+        OfferDetail: OfferDetails,
         IsPaid: true,
 
         CreatedDate: TodayDate(),
@@ -1251,168 +809,88 @@ function RetReservationData() {
         DriverId: 0,
         //Covid 19
         IsSanitization: IsSanitization,
+        IsSanitization: IsSanitization,
         IsSnow: IsSnow,
-        Snow: retSnow + "^" + SnowPercentage,
+        Snow: SnowAmount + "^" + SnowPercentage,
         Stops: MySearch.Stops, 
-        CardProcessingFee: retCardFee + "^" + CardProcessingPercent
+        CardProcessingFee: calculateCardProcessingFee(true)
     }
     if (MySearch.Tab == 2 && MySearch.ChkRetReservation == true) {
-        RetDataArr.Service = MySearch.Service;
-        RetDataArr.Source = MySearch.sourceP2PRet;
-        RetDataArr.Destination = MySearch.destinationP2PRet;
-        RetDataArr.Fare = MySearch.RetSubTotal
-        RetDataArr.Distance = MySearch.TotalDistanceRet
-        RetDataArr.Gratuity = retGratuity + "^" + GratuityPercent;
-        RetDataArr.Snow = retSnow + "^" + SnowPercentage;
-        RetDataArr.OfferDetail = RetOfferDetails
+        DataArr.Service = MySearch.Service;
+        DataArr.Source = MySearch.sourceP2PRet;
+        DataArr.Destination = MySearch.destinationP2PRet;
+        DataArr.Fare = MySearch.RetSubTotal
+        DataArr.Distance = MySearch.TotalDistanceRet
+        DataArr.Gratuity = RetGratuityAmount + "^" + GratuityPercent;
+        DataArr.OfferDetail = RetOfferDetails
     }
     if (MySearch.Tab == 5) {
-        RetDataArr.Service = 'Frederick-' + RetDataArr.Service;
+        DataArr.Service = 'Frederick-' + DataArr.Service;
     }
     AddReservation("Ret")
 }
 
 function AddReservation(type) {
-
     showProcessingSpinner();
-    $("#completeBookingBtn").prop("disabled", true);
-
-    let reservationObj =
-        type === "Ret"
-            ? RetDataArr
-            : DataArr;
+    $("#btnBook").prop("disabled", true);
 
     $.ajax({
         url: "Handler/BookingHandler.asmx/AddReservation",
         type: "POST",
-        data: JSON.stringify({
-            Reservation: reservationObj,
-            IsEmail: true
-        }),
+        data: JSON.stringify({ Reservation: DataArr, IsEmail: true }),
         contentType: "application/json",
         dataType: "json",
-
         success: function (response) {
-           
-            if (!MySearch.ChkRetReservation || type === "Ret")
-            {
-                hideProcessingSpinner(); 
-            }
-            $("#completeBookingBtn").prop("disabled", false);
+            hideProcessingSpinner();
+            $("#btnBook").prop("disabled", false);
 
             let obj;
-
             try {
-                obj = typeof response === "object"
-                    ? JSON.parse(response.d)
-                    : JSON.parse(response);
-            }
-            catch (e) {
+                obj = typeof response === "object" ? JSON.parse(response.d) : JSON.parse(response);
+            } catch (e) {
                 alert("Unexpected server response. Please try again.");
                 return;
             }
 
-            // Only show confirmation modal if booking is successful
+            // Only show confirmation modal if booking is successful AND a valid ReservationId is returned
             if (obj.retCode === 1 && obj.ReservationId) {
-
+                
                 $("#ReservationIdConf").empty();
 
                 if (MySearch.ChkRetReservation && type === "Ret") {
-
-                    $("#ReservationIdConf").append(
-                        "Your Booking number is : " + ReservationId
-                    );
-
-                    $("#ReservationIdConf").append(
-                        "<br> Your Return Booking number is : "
-                        + obj.ReservationId
-                    );
-
-                }
-                else if (MySearch.ChkRetReservation && type === "Res")
-                {
-
+                    $("#ReservationIdConf").append("Your Booking number is : " + ReservationId);
+                    $("#ReservationIdConf").append("<br> Your Return Booking number is : " + obj.ReservationId);
+                } else if (MySearch.ChkRetReservation && type === "Res") {
                     ReservationId = obj.ReservationId;
-
+                } else {
+                    $("#ReservationIdConf").append("Your Booking number is : " + obj.ReservationId);
                 }
-                else {
-
-                    $("#ReservationIdConf").append("Your Booking number is : "+ obj.ReservationId);
-                }
-
-                $('#bookingModal').modal('hide');
-                $('#processingModal').modal('hide');
-
-                if ( !MySearch.ChkRetReservation || type === "Ret")
-                {
-
-                    setTimeout(function () {
-
-                        $('.modal-backdrop').remove();
-
-                        $('body').removeClass('modal-open');
-
-                        $('body').css('padding-right', '');
-
-                        $('#bookingConfirmationModal').modal("show");
-
-                    }, 300);
-                }
-
-                // Add back button once
+                $('#bookingModal').modal("hide");
+                $('#bookingConfirmationModal').modal("show");
+                // Add a button for user to continue
                 if ($("#backToHomeBtn").length === 0) {
-
-                    $("#ReservationIdConf").append(
-                        '<br><button id="backToHomeBtn" class="primaryButton mt-3">Back to Home</button>'
-                    );
-
+                    $("#ReservationIdConf").append('<br><button id="backToHomeBtn" class="primaryButton mt-3">Back to Home</button>');
                     $("#backToHomeBtn").on("click", function () {
-
                         $('#bookingConfirmationModal').modal('hide');
-
                         location.href = "index.html";
                     });
                 }
-            }
-            else if (obj.retCode === 1 && !obj.ReservationId) {
-
+            } else if (obj.retCode === 1 && !obj.ReservationId) {
                 $('#bookingConfirmationModal').modal('hide');
-
-                alert("Booking Cancelled!");
-            }
-            else {
-
-                alert(
-                    "Something went wrong while saving your reservation. Please try again."
-                );
+                alert("Booking Cancelled! ");
+            } else {
+                alert("Something went wrong while saving your reservation. Please try again.");
             }
         },
-
         error: function () {
-
             hideProcessingSpinner();
-            $("#completeBookingBtn").prop("disabled", false);             
-
-            window.onbeforeunload = null;
-
-            if (MySearch.ChkRetReservation && type === "Ret") {
-
-                alert(
-                    "Outbound booking saved successfully, but return booking failed. Please contact support."
-                );
-            }
-            else {
-
-                alert(
-                    "A network error occurred while saving your reservation. Please try again."
-                );
-            }
+            $("#btnBook").prop("disabled", false);
+            alert("A network error occurred while saving your reservation. Please check your connection and try again.");
         }
     });
 }
 
 function Validate() {
-    ResetBookingState();
     Fname = $('#Fname').val();
     Lname = $('#Lname').val();
     PhoneNo = $('#PhoneNo').val();
@@ -1433,13 +911,147 @@ function Validate() {
     CheckEmail()
 }
 window.Validate = Validate;
- 
+
+function calculateCardProcessingFee(isRet) {
+    var newTotal = 0;
+    if (!isRet)
+        newTotal = parseFloat(Total);
+    else
+        newTotal = parseFloat(TotalRet);
+
+    var fee = ((newTotal / 100) * parseFloat(CardProcessingPercent)).toFixed(2);
+    return fee + "^" + CardProcessingPercent;
+}
+
+// Helper to calculate total for a single leg
+function calculateLegTotal(opts) {
+    // opts: {SubTotal, LateNight, Gratuity, Snow, ExtraBag, ExtraAdult, ExtraChild, ChildSeat, PetinCage, MeetAndGreet, Offer, Sanitization, CardProcessingPercent}
+    let total = 0;
+    total += parseFloat(opts.SubTotal || 0);
+    total += parseFloat(opts.LateNight || 0);
+    total += parseFloat(opts.Gratuity || 0);
+    total += parseFloat(opts.Snow || 0);
+    total += parseFloat(opts.ExtraBag || 0);
+    total += parseFloat(opts.ExtraAdult || 0);
+    total += parseFloat(opts.ExtraChild || 0);
+    total += parseFloat(opts.ChildSeat || 0);
+    total += parseFloat(opts.PetinCage || 0);
+    total += parseFloat(opts.MeetAndGreet || 0);
+    total += parseFloat(opts.Sanitization || 0);
+    total -= parseFloat(opts.Offer || 0);
+    // Card processing fee
+    let cardFee = ((total / 100) * parseFloat(opts.CardProcessingPercent || 0));
+    total += cardFee;
+    return parseFloat(total).toFixed(2);
+}
+
 function CalculateFinalPaymentAmount() {
 
-    return parseFloat(
-        CalcTotal()
-    ).toFixed(2);
+    let finalAmount = parseFloat(Total || 0);
+
+    if (isNaN(finalAmount))
+        finalAmount = 0;
+
+    return finalAmount.toFixed(2);
 }
+
+function PayAmount() {
+    CardNumber = $("#CardsNumber").val();
+    Month = $("#Month option:selected").text();
+    Year = $("#Year option:selected").text();
+    Security_Code = $("#Security_Code").val();
+    if (CardNumber == '') {
+        alert("Please enter Card Number");
+        return false;
+    }
+    if (Month == 'Month') {
+        alert("Please select Month");
+        return false;
+    }
+    if (Year == 'Years') {
+        alert("Please enter Years");
+        return false;
+    }
+    if (Security_Code == '') {
+        alert("Please enter Card Security Code");
+        return false;
+    }
+
+    // Test user bypass: show loader, simulate processing, show confirmation, skip payment
+    if (Email == "shahidanwar888@gmail.com" || Email == "nazarali91@gmail.com") {
+        showProcessingSpinner();
+        $("#btnBook").prop("disabled", true);
+        setTimeout(function() {
+            hideProcessingSpinner();
+            $("#btnBook").prop("disabled", false);
+            ReservationData();
+        }, 2000); // Simulate 2 seconds processing
+        return;
+    }
+
+    var Payment = {
+        CardNumber: CardNumber,
+        Month: Month,
+        Year: Year,
+        Security_Code: Security_Code,
+        Amount: CalculateFinalPaymentAmount()
+    }
+    $.ajax({
+        type: "POST",
+        url: "/Handler/PayPalHandler.asmx/Paypal",
+        data: JSON.stringify(Payment),
+        contentType: "application/json",
+        datatype: "json",
+        success: function (response) {
+            var Cond = response.d;
+            if (Cond === "Transaction Successful.") {
+                ReservationData();
+            } else if (Cond === "Transaction Cancelled." || Cond === "User Cancelled" || Cond === "Cancelled" || Cond === "Payment Cancelled") {
+                // Optionally log failed/cancelled attempt
+                LogFailedReservation(Cond);
+                document.getElementById('btnBook').style.visibility = '';
+                $("#CircleImage").hide();
+                $('#SpnMessege').text("Payment was cancelled. Your booking was not saved.");
+                $('#ModelMessege').modal('show');
+            } else {
+                // Payment failed for another reason
+                LogFailedReservation(Cond);
+                document.getElementById('btnBook').style.visibility = '';
+                $("#CircleImage").hide();
+                $('#SpnMessege').text(Cond);
+                $('#ModelMessege').modal('show');
+            }
+        },
+        error: function () {
+            LogFailedReservation("Network Error");
+            document.getElementById('btnBook').style.visibility = '';
+            $("#CircleImage").hide();
+            $('#SpnMessege').text("A network error occurred while processing your payment. Please try again.");
+            $('#ModelMessege').modal('show');
+        }
+    });
+}
+
+// Log failed/cancelled payment attempts without booking numbers
+function LogFailedReservation(reason) {
+    // Prepare minimal data for logging
+    var failedData = {
+        Email: Email,
+        Reason: reason,
+        Date: TodayDate(),
+        Status: "PaymentFailed"
+    };
+    // Optionally add more fields as needed
+    $.ajax({
+        url: "Handler/BookingHandler.asmx/LogFailedReservation",
+        type: "POST",
+        data: JSON.stringify({ FailedReservation: failedData }),
+        contentType: "application/json",
+        dataType: "json"
+        // No UI feedback needed for logging
+    });
+}
+
 
 function CheckEmail() {
     var Data = { Email: Email };
@@ -1461,8 +1073,9 @@ function CheckEmail() {
                     Total = parseFloat(Total).toFixed(2);
                 }
 
-                updatePayAmountDisplay();
-
+                $('#PayAmount').text(
+                    "Total Amount: $ " + CalculateFinalPaymentAmount()
+                );
                 if (Fname == '') {
                     Fname = obj.Details.FirstName
                     $('#Fname').val(Fname);
@@ -1474,31 +1087,21 @@ function CheckEmail() {
                 if (PhoneNo == '') {
                     PhoneNo = obj.Details.MobileNo
                     $('#PhoneNo').val(PhoneNo);
-                } 
-                if (Email == "shahidanwar888@gmail.com" || Email == "nazarali91@gmail.com" || Email == "khazhar007@gmail.com") {
-                    $("#completeBookingBtn").prop("disabled", true);
-
-                    showProcessingSpinner();
-
-                    window.onbeforeunload = function () {
-                        return "Your reservation is still being processed.";
-                    };
-
-                    setTimeout(function () {
-
-                        ReservationData();
-
-                    }, 300);
                 }
 
-                $('#bookingModal').modal("show");
+                if (Email == "shahidanwar888@gmail.com" || Email == "nazarali91@gmail.com" || Email == "khazhar007@gmail.com")
+                    ReservationData();
+                else {
+
+                }
+                $('#bookingModal').modal("show")
             }
             else if (obj.retCode == 0) {
                 alert("Entered Email Address is not registered")
             }
         },
         error: function () {
-            alert("Something went wrong. Please try again.")
+            alert("Somthing went wrong. Please try again.")
         }
     });
 }
@@ -1530,13 +1133,111 @@ function GetP2PLocation() {
         }
     }
     return Location;
-} 
+}
+
+function LocalData() {
+    //MySearch = {
+    //    Airlines: "",
+    //    BaseCharge: 15,
+    //    ChkRetReservation: true,
+    //    Destination: "Baltimore Washington International Airport (BWI) ",
+    //    DestinationLat: "39.1774",
+    //    DestinationLongt: "-76.6684",
+    //    DistanceP2PArr: [0, 0, 0, 0],
+    //    FlightNo: "",
+    //    Hours: 0,
+    //    LatLongP2PArr: ["", "", "", "", ""],
+    //    LocationP2PArr: ["", "", ""],
+    //    Passengers: "2",
+    //    ReservationDate: "10-26-2020",
+    //    RetAirlines: "Aer Lingus",
+    //    RetDate: "10-27-2020",
+    //    RetFlightNo: "fb020",
+    //    RetTime: "04:00:AM",
+    //    Service: "To Airport",
+    //    Source: "Washington D.C., DC, USA",
+    //    SourceLat: 38.9071923,
+    //    SourceLongt: -77.0368707,
+    //    SubTotal: "102.38",
+    //    Tab: 1,
+    //    Time: "05:00:AM",
+    //    TimeTaken: "42 mins",
+    //    TotalDistance: "31.32",
+    //    VehicleId: "1",
+    //    VehicleRate: 2.79,
+    //}
+
+    MySearch = {
+        Airlines: "",
+        BaseCharge: 25,
+        ChkRetReservation: true,        
+        DistanceP2PArr: [0, 0, 0, 0],
+        FlightNo: "",
+        Hours: "2",
+        LatLongP2PArr: ["", "", "", "", ""],
+        LocationP2PArr: ["", "", ""],
+        Passengers: "3",
+        ReservationDate: "10-27-2020",
+        RetAirlines: "",
+        RetDate: "",
+        RetFlightNo: "",
+        RetTime: "",
+        Service: "To Airport", 
+        Tab: 3,
+        Time: "12:00:AM",
+        TimeTaken: "54 mins",
+        SubTotal: "109.94",
+        Source: "9618 Melrose Square Way, Gaithersburg, MD, USA",
+        Destination: "Baltimore Washington International Airport (BWI)",
+        SourceLat: 39.1819,
+        SourceLongt: -77.1985,
+        DestinationLat: 39.1754,
+        DestinationLongt: -76.6684,
+        TotalDistance: 58.7,
+        VehicleId: "1",
+        VehicleRate: 1.95,
+    }
+
+    //MySearch = {
+    //    Airlines: "",
+    //    BaseCharge: 15,
+    //    ChkRetReservation: false,
+    //    Destination: "Akola, Maharashtra, India",
+    //    DestinationLat: "20.7002159",
+    //    DestinationLongt: "77.0081678",
+    //    DistanceP2PArr: ["95.69", "59.71", 0, 0],
+    //    FlightNo: "",
+    //    Hours: 0,
+    //    LatLongP2PArr: ["21.1458004^79.0881546", "20.9319821^77.7523039", "20.7002159^77.0081678", "", ""],
+    //    LocationP2PArr: ["Nagpur, Maharashtra, India", "Amravati, Maharashtra, India", "Akola, Maharashtra, India"],
+    //    Passengers: "2",
+    //    ReservationDate: "09-30-2020",
+    //    RetAirlines: "",
+    //    RetDate: "",
+    //    RetFlightNo: "",
+    //    RetTime: "",
+    //    Service: "Point To Point",
+    //    Source: "Amravati, Maharashtra, India",
+    //    SourceLat: "20.9319821",
+    //    SourceLongt: "77.7523039",
+    //    SubTotal: "448.57",
+    //    Tab: 2,
+    //    Time: "12:00:AM",
+    //    TimeTaken: "2 hours 22 mins",
+    //    TotalDistance: 155.4,
+    //    VehicleId: "1",
+    //    VehicleRate: 2.79,
+    //}
+    LoadData()
+}
+
 function GetReturnService(Ser) {
     if (Ser == "To Airport")
         return "From Airport"
     if (Ser == "From Airport")
         return "To Airport"
 }
+
 
 function GetAllSnow() {
     $.ajax({
@@ -1581,26 +1282,15 @@ function ShowHideDiv(divId) {
 }
 
 function showProcessingSpinner() {
-    $('#processingModal').modal({
-        backdrop: 'static',
-        keyboard: false
-    });
+    $('#processingModal').modal('show');
     // Prevent user actions
-    /*$('body').css('pointer-events', 'none');*/ 
+    $('body').css('pointer-events', 'none');
+    window.onbeforeunload = function () {
+        return "Your reservation is still being processed. Are you sure you want to leave?";
+    };
 }
 function hideProcessingSpinner() {
-
     $('#processingModal').modal('hide');
-
-    $('.modal-backdrop').remove();
-
-    $('body').removeClass('modal-open');
-
-    $('body').css('padding-right', '');
-
-    $('body').css('overflow', '');
-
     $('body').css('pointer-events', '');
-
     window.onbeforeunload = null;
 }

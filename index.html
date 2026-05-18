@@ -5739,20 +5739,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal fade" id="bookingModal" aria-hidden="true" aria-labelledby="bookingModal" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <p class="text-center mb-3 level5" id="PayAmount"></p>
-                            <div id="paypal-button-container"></div>
-                            <!--<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-                            <!--<button class="btn btn-primary mt-4 mx-auto d-table" data-bs-target="#bookingConfirmationModal" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> 
             <div class="modal fade" id="bookingConfirmationModal" aria-hidden="true" aria-labelledby="bookingConfirmationModal" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
@@ -5937,9 +5924,9 @@
     <script src="Scripts/Fredrickcommon.js"></script>
     <script src="Scripts/FredrickIndex.js"></script>
     <script src="Scripts/FredrickRequest.js"></script>
-    <script src="Scripts/Search.js?v=1.2"></script>
+    <script src="Scripts/Search.js?v=1.4"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AXuQ138spiIzH4fPx9iOooXvu3Gaeeipe0ldtqAcZvDIXNSjd6gvQagUD-6tl-BshMZxrkocpxMzToeB&currency=USD" data-namespace="paypal_sdk"></script>
-    <script src="Scripts/Booking.js?v=1.3"></script>
+    <script src="Scripts/Booking.js?v=1.4"></script>
     <script>
         // Helper to show loader
         function showProcessingModal() {
@@ -5952,37 +5939,70 @@
         }
         paypal_sdk.Buttons({
             onClick: function (data, actions) {
-                showProcessingModal();
+
                 return actions.resolve();
             },
             createOrder: function (data, actions) {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: Total,
+                            value: CalculateFinalPaymentAmount(),
                         }
                     }]
                 });
             },
             onApprove: function (data, actions) {
+
+                showProcessingSpinner();
+
                 return actions.order.capture().then(function (details) {
-                    hideProcessingModal();
+
                     IsPayment = true;
+
+                    window.onbeforeunload = function () {
+                        return "Your reservation is still being processed.";
+                    };
+
                     ReservationData();
                 });
             },
             onCancel: function (data) {
+                ResetBookingState();
                 hideProcessingModal();
                 // Show payment not completed modal
                 var cancelModal = new bootstrap.Modal(document.getElementById('paymentCancelledModal'));
                 cancelModal.show();
             },
             onError: function (err) {
+                ResetBookingState();
                 hideProcessingModal();
                 var cancelModal = new bootstrap.Modal(document.getElementById('paymentCancelledModal'));
                 cancelModal.show();
             }
         }).render('#paypal-button-container');
+    </script>
+    <!-- Payment Cancelled Modal -->
+    <div class="modal fade" id="paymentCancelledModal" tabindex="-1" aria-labelledby="paymentCancelledModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="mb-3">Payment was cancelled or not completed.</h5>
+                    <p class="text-muted mb-0">No payment was processed. You may try again or close this window.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Always clean up modal backdrop and modal-open class after hiding/cancelling payment
+        function cleanModalBackdrop() {
+            setTimeout(function() {
+                $(".modal-backdrop").remove();
+                $("body").removeClass("modal-open").css({"padding-right": "", "overflow": "", "pointer-events": ""});
+            }, 500); // Delay to allow modal to hide first
+        }
+        // Attach to paymentCancelledModal close event
+        $(document).on('hidden.bs.modal', '#paymentCancelledModal', cleanModalBackdrop);
     </script>
     <script src="Scripts/Default.js"></script>
 </body>

@@ -493,4 +493,16 @@
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
     </url>
+  <url>
+    <loc>https://airportshuttles4less.com/corporate-transportation-maryland.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://airportshuttles4less.com/limo-service-maryland.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
 </urlset>

@@ -50,6 +50,7 @@
     <link href="../assets/css/custom.css" rel="stylesheet">
     <script src="https://airportshuttles4less.com/https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuX_jrF2mEltKATOVUuouVHdU2688XBfU&libraries=places"></script>
+    <script src="Scripts/AutocompleteRoute.js"></script>
 </head>
 
 <body>
@@ -229,8 +230,79 @@
                 <h5 class="card-title mb-3" style="color: #e30d16;">Ready to Book?</h5>
                 <p class="card-text">Experience comfort and reliability. Book your airport shuttle or minivan transfer
                   now!</p>
-                <a href="https://airportshuttles4less.com/contact-us.html" class="btn btn-lg"
-                  style="background-color: #e30d16; color: #fff; border: none;">Book Now</a>
+                <form class="quote-form" >
+                            <!-- First Name -->
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" required 
+                            style="border:1px solid #e30d16;"/>
+                            <!-- Last Name -->
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required 
+                            style="border:1px solid #e30d16;"/>
+
+                            <!-- Phone -->
+                            <input type="tel" name="phone" id="phone" placeholder="Phone" required 
+                            style="border:1px solid #e30d16;"/>
+                            <!-- Email -->
+                            <input type="email" name="email" id="emailid" placeholder="Email" required 
+                            style="border:1px solid #e30d16;"/>
+    
+                            <!-- Pick Up Date -->
+                            <input type="date" name="pick_up_date" id="pick_up_date" required 
+                            style="border:1px solid #e30d16;"/>
+                            <!-- Pick Up Time -->
+                            <input type="time" name="pick_up_time" id="pick_up_time" required 
+                            style="border:1px solid #e30d16;"/>
+    
+                            <!-- Pick Up Location -->
+                            <input type="text" name="pick_up_location" id="pick_up_location"  placeholder="Pick Up Location" autocomplete="off"  required 
+                            style="border:1px solid #e30d16;"/> 
+                            <!-- Destination -->
+                            <input type="text" name="destination" id="destination" placeholder="Destination" autocomplete="off" required 
+                            style="border:1px solid #e30d16;"/>
+    
+                            <!-- Type of Service -->
+                            <select name="service_type" id="service_type" required
+                            style="border:1px solid #e30d16;">
+                                <option value="" disabled selected>Type of Service</option>
+                                <option value="point-to-point">Point to Point</option>
+                                <option value="airport">Airport Transfer</option>
+                                <option value="hourly-limo-service">Hourly Limo</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+    
+                            <!-- Vehicle Types -->
+                            <select name="vehicle_type" id="vehicle_type" required
+                            style="border:1px solid #e30d16;">
+                                <option value="" disabled selected>Vehicle Types</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="limo">Limousine</option>
+                                <option value="bus">Mini Bus</option>
+                                <option value="sprinter-van">Sprinter Van</option>
+                                <option value="motor-coaches">Motor Coaches</option>
+                            </select>
+    
+                            <!-- # Hours -->
+                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required 
+                            style="border:1px solid #e30d16;"/>
+                            <!-- Passengers -->
+                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required 
+                            style="border:1px solid #e30d16;"/>
+
+                            <!-- Message / Note -->
+                            <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"
+                            style="border:1px solid #e30d16;"></textarea>
+    
+                            <!-- Submit Button -->
+                            <div class="full-width">
+                                <button type="button" onclick="QuoteMail()"
+                                style="background-color:#e30d16; color:#fff; border:2px solid #e30d16; padding:14px 28px; cursor:pointer; transition:all 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='#fff'; this.style.color='#e30d16'; this.style.border='2px solid #e30d16';"
+                                onmouseout="this.style.backgroundColor='#e30d16'; this.style.color='#fff'; this.style.border='2px solid #e30d16';"
+                                >GET YOUR QUOTE</button>
+                            </div>
+                        </form>
               </div>
             </div>
           </aside>
@@ -616,6 +688,8 @@
     <script src="../Scripts/Default.js"></script>
   </div>
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="Scripts/Default.js"></script>
 </body>
 
 </html>

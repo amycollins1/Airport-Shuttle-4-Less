@@ -253,16 +253,20 @@
                             </select>
     
                             <!-- # Hours -->
-                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required 
+                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" max="24" required 
                             style="border:1px solid #e30d16;"/>
                             <!-- Passengers -->
-                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required 
+                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" max="56" required 
                             style="border:1px solid #e30d16;"/>
 
                             <!-- Message / Note -->
                             <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"
                             style="border:1px solid #e30d16;"></textarea>
-    
+
+                            <div class="full-width g-recaptcha" data-sitekey="6Lco5GwtAAAAAKxSFTyXgy8wUugrwSZiBsuT5EwG"></div>
+
+                            <div style="display:none;"><input type="text" name="website" id="website" autocomplete="off" tabindex="-1"></div>
+
                             <!-- Submit Button -->
                             <div class="full-width">
                                 <button type="button" onclick="QuoteMail()"
@@ -659,5 +663,6 @@
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="Scripts/Default.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>

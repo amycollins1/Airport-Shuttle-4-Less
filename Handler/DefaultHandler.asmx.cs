@@ -195,10 +195,36 @@ namespace Frederick.Handler
         }
 
         [WebMethod(true)]
-        public string QuoteMail(string first_name, string last_name, string pick_up_date, string pick_up_time, string pick_up_location, string destination, string service_type, string vehicle_type, string hours, string passengers, string phone, string email, string message, string current_page_url, string CCEmails)
+        public string QuoteMail(string first_name, string last_name, string pick_up_date, string pick_up_time, string pick_up_location, string destination, string service_type, string vehicle_type, string hours, string passengers, string phone, string email, string message, string current_page_url, string CCEmails, string gRecaptchaToken)
         {
             try
             {
+
+                 // ===== GOOGLE reCAPTCHA v2 VERIFICATION =====
+
+                string secretKey = "6Lco5GwtAAAAAKNGbknNXxhpmTuRMuPTYwzo12Qr";
+
+                using (WebClient client = new WebClient())
+                {
+                    var response = client.DownloadString(
+                        "https://www.google.com/recaptcha/api/siteverify" +
+                        "?secret=" + secretKey +
+                        "&response=" + gRecaptchaToken
+                    );
+
+                    JObject result = JObject.Parse(response);
+
+                    bool success = result.Value<bool>("success");
+
+                    if (!success)
+                    {
+                        return jsSerializer.Serialize(new
+                        {
+                            retCode = 0,
+                            Msg = "Please complete the CAPTCHA."
+                        });
+                    }
+                }
                 // Create a unique hash for the enquiry data
                 string enquiryHash = string.Join("|",
                     first_name, last_name, pick_up_date, pick_up_time, pick_up_location, destination,

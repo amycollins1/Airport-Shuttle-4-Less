@@ -564,47 +564,114 @@ function QuoteMail() {
     if (passengers == "") return fail("Please Enter Passengers");
     if (emailid != "") { if (!validateEmail(emailid)) return fail("Please enter valid Email ID"); }
     if (phone == "") return fail("Please Enter Phone No");
+    if ($("#website").val() !== "") {return fail("Invalid request.");}
 
-    var Data = {
-        first_name: first_name,
-        last_name: last_name,
-        pick_up_date: pick_up_date,
-        pick_up_time: pick_up_time,
-        pick_up_location: pick_up_location,
-        destination: destination,
-        service_type: service_type,
-        vehicle_type: vehicle_type,
-        hours: hours,
-        passengers: passengers,
-        phone: phone,
-        email: emailid,
-        message: message,
-        current_page_url: current_page_url,
-        CCEmails: CCEmails
-    };
-    $.ajax({
-        type: "POST",
-        url: "/Handler/DefaultHandler.asmx/QuoteMail",
-        data: JSON.stringify(Data),
-        contentType: "application/json",
-        datatype: "json",
-        success: function (response) {
-            hideLoader();
-            var obj = JSON.parse(response.d);
-            if (obj.retCode == 1) {
-                showMsg("Quote enquiry sent successfully!", 'success');
-                resetForm();
-            } else {
-                showMsg(obj.Msg || 'Something went wrong while sending enquiry mail.', 'error');
-            }
-            $btn.prop('disabled', false).text('GET YOUR QUOTE');
-        },
-        error: function (request, status, error) {
-            hideLoader();
-            showMsg("A network error occurred. Please try again.", 'error');
-            $btn.prop('disabled', false).text('GET YOUR QUOTE');
+//     var Data = {
+//         first_name: first_name,
+//         last_name: last_name,
+//         pick_up_date: pick_up_date,
+//         pick_up_time: pick_up_time,
+//         pick_up_location: pick_up_location,
+//         destination: destination,
+//         service_type: service_type,
+//         vehicle_type: vehicle_type,
+//         hours: hours,
+//         passengers: passengers,
+//         phone: phone,
+//         email: emailid,
+//         message: message,
+//         current_page_url: current_page_url,
+//         CCEmails: CCEmails
+//     };
+//     $.ajax({
+//         type: "POST",
+//         url: "/Handler/DefaultHandler.asmx/QuoteMail",
+//         data: JSON.stringify(Data),
+//         contentType: "application/json",
+//         datatype: "json",
+//         success: function (response) {
+//             hideLoader();
+//             var obj = JSON.parse(response.d);
+//             if (obj.retCode == 1) {
+//                 showMsg("Quote enquiry sent successfully!", 'success');
+//                 resetForm();
+//             } else {
+//                 showMsg(obj.Msg || 'Something went wrong while sending enquiry mail.', 'error');
+//             }
+//             $btn.prop('disabled', false).text('GET YOUR QUOTE');
+//         },
+//         error: function (request, status, error) {
+//             hideLoader();
+//             showMsg("A network error occurred. Please try again.", 'error');
+//             $btn.prop('disabled', false).text('GET YOUR QUOTE');
+//         }
+//     });
+// }
+
+var token = grecaptcha.getResponse();
+
+if (token.length === 0) {
+    hideLoader();
+    showMsg("Please complete the CAPTCHA.", "error");
+    $btn.prop("disabled", false).text("GET YOUR QUOTE");
+    return;
+}
+
+var Data = {
+    first_name: first_name,
+    last_name: last_name,
+    pick_up_date: pick_up_date,
+    pick_up_time: pick_up_time,
+    pick_up_location: pick_up_location,
+    destination: destination,
+    service_type: service_type,
+    vehicle_type: vehicle_type,
+    hours: hours,
+    passengers: passengers,
+    phone: phone,
+    email: emailid,
+    message: message,
+    current_page_url: current_page_url,
+    CCEmails: CCEmails,
+    gRecaptchaToken: token
+};
+
+$.ajax({
+    type: "POST",
+    url: "/Handler/DefaultHandler.asmx/QuoteMail",
+    data: JSON.stringify(Data),
+    contentType: "application/json",
+    datatype: "json",
+    success: function (response) {
+        hideLoader();
+
+        var obj = JSON.parse(response.d);
+
+        if (obj.retCode == 1) {
+            showMsg("Quote enquiry sent successfully!", "success");
+            resetForm();
+
+            // Optional: reset the checkbox after success
+            grecaptcha.reset();
+        } else {
+            showMsg(obj.Msg || "Something went wrong while sending enquiry mail.", "error");
+
+            // Optional: reset the checkbox after failure too
+            grecaptcha.reset();
         }
-    });
+
+        $btn.prop("disabled", false).text("GET YOUR QUOTE");
+    },
+    error: function () {
+        hideLoader();
+        showMsg("A network error occurred. Please try again.", "error");
+
+        // Optional: reset the checkbox after error
+        grecaptcha.reset();
+
+        $btn.prop("disabled", false).text("GET YOUR QUOTE");
+    }
+});
 }
 
 function LoadA4SLAirports() {

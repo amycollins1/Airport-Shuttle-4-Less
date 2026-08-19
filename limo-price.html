@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Limo Price Calculator | Airport Shuttles 4 Less
+    </title>
+
+    <meta
+        name="description"
+        content="Calculate an estimated limo and private transportation fare based on your pickup location, destination and vehicle."
+    >
+
+    <link
+        rel="canonical"
+        href="https://airportshuttles4less.com/limo-price-calculator.html"
+    >
+
+
+    <!-- Existing site CSS -->
+
+    <link
+        href="assets/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="assets/css/slick.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="assets/css/slick-theme.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    >
+
+    <link
+        href="assets/css/custom.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="assets/css/responsive.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Google Maps -->
+
+    <script
+        type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuX_jrF2mEltKATOVUuouVHdU2688XBfU"
+    ></script>
+
+
+    <style>
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .priceCalculatorPage {
+
+            background: #ffffff;
+
+            color: #111111;
+
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .priceCalculatorHero {
+
+            padding: 85px 20px 65px;
+
+            background: #ffffff;
+
+            text-align: center;
+
+        }
+
+        .priceCalculatorHero .eyebrow {
+
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: #e30d16;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+        .priceCalculatorHero h1 {
+
+            margin: 0 0 18px;
+
+            color: #111111;
+
+            font-size: 48px;
+
+            line-height: 1.15;
+
+            font-weight: 700;
+
+        }
+
+        .priceCalculatorHero p {
+
+            max-width: 720px;
+
+            margin: 0 auto;
+
+            color: #707070;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CALCULATOR SECTION
+        ===================================================== */
+
+        .priceCalculatorSection {
+
+            padding: 15px 20px 85px;
+
+            background: #ffffff;
+
+        }
+
+        .priceCalculatorContainer {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =====================================================
+           CALCULATOR BOX
+        ===================================================== */
+
+        .priceCalculatorBox {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border: 1px solid #dddddd;
+
+            background: #ffffff;
+
+            box-shadow: 0 18px 50px rgba(0,0,0,.09);
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .priceCalculatorForm {
+
+            padding: 50px;
+
+        }
+
+        .priceCalculatorForm h2 {
+
+            margin: 0 0 8px;
+
+            color: #111111;
+
+            font-size: 26px;
+
+            font-weight: 700;
+
+        }
+
+        .priceCalculatorIntro {
+
+            margin: 0 0 30px;
+
+            color: #777777;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           FIELD
+        ===================================================== */
+
+        .calculatorField {
+
+            margin-bottom: 20px;
+
+        }
+
+        .calculatorField label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #111111;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+        }
+
+        .calculatorInput,
+        .calculatorSelect {
+
+            width: 100%;
+
+            height: 53px;
+
+            padding: 0 15px;
+
+            border: 1px solid #d5d5d5;
+
+            border-radius: 2px;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: border-color .2s ease;
+
+        }
+
+        .calculatorInput:focus,
+        .calculatorSelect:focus {
+
+            border-color: #e30d16;
+
+        }
+
+
+        /* =====================================================
+           TRIP TYPE
+        ===================================================== */
+
+        .tripTypeOptions {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+        .tripTypeOption {
+
+            position: relative;
+
+        }
+
+        .tripTypeOption input {
+
+            position: absolute;
+
+            opacity: 0;
+
+        }
+
+        .tripTypeOption label {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            height: 50px;
+
+            margin: 0;
+
+            border: 1px solid #d5d5d5;
+
+            background: #ffffff;
+
+            color: #555555;
+
+            cursor: pointer;
+
+            transition: all .2s ease;
+
+        }
+
+        .tripTypeOption input:checked + label {
+
+            border-color: #e30d16;
+
+            background: #fff5f5;
+
+            color: #e30d16;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           CALCULATE BUTTON
+        ===================================================== */
+
+        .calculateFareButton {
+
+            width: 100%;
+
+            height: 55px;
+
+            margin-top: 5px;
+
+            border: 2px solid #e30d16;
+
+            border-radius: 2px;
+
+            background: #e30d16;
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition: all .25s ease;
+
+        }
+
+        .calculateFareButton:hover {
+
+            background: #ffffff;
+
+            color: #e30d16;
+
+        }
+
+        .calculateFareButton:disabled {
+
+            opacity: .65;
+
+            cursor: wait;
+
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        .calculatorError {
+
+            display: none;
+
+            margin-top: 12px;
+
+            color: #e30d16;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+        }
+
+        .calculatorError.show {
+
+            display: block;
+
+        }
+
+
+        /* =====================================================
+           RESULT PANEL
+        ===================================================== */
+
+        .priceResultPanel {
+
+            display: flex;
+
+            align-items: center;
+
+            min-height: 600px;
+
+            padding: 50px;
+
+            background: #111111;
+
+        }
+
+
+        /* =====================================================
+           INITIAL STATE
+        ===================================================== */
+
+        .resultInitial {
+
+            width: 100%;
+
+            text-align: center;
+
+        }
+
+        .resultDollar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 72px;
+
+            height: 72px;
+
+            margin: 0 auto 22px;
+
+            border: 2px solid #e30d16;
+
+            border-radius: 50%;
+
+            color: #e30d16;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+        }
+
+        .resultInitial h3 {
+
+            margin: 0 0 10px;
+
+            color: #ffffff;
+
+            font-size: 28px;
+
+        }
+
+        .resultInitial p {
+
+            max-width: 350px;
+
+            margin: 0 auto;
+
+            color: #999999;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           RESULT
+        ===================================================== */
+
+        .resultContent {
+
+            display: none;
+
+            width: 100%;
+
+        }
+
+        .resultContent.show {
+
+            display: block;
+
+        }
+
+        .resultLabel {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #e30d16;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+        .resultContent h3 {
+
+            margin: 0 0 25px;
+
+            color: #ffffff;
+
+            font-size: 30px;
+
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        .estimatedPrice {
+
+            padding: 25px 0;
+
+            margin-bottom: 25px;
+
+            border-top: 1px solid #333333;
+
+            border-bottom: 1px solid #333333;
+
+        }
+
+        .estimatedPrice span {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #999999;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+        .estimatedPrice strong {
+
+            color: #ffffff;
+
+            font-size: 42px;
+
+            line-height: 1;
+
+        }
+
+
+        /* =====================================================
+           DETAILS
+        ===================================================== */
+
+        .resultDetails {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+            margin-bottom: 22px;
+
+        }
+
+        .resultDetail {
+
+            padding: 15px;
+
+            background: #202020;
+
+        }
+
+        .resultDetail span {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #888888;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+        }
+
+        .resultDetail strong {
+
+            display: block;
+
+            color: #ffffff;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================================
+           NOTE
+        ===================================================== */
+
+        .resultNote {
+
+            margin: 0 0 25px;
+
+            color: #888888;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .resultButtons {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+        .resultButton {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 51px;
+
+            padding: 10px 15px;
+
+            border: 1px solid #e30d16;
+
+            text-decoration: none !important;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: .7px;
+
+            text-transform: uppercase;
+
+            transition: all .25s ease;
+
+        }
+
+        .bookRideButton {
+
+            background: #e30d16;
+
+            color: #ffffff !important;
+
+        }
+
+        .bookRideButton:hover {
+
+            background: #ffffff;
+
+            color: #e30d16 !important;
+
+        }
+
+        .quoteButton {
+
+            background: transparent;
+
+            color: #ffffff !important;
+
+        }
+
+        .quoteButton:hover {
+
+            background: #ffffff;
+
+            color: #111111 !important;
+
+        }
+
+
+        /* =====================================================
+           SEO CONTENT
+        ===================================================== */
+
+        .calculatorSeo {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding: 0 20px 85px;
+
+        }
+
+        .calculatorSeo h2 {
+
+            margin: 0 0 15px;
+
+            color: #111111;
+
+            font-size: 30px;
+
+        }
+
+        .calculatorSeo h3 {
+
+            margin: 35px 0 10px;
+
+            color: #111111;
+
+            font-size: 21px;
+
+        }
+
+        .calculatorSeo p {
+
+            margin: 0 0 15px;
+
+            color: #666666;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 767px) {
+
+            .priceCalculatorHero {
+
+                padding: 55px 18px 40px;
+
+            }
+
+            .priceCalculatorHero h1 {
+
+                font-size: 34px;
+
+            }
+
+            .priceCalculatorHero p {
+
+                font-size: 15px;
+
+            }
+
+            .priceCalculatorSection {
+
+                padding: 10px 15px 55px;
+
+            }
+
+            .priceCalculatorBox {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .priceCalculatorForm {
+
+                padding: 30px 22px;
+
+            }
+
+            .priceResultPanel {
+
+                min-height: 500px;
+
+                padding: 30px 22px;
+
+            }
+
+            .resultButtons {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="wrapper">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div id="header"></div>
+
+
+    <script>
+
+        fetch('header.html')
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                document
+                    .getElementById('header')
+                    .innerHTML = data;
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    'Header could not be loaded:',
+                    error
+                );
+
+            });
+
+    </script>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="priceCalculatorPage">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="priceCalculatorHero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    INSTANT FARE ESTIMATE
+                </span>
+
+                <h1>
+                    Limo Price Calculator
+                </h1>
+
+                <p>
+                    Get an estimated price for your private
+                    transportation by entering your pickup
+                    location, destination and preferred vehicle.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CALCULATOR
+        ================================================== -->
+
+        <section class="priceCalculatorSection">
+
+            <div class="priceCalculatorContainer">
+
+                <div class="priceCalculatorBox">
+
+
+                    <!-- =====================================
+                         FORM
+                    ====================================== -->
+
+                    <div class="priceCalculatorForm">
+
+                        <h2>
+                            Calculate Your Ride
+                        </h2>
+
+                        <p class="priceCalculatorIntro">
+                            Enter your trip details below to
+                            receive an estimated fare.
+                        </p>
+
+
+                        <!-- PICKUP -->
+
+                        <div class="calculatorField">
+
+                            <label for="calculatorPickup">
+                                Pickup Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="calculatorPickup"
+                                class="calculatorInput"
+                                placeholder="Enter pickup address"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <!-- DESTINATION -->
+
+                        <div class="calculatorField">
+
+                            <label for="calculatorDestination">
+                                Drop-off Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="calculatorDestination"
+                                class="calculatorInput"
+                                placeholder="Enter destination"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <!-- VEHICLE -->
+
+                        <div class="calculatorField">
+
+                            <label for="calculatorVehicle">
+                                Vehicle Type
+                            </label>
+
+                            <select
+                                id="calculatorVehicle"
+                                class="calculatorSelect"
+                            >
+
+                                <option value="">
+                                    Select Vehicle
+                                </option>
+
+                                <option value="sedan">
+                                    Sedan
+                                </option>
+
+                                <option value="suv">
+                                    SUV
+                                </option>
+
+                                <option value="limo">
+                                    Limousine
+                                </option>
+
+                                <option value="mini_bus">
+                                    Mini Bus
+                                </option>
+
+                                <option value="sprinter">
+                                    Sprinter Van
+                                </option>
+
+                                <option value="motor_coach">
+                                    Motor Coaches
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- TRIP TYPE -->
+
+                        <div class="calculatorField">
+
+                            <label>
+                                Trip Type
+                            </label>
+
+
+                            <div class="tripTypeOptions">
+
+
+                                <div class="tripTypeOption">
+
+                                    <input
+                                        type="radio"
+                                        name="calculatorTripType"
+                                        id="calculatorOneWay"
+                                        value="oneway"
+                                        checked
+                                    >
+
+                                    <label
+                                        for="calculatorOneWay"
+                                    >
+                                        One Way
+                                    </label>
+
+                                </div>
+
+
+                                <div class="tripTypeOption">
+
+                                    <input
+                                        type="radio"
+                                        name="calculatorTripType"
+                                        id="calculatorRoundTrip"
+                                        value="roundtrip"
+                                    >
+
+                                    <label
+                                        for="calculatorRoundTrip"
+                                    >
+                                        Round Trip
+                                    </label>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CALCULATE -->
+
+                        <button
+                            type="button"
+                            id="calculateFare"
+                            class="calculateFareButton"
+                        >
+
+                            Calculate Estimated Fare
+
+                        </button>
+
+
+                        <div
+                            id="calculatorError"
+                            class="calculatorError"
+                        ></div>
+
+
+                    </div>
+
+
+                    <!-- =====================================
+                         RESULT
+                    ====================================== -->
+
+                    <div class="priceResultPanel">
+
+
+                        <!-- INITIAL -->
+
+                        <div
+                            id="resultInitial"
+                            class="resultInitial"
+                        >
+
+                            <div class="resultDollar">
+                                $
+                            </div>
+
+                            <h3>
+                                Your Estimated Fare
+                            </h3>
+
+                            <p>
+                                Enter your trip details to see
+                                your estimated transportation price.
+                            </p>
+
+                        </div>
+
+
+                        <!-- RESULT -->
+
+                        <div
+                            id="resultContent"
+                            class="resultContent"
+                        >
+
+                            <span class="resultLabel">
+                                ESTIMATED FARE
+                            </span>
+
+                            <h3>
+                                Your Ride Estimate
+                            </h3>
+
+
+                            <!-- PRICE -->
+
+                            <div class="estimatedPrice">
+
+                                <span>
+                                    Estimated Price
+                                </span>
+
+                                <strong
+                                    id="estimatedPrice"
+                                >
+                                    $0
+                                </strong>
+
+                            </div>
+
+
+                            <!-- DETAILS -->
+
+                            <div class="resultDetails">
+
+
+                                <div class="resultDetail">
+
+                                    <span>
+                                        Distance
+                                    </span>
+
+                                    <strong
+                                        id="resultDistance"
+                                    >
+                                        —
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="resultDetail">
+
+                                    <span>
+                                        Drive Time
+                                    </span>
+
+                                    <strong
+                                        id="resultDuration"
+                                    >
+                                        —
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="resultDetail">
+
+                                    <span>
+                                        Vehicle
+                                    </span>
+
+                                    <strong
+                                        id="resultVehicle"
+                                    >
+                                        —
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="resultDetail">
+
+                                    <span>
+                                        Trip
+                                    </span>
+
+                                    <strong
+                                        id="resultTrip"
+                                    >
+                                        —
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <p class="resultNote">
+
+                                This is an estimated fare only.
+                                Final pricing may vary based on
+                                trip requirements, waiting time,
+                                stops, tolls and other applicable
+                                charges.
+
+                            </p>
+
+
+                            <!-- BUTTONS -->
+
+                            <div class="resultButtons">
+
+                                <a
+                                    href="reservation.html#reservationPgSection"
+                                    class="resultButton bookRideButton"
+                                >
+                                    Book This Ride
+                                </a>
+
+
+                                <a
+                                    href="contact-us.html"
+                                    class="resultButton quoteButton"
+                                >
+                                    Get Exact Quote
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div id="footer"></div>
+
+
+    <script>
+
+        fetch('footer.html')
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                document
+                    .getElementById('footer')
+                    .innerHTML = data;
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    'Footer could not be loaded:',
+                    error
+                );
+
+            });
+
+    </script>
+
+
+</div>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* =========================================================
+   PRICING CONFIGURATION
+
+   IMPORTANT:
+   THESE ARE PLACEHOLDER VALUES.
+
+   The source code you provided contains the vehicle names
+   but does NOT contain the actual pricing/rates.
+
+   Replace these once the client confirms pricing.
+========================================================= */
+
+const AS4L_PRICING = {
+
+    sedan: {
+
+        name: "Sedan",
+
+        base: 50,
+
+        perMile: 4.50,
+
+        minimum: 75
+
+    },
+
+    suv: {
+
+        name: "SUV",
+
+        base: 65,
+
+        perMile: 5.25,
+
+        minimum: 90
+
+    },
+
+    limo: {
+
+        name: "Limousine",
+
+        base: 85,
+
+        perMile: 6.00,
+
+        minimum: 110
+
+    },
+
+    mini_bus: {
+
+        name: "Mini Bus",
+
+        base: 150,
+
+        perMile: 9.00,
+
+        minimum: 200
+
+    },
+
+    sprinter: {
+
+        name: "Sprinter Van",
+
+        base: 100,
+
+        perMile: 7.50,
+
+        minimum: 150
+
+    },
+
+    motor_coach: {
+
+        name: "Motor Coach",
+
+        base: 250,
+
+        perMile: 13.00,
+
+        minimum: 350
+
+    }
+
+};
+
+
+/* =========================================================
+   GOOGLE MAPS
+========================================================= */
+
+let as4lDirectionsService = null;
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function initializePriceCalculator() {
+
+
+    if (
+        typeof google === "undefined" ||
+        !google.maps
+    ) {
+
+        console.error(
+            "Google Maps could not be loaded."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Directions service
+    */
+
+    as4lDirectionsService =
+        new google.maps.DirectionsService();
+
+
+    /*
+       Pickup autocomplete
+    */
+
+    const pickup =
+        document.getElementById(
+            "calculatorPickup"
+        );
+
+
+    /*
+       Destination autocomplete
+    */
+
+    const destination =
+        document.getElementById(
+            "calculatorDestination"
+        );
+
+
+    if (
+        pickup &&
+        destination &&
+        google.maps.places
+    ) {
+
+
+        new google.maps.places.Autocomplete(
+            pickup,
+            {
+                fields: [
+                    "formatted_address",
+                    "geometry",
+                    "name"
+                ]
+            }
+        );
+
+
+        new google.maps.places.Autocomplete(
+            destination,
+            {
+                fields: [
+                    "formatted_address",
+                    "geometry",
+                    "name"
+                ]
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CALCULATE FARE
+========================================================= */
+
+document
+    .getElementById(
+        "calculateFare"
+    )
+    .addEventListener(
+        "click",
+        function() {
+
+
+            const pickup =
+                document
+                    .getElementById(
+                        "calculatorPickup"
+                    )
+                    .value
+                    .trim();
+
+
+            const destination =
+                document
+                    .getElementById(
+                        "calculatorDestination"
+                    )
+                    .value
+                    .trim();
+
+
+            const vehicle =
+                document
+                    .getElementById(
+                        "calculatorVehicle"
+                    )
+                    .value;
+
+
+            const tripType =
+                document
+                    .querySelector(
+                        'input[name="calculatorTripType"]:checked'
+                    )
+                    .value;
+
+
+            const error =
+                document.getElementById(
+                    "calculatorError"
+                );
+
+
+            const button =
+                document.getElementById(
+                    "calculateFare"
+                );
+
+
+            /*
+               Clear error
+            */
+
+            error.classList.remove(
+                "show"
+            );
+
+
+            /*
+               Validation
+            */
+
+            if (!pickup) {
+
+                showCalculatorError(
+                    "Please enter your pickup location."
+                );
+
+                return;
+
+            }
+
+
+            if (!destination) {
+
+                showCalculatorError(
+                    "Please enter your drop-off location."
+                );
+
+                return;
+
+            }
+
+
+            if (!vehicle) {
+
+                showCalculatorError(
+                    "Please select a vehicle."
+                );
+
+                return;
+
+            }
+
+
+            if (!as4lDirectionsService) {
+
+                showCalculatorError(
+                    "The map service is still loading. Please try again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+               Loading
+            */
+
+            button.disabled = true;
+
+            button.textContent =
+                "Calculating...";
+
+
+            /*
+               Get Google route
+            */
+
+            as4lDirectionsService.route(
+
+                {
+
+                    origin:
+                        pickup,
+
+                    destination:
+                        destination,
+
+                    travelMode:
+                        google.maps.TravelMode.DRIVING
+
+                },
+
+                function(
+                    response,
+                    status
+                ) {
+
+
+                    button.disabled =
+                        false;
+
+
+                    button.textContent =
+                        "Calculate Estimated Fare";
+
+
+                    /*
+                       Error
+                    */
+
+                    if (
+                        status !== "OK"
+                    ) {
+
+                        showCalculatorError(
+                            "We couldn't calculate this route. Please check your pickup and destination."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /*
+                       Get route leg
+                    */
+
+                    const leg =
+                        response
+                            .routes[0]
+                            .legs[0];
+
+
+                    /*
+                       Google gives meters.
+
+                       Convert to miles.
+                    */
+
+                    let miles =
+                        leg
+                            .distance
+                            .value /
+                        1609.344;
+
+
+                    miles =
+                        Math.round(
+                            miles * 10
+                        ) / 10;
+
+
+                    /*
+                       Vehicle pricing
+                    */
+
+                    const pricing =
+                        AS4L_PRICING[
+                            vehicle
+                        ];
+
+
+                    let fare =
+                        pricing.base +
+                        (
+                            miles *
+                            pricing.perMile
+                        );
+
+
+                    /*
+                       Minimum fare
+                    */
+
+                    if (
+                        fare <
+                        pricing.minimum
+                    ) {
+
+                        fare =
+                            pricing.minimum;
+
+                    }
+
+
+                    /*
+                       Round trip
+                    */
+
+                    if (
+                        tripType ===
+                        "roundtrip"
+                    ) {
+
+                        fare =
+                            fare * 2;
+
+                    }
+
+
+                    /*
+                       Price range
+
+                       We don't show a precise
+                       calculated number because this
+                       is an ESTIMATE.
+                    */
+
+                    const low =
+                        Math.round(
+                            (
+                                fare *
+                                0.95
+                            ) / 5
+                        ) * 5;
+
+
+                    const high =
+                        Math.round(
+                            (
+                                fare *
+                                1.10
+                            ) / 5
+                        ) * 5;
+
+
+                    /*
+                       Display price
+                    */
+
+                    document
+                        .getElementById(
+                            "estimatedPrice"
+                        )
+                        .textContent =
+                        "$" +
+                        low +
+                        " – $" +
+                        high;
+
+
+                    /*
+                       Distance
+                    */
+
+                    document
+                        .getElementById(
+                            "resultDistance"
+                        )
+                        .textContent =
+                        miles +
+                        " miles";
+
+
+                    /*
+                       Duration
+                    */
+
+                    document
+                        .getElementById(
+                            "resultDuration"
+                        )
+                        .textContent =
+                        leg
+                            .duration
+                            .text;
+
+
+                    /*
+                       Vehicle
+                    */
+
+                    document
+                        .getElementById(
+                            "resultVehicle"
+                        )
+                        .textContent =
+                        pricing.name;
+
+
+                    /*
+                       Trip type
+                    */
+
+                    document
+                        .getElementById(
+                            "resultTrip"
+                        )
+                        .textContent =
+                        tripType ===
+                        "roundtrip"
+                            ? "Round Trip"
+                            : "One Way";
+
+
+                    /*
+                       Hide initial state
+                    */
+
+                    document
+                        .getElementById(
+                            "resultInitial"
+                        )
+                        .style.display =
+                        "none";
+
+
+                    /*
+                       Show result
+                    */
+
+                    document
+                        .getElementById(
+                            "resultContent"
+                        )
+                        .classList.add(
+                            "show"
+                        );
+
+
+                    /*
+                       Scroll result on mobile
+                    */
+
+                    if (
+                        window.innerWidth <
+                        768
+                    ) {
+
+                        document
+                            .getElementById(
+                                "resultContent"
+                            )
+                            .scrollIntoView({
+                                behavior:
+                                    "smooth",
+                                block:
+                                    "start"
+                            });
+
+                    }
+
+                }
+
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+function showCalculatorError(
+    message
+) {
+
+    const error =
+        document.getElementById(
+            "calculatorError"
+        );
+
+
+    error.textContent =
+        message;
+
+
+    error.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   START GOOGLE MAPS
+========================================================= */
+
+if (
+    typeof google !== "undefined" &&
+    google.maps
+) {
+
+    initializePriceCalculator();
+
+}
+
+else {
+
+    /*
+       In case Google Maps is still loading,
+       wait and initialize.
+    */
+
+    window.addEventListener(
+        "load",
+        function() {
+
+            initializePriceCalculator();
+
+        }
+    );
+
+}
+
+</script>
+
+
+<!-- Existing site JS -->
+
+<script src="assets/js/jquery-3.7.1.js"></script>
+
+<script src="assets/js/jquery.fancybox.min.js"></script>
+
+<script src="assets/js/slick.min.js"></script>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/custom.js"></script>
+
+<script src="Scripts/Default.js"></script>
+
+
+</body>
+
+</html>

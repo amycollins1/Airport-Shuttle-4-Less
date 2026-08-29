@@ -608,14 +608,14 @@ function QuoteMail() {
 //     });
 // }
 
-var token = grecaptcha.getResponse();
+// var token = grecaptcha.getResponse();
 
-if (token.length === 0) {
-    hideLoader();
-    showMsg("Please complete the CAPTCHA.", "error");
-    $btn.prop("disabled", false).text("GET YOUR QUOTE");
-    return;
-}
+// if (token.length === 0) {
+//     hideLoader();
+//     showMsg("Please complete the CAPTCHA.", "error");
+//     $btn.prop("disabled", false).text("GET YOUR QUOTE");
+//     return;
+// }
 
 var Data = {
     first_name: first_name,
@@ -633,7 +633,8 @@ var Data = {
     message: message,
     current_page_url: current_page_url,
     CCEmails: CCEmails,
-    gRecaptchaToken: token
+    // gRecaptchaToken: token
+    website: $("#website").val()
 };
 
 $.ajax({
@@ -652,12 +653,12 @@ $.ajax({
             resetForm();
 
             // Optional: reset the checkbox after success
-            grecaptcha.reset();
+            // grecaptcha.reset();
         } else {
             showMsg(obj.Msg || "Something went wrong while sending enquiry mail.", "error");
 
             // Optional: reset the checkbox after failure too
-            grecaptcha.reset();
+            // grecaptcha.reset();
         }
 
         $btn.prop("disabled", false).text("GET YOUR QUOTE");
@@ -667,7 +668,7 @@ $.ajax({
         showMsg("A network error occurred. Please try again.", "error");
 
         // Optional: reset the checkbox after error
-        grecaptcha.reset();
+        // grecaptcha.reset();
 
         $btn.prop("disabled", false).text("GET YOUR QUOTE");
     }

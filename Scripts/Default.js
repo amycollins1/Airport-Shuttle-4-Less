@@ -510,19 +510,20 @@ function QuoteMail() {
     // var emailid = $("#emailid").val();
     // var message = $("#quote_message").val();
 
-    var first_name = $("#first_name").val();
-    var last_name = "";
-    var pick_up_time = "";
-    var service_type = "";
-    var vehicle_type = "";
-    var hours = "";
-    var passengers = "";
-    var pick_up_date = $("#pick_up_date").val();
-    var pick_up_location = $("#pick_up_location").val();
-    var destination = $("#destination").val();
-    var phone = $("#phone").val();
-    var emailid = $("#emailid").val();
-    var message = $("#quote_message").val();
+    var first_name = $("#first_name").val() || "";
+    var last_name = $("#last_name").val() || "";
+    var pick_up_date = $("#pick_up_date").val() || "";
+    var pick_up_time = $("#pick_up_time").val() || "";
+    var pick_up_location = $("#pick_up_location").val() || "";
+    var destination = $("#destination").val() || "";
+    var service_type = $("#service_type").val() || "";
+    var vehicle_type = $("#vehicle_type").val() || "";
+    var hours = $("#hours").val() || "";
+    var passengers = $("#passengers").val() || "";
+    var phone = $("#phone").val() || "";
+    var emailid = $("#emailid").val() || "";
+    var message = $("#quote_message").val() || "";
+
 
     // Get current page URL
     var current_page_url = window.location.href;

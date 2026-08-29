@@ -104,9 +104,9 @@ gtag('config', 'AW-16647266454');
                         <p>If you prefer instant pricing and immediate reservations, please <b><a href="reservation.html#reservationPgSection"> click here</a></b>.</p>
                         <form class="quote-form" >
                             <!-- First Name -->
-                            <input type="text" name="first_name" id="first_name" placeholder="First Name" required />
+                            <input type="text" name="first_name" id="first_name" placeholder="Your Name" required />
                             <!-- Last Name -->
-                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required />
+                            <!-- <input type="text" name="last_name" id="last_name" placeholder="Last Name" required /> -->
 
                             <!-- Phone -->
                             <input type="tel" name="phone" id="phone" placeholder="Phone" required />
@@ -114,9 +114,9 @@ gtag('config', 'AW-16647266454');
                             <input type="email" name="email" id="emailid" placeholder="Email" required />
     
                             <!-- Pick Up Date -->
-                            <input type="date" name="pick_up_date" id="pick_up_date" required />
+                            <input type="text" name="pick_up_date" id="pick_up_date" placeholder="Pickup Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required/>
                             <!-- Pick Up Time -->
-                            <input type="time" name="pick_up_time" id="pick_up_time" required />
+                            <!-- <input type="time" name="pick_up_time" id="pick_up_time" required /> -->
     
                             <!-- Pick Up Location -->
                             <input type="text" name="pick_up_location" id="pick_up_location"  placeholder="Pick Up Location" autocomplete="off"  required /> 
@@ -124,7 +124,7 @@ gtag('config', 'AW-16647266454');
                             <input type="text" name="destination" id="destination" placeholder="Destination" autocomplete="off" required />
     
                             <!-- Type of Service -->
-                            <select name="service_type" id="service_type" required>
+                            <!-- <select name="service_type" id="service_type" required>
                                 <option value="" disabled selected>Type of Service</option>
                                 <option value="point-to-point">Point to Point</option>
                                 <option value="airport">Airport Transfer</option>
@@ -132,10 +132,10 @@ gtag('config', 'AW-16647266454');
                                 <option value="wedding">Wedding</option>
                                 <option value="corporate">Corporate Event</option>
                                 <option value="other">Other</option>
-                            </select>
+                            </select> -->
     
                             <!-- Vehicle Types -->
-                            <select name="vehicle_type" id="vehicle_type" required>
+                            <!-- <select name="vehicle_type" id="vehicle_type" required>
                                 <option value="" disabled selected>Vehicle Types</option>
                                 <option value="sedan">Sedan</option>
                                 <option value="suv">SUV</option>
@@ -143,13 +143,13 @@ gtag('config', 'AW-16647266454');
                                 <option value="bus">Mini Bus</option>
                                 <option value="sprinter-van">Sprinter Van</option>
                                 <option value="motor-coaches">Motor Coaches</option>
-                            </select>
+                            </select> -->
     
                             <!-- # Hours -->
-                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required />
+                            <!-- <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required /> -->
                             <!-- Passengers -->
-                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required />
-
+                            <!-- <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required /> -->
+ 
                             <!-- Message / Note -->
                             <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"></textarea>
     

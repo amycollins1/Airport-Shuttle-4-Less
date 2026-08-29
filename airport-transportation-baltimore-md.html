@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <p>If you prefer instant pricing and immediate reservations, please <b><a href="reservation.html#reservationPgSection"> click here</a></b>.</p>
                         <form class="quote-form" >
                             <!-- First Name -->
-                            <input type="text" name="name" id="name" placeholder="Your Name" required />
+                            <input type="text" name="first_name" id="first_name" placeholder="Your Name" required />
                             <!-- Last Name -->
                             <!-- <input type="text" name="last_name" id="last_name" placeholder="Last Name" required /> -->
 
@@ -114,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <input type="email" name="email" id="emailid" placeholder="Email" required />
     
                             <!-- Pick Up Date -->
-                            <input type="date" name="pick_up_date" id="pick_up_date" required />
+                            <input type="text" name="pick_up_date" id="pick_up_date" placeholder="Pickup Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required/>
                             <!-- Pick Up Time -->
                             <!-- <input type="time" name="pick_up_time" id="pick_up_time" required /> -->
     
@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <!-- <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required /> -->
                             <!-- Passengers -->
                             <!-- <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required /> -->
-
+ 
                             <!-- Message / Note -->
                             <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"></textarea>
     

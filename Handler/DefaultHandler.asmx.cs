@@ -195,7 +195,14 @@ namespace Frederick.Handler
         }
 
         [WebMethod(true)]
-        public string QuoteMail(string first_name, string last_name, string pick_up_date, string pick_up_time, string pick_up_location, string destination, string service_type, string vehicle_type, string hours, string passengers, string phone, string email, string message, string current_page_url, string CCEmails, string website)
+        public string QuoteMail(string first_name, 
+        string last_name,
+         string pick_up_date, 
+         string pick_up_time, 
+         string pick_up_location, 
+         string destination, 
+         string service_type, string vehicle_type, string hours, string passengers, 
+         string phone, string email, string message, string current_page_url, string CCEmails, string website)
         {
             try
             {
@@ -236,8 +243,13 @@ namespace Frederick.Handler
                 // }
                 // Create a unique hash for the enquiry data
                 string enquiryHash = string.Join("|",
-                    first_name, last_name, pick_up_date, pick_up_time, pick_up_location, destination,
-                    service_type, vehicle_type, hours, passengers, phone, email, message, current_page_url, CCEmails
+                    first_name, 
+                    // last_name, 
+                    pick_up_date, 
+                    // pick_up_time, 
+                    pick_up_location, destination,
+                    // service_type, vehicle_type, hours, passengers, 
+                    phone, email, message, current_page_url, CCEmails
                 ).GetHashCode().ToString();
 
                 // Use session to store last enquiry info per email
@@ -256,7 +268,32 @@ namespace Frederick.Handler
                 // Store this enquiry in session
                 Context.Session[sessionKey] = Tuple.Create(enquiryHash, now);
 
-                EmailManager.QuoteMail(first_name, last_name, pick_up_date, pick_up_time, pick_up_location, destination, service_type, vehicle_type, hours, passengers, phone, email, message, current_page_url, CCEmails);
+                // EmailManager.QuoteMail(first_name, 
+                // last_name, 
+                // pick_up_date, 
+                // pick_up_time, 
+                // pick_up_location, 
+                // destination, 
+                // service_type, vehicle_type, hours, passengers, 
+                // phone, email, message, current_page_url, CCEmails);
+
+                EmailManager.QuoteMail(
+                first_name,
+                "",
+                pick_up_date,
+                "",
+                pick_up_location,
+                destination,
+                "",
+                "",
+                "",
+                "",
+                phone,
+                email,
+                message,
+                current_page_url,
+                CCEmails
+            );
 
                 return jsSerializer.Serialize(new { retCode = 1 });
             }

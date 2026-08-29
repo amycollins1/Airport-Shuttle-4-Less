@@ -496,16 +496,30 @@ function EnquiryMail() {
 }
 
 function QuoteMail() {
+    // var first_name = $("#first_name").val();
+    // var last_name = $("#last_name").val();
+    // var pick_up_date = $("#pick_up_date").val();
+    // var pick_up_time = $("#pick_up_time").val();
+    // var pick_up_location = $("#pick_up_location").val();
+    // var destination = $("#destination").val();
+    // var service_type = $("#service_type").val();
+    // var vehicle_type = $("#vehicle_type").val();
+    // var hours = $("#hours").val();
+    // var passengers = $("#passengers").val();
+    // var phone = $("#phone").val();
+    // var emailid = $("#emailid").val();
+    // var message = $("#quote_message").val();
+
     var first_name = $("#first_name").val();
-    var last_name = $("#last_name").val();
+    var last_name = "";
+    var pick_up_time = "";
+    var service_type = "";
+    var vehicle_type = "";
+    var hours = "";
+    var passengers = "";
     var pick_up_date = $("#pick_up_date").val();
-    var pick_up_time = $("#pick_up_time").val();
     var pick_up_location = $("#pick_up_location").val();
     var destination = $("#destination").val();
-    var service_type = $("#service_type").val();
-    var vehicle_type = $("#vehicle_type").val();
-    var hours = $("#hours").val();
-    var passengers = $("#passengers").val();
     var phone = $("#phone").val();
     var emailid = $("#emailid").val();
     var message = $("#quote_message").val();
@@ -553,15 +567,15 @@ function QuoteMail() {
         return false;
     }
     if (first_name == "") return fail("Please Enter First Name");
-    if (last_name == "") return fail("Please Enter Last Name");
+    // if (last_name == "") return fail("Please Enter Last Name");
     if (pick_up_date == "") return fail("Please Enter Pick_up Date");
-    if (pick_up_time == "") return fail("Please Enter Pick_up time");
+    // if (pick_up_time == "") return fail("Please Enter Pick_up time");
     if (pick_up_location == "") return fail("Please Enter Pick_up Location");
     if (destination == "") return fail("Please Enter destination");
-    if (service_type == "") return fail("Please Enter Service Type");
-    if (vehicle_type == "") return fail("Please Enter Vehicle Type");
-    if (hours == "") return fail("Please Enter Hours");
-    if (passengers == "") return fail("Please Enter Passengers");
+    // if (service_type == "") return fail("Please Enter Service Type");
+    // if (vehicle_type == "") return fail("Please Enter Vehicle Type");
+    // if (hours == "") return fail("Please Enter Hours");
+    // if (passengers == "") return fail("Please Enter Passengers");
     if (emailid != "") { if (!validateEmail(emailid)) return fail("Please enter valid Email ID"); }
     if (phone == "") return fail("Please Enter Phone No");
     if ($("#website").val() !== "") {return fail("Invalid request.");}

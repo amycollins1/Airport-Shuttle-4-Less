@@ -181,11 +181,11 @@
                   now!</p>
                 <form class="quote-form" >
                             <!-- First Name -->
-                            <input type="text" name="first_name" id="first_name" placeholder="First Name" required 
+                            <input type="text" name="first_name" id="first_name" placeholder="Your Name" required 
                             style="border:1px solid #e30d16;"/>
                             <!-- Last Name -->
-                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required 
-                            style="border:1px solid #e30d16;"/>
+                            <!-- <input type="text" name="last_name" id="last_name" placeholder="Last Name" required 
+                            style="border:1px solid #e30d16;"/> -->
 
                             <!-- Phone -->
                             <input type="tel" name="phone" id="phone" placeholder="Phone" required 
@@ -195,11 +195,11 @@
                             style="border:1px solid #e30d16;"/>
     
                             <!-- Pick Up Date -->
-                            <input type="date" name="pick_up_date" id="pick_up_date" required 
+                            <input type="text" name="pick_up_date" id="pick_up_date" placeholder="Pickup Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required
                             style="border:1px solid #e30d16;"/>
                             <!-- Pick Up Time -->
-                            <input type="time" name="pick_up_time" id="pick_up_time" required 
-                            style="border:1px solid #e30d16;"/>
+                            <!-- <input type="time" name="pick_up_time" id="pick_up_time" required 
+                            style="border:1px solid #e30d16;"/> -->
     
                             <!-- Pick Up Location -->
                             <input type="text" name="pick_up_location" id="pick_up_location"  placeholder="Pick Up Location" autocomplete="off"  required 
@@ -209,7 +209,7 @@
                             style="border:1px solid #e30d16;"/>
     
                             <!-- Type of Service -->
-                            <select name="service_type" id="service_type" required
+                            <!-- <select name="service_type" id="service_type" required
                             style="border:1px solid #e30d16;">
                                 <option value="" disabled selected>Type of Service</option>
                                 <option value="point-to-point">Point to Point</option>
@@ -218,10 +218,10 @@
                                 <option value="wedding">Wedding</option>
                                 <option value="corporate">Corporate Event</option>
                                 <option value="other">Other</option>
-                            </select>
+                            </select> -->
     
                             <!-- Vehicle Types -->
-                            <select name="vehicle_type" id="vehicle_type" required
+                            <!-- <select name="vehicle_type" id="vehicle_type" required
                             style="border:1px solid #e30d16;">
                                 <option value="" disabled selected>Vehicle Types</option>
                                 <option value="sedan">Sedan</option>
@@ -230,14 +230,14 @@
                                 <option value="bus">Mini Bus</option>
                                 <option value="sprinter-van">Sprinter Van</option>
                                 <option value="motor-coaches">Motor Coaches</option>
-                            </select>
+                            </select> -->
     
                             <!-- # Hours -->
-                            <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" max="24" required 
-                            style="border:1px solid #e30d16;"/>
+                            <!-- <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" max="24" required 
+                            style="border:1px solid #e30d16;"/> -->
                             <!-- Passengers -->
-                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" max="56" required 
-                            style="border:1px solid #e30d16;"/>
+                            <!-- <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" max="56" required 
+                            style="border:1px solid #e30d16;"/> -->
 
                             <!-- Message / Note -->
                             <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"

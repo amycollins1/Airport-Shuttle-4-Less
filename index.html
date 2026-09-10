@@ -207,7 +207,7 @@
         </section>
         <body>
             <!-- Star Button -->
-            <a href="dmv-to-philadelphia-world-cup-transportation.html" class="star-prompt" title="Special Offers">
+            <!-- <a href="dmv-to-philadelphia-world-cup-transportation.html" class="star-prompt" title="Special Offers">
                 ★ FIFA World Cup 2026
             </a>
 
@@ -238,7 +238,7 @@
                         background: darkred;
                         transform: translateY(50%) scale(1.05);
                     }
-            </style>
+            </style> -->
 
 
             <div id="dvMap" style="display: none"></div>
@@ -5228,6 +5228,22 @@
                             <!-- Destination -->
                             <input type="text" name="destination" id="destination" placeholder="Destination" autocomplete="off" required />
  
+                            <!-- Vehicle Types -->
+                            <select name="vehicle_type" id="vehicle_type" required>
+                                <option value="" disabled selected>Vehicle Types</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="limo">Limousine</option>
+                                <option value="bus">Mini Bus</option>
+                                <option value="sprinter-van">Sprinter Van</option>
+                                <option value="motor-coaches">Motor Coaches</option>
+                            </select>
+    
+                            <!-- # Hours -->
+                            <!-- <input type="number" name="hours" id="hours" placeholder="# Hours" min="1" required /> -->
+                            <!-- Passengers -->
+                            <input type="number" name="passengers" id="passengers" placeholder="Passengers" min="1" required />
+
                             <!-- Message / Note -->
                             <textarea name="quote_message" id="quote_message" placeholder="Add a message or note (optional)" rows="2"></textarea>
     

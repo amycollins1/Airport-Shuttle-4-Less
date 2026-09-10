@@ -277,24 +277,6 @@ namespace Frederick.Handler
                 service_type, vehicle_type, hours, passengers, 
                 phone, email, message, current_page_url, CCEmails);
 
-            //     EmailManager.QuoteMail(
-            //     first_name,
-            //     "",
-            //     pick_up_date,
-            //     "",
-            //     pick_up_location,
-            //     destination,
-            //     "",
-            //     "",
-            //     "",
-            //     "",
-            //     phone,
-            //     email,
-            //     message,
-            //     current_page_url,
-            //     CCEmails
-            // );
-
                 return jsSerializer.Serialize(new { retCode = 1 });
             }
             catch (Exception ex)

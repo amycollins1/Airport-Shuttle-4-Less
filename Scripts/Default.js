@@ -567,18 +567,18 @@ function QuoteMail() {
         $btn.prop('disabled', false).text('GET YOUR QUOTE');
         return false;
     }
-    if (first_name == "") return fail("Please Enter First Name");
+    if (first_name == "") return fail("Please Enter Your Name");
+    if (phone == "") return fail("Please Enter Phone No");
+    if (emailid == "") { if (!validateEmail(emailid)) return fail("Please enter valid Email ID"); }
     // if (last_name == "") return fail("Please Enter Last Name");
     if (pick_up_date == "") return fail("Please Enter Pick_up Date");
     // if (pick_up_time == "") return fail("Please Enter Pick_up time");
     if (pick_up_location == "") return fail("Please Enter Pick_up Location");
     if (destination == "") return fail("Please Enter destination");
     // if (service_type == "") return fail("Please Enter Service Type");
-    // if (vehicle_type == "") return fail("Please Enter Vehicle Type");
+    if (vehicle_type == "") return fail("Please Enter Vehicle Type");
     // if (hours == "") return fail("Please Enter Hours");
-    // if (passengers == "") return fail("Please Enter Passengers");
-    if (emailid != "") { if (!validateEmail(emailid)) return fail("Please enter valid Email ID"); }
-    if (phone == "") return fail("Please Enter Phone No");
+    if (passengers == "") return fail("Please Enter Passengers");
     if ($("#website").val() !== "") {return fail("Invalid request.");}
 
 //     var Data = {

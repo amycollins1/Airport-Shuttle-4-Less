@@ -732,7 +732,7 @@ function convertTime12to24(MyTime) {
     }
     return (MyTime.replace(/(AM|PM)/, '')).trim();
 }
-var CCEmails = "amy.collins244@gmail.com,khazhar007@gmail.com";
+var CCEmails = "amy.collins244@gmail.com";
 function OpenTermsPopup(open) {
     if (open == 'Terms') {
         $("#termsModal").modal('show')

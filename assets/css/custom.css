@@ -1098,26 +1098,32 @@ button.btn-close {
   color: #fff;
 }
 .fixedbg {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 60px 0;
-  color: #fff;
-  z-index: 1;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 0;
+    color: #fff;
+    overflow: hidden;
 }
 
 .fixedbg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
 }
 
 .fixedbg .container {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .fixedbg {
+        background-attachment: scroll;
+    }
 }
 
 @media (max-width: 600px) {

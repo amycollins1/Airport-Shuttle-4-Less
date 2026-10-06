@@ -115,6 +115,41 @@
 </head>
 <body>
 
+    <!-- Star Button -->
+        <a href="tel:+14433363333" class="star-prompt" title="Special Offers">
+                <i class="fa fa-phone"></i>Call Us For Special Pricing
+        </a>
+
+        <style>
+            .star-prompt {
+                position: fixed;
+                right: 20px; /* distance from right edge */
+                    bottom: 60%; /* moved a bit higher */
+                    transform: translateY(50%);
+                    background: red; /* red background */
+                    color: white; /* text color */
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 10px 16px;
+                    border-radius: 25px; /* pill shape for text + icon */
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+                    text-decoration: none;
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px; /* space between star and text */
+                    transition: transform 0.2s ease, background 0.2s ease;
+                    white-space: nowrap; /* prevent text from breaking */
+                }
+
+                    .star-prompt:hover {
+                        background: darkred;
+                        color: white !important; /* text color */
+                        transform: translateY(50%) scale(1.05);
+                    }
+        </style>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54676SGW"
@@ -206,41 +241,7 @@
             </div>
         </section>
         <body>
-            <!-- Star Button -->
-            <!-- <a href="dmv-to-philadelphia-world-cup-transportation.html" class="star-prompt" title="Special Offers">
-                ★ FIFA World Cup 2026
-            </a>
-
-            <style>
-                .star-prompt {
-                    position: fixed;
-                    right: 20px; /* distance from right edge */
-                    bottom: 60%; /* moved a bit higher */
-                    transform: translateY(50%);
-                    background: red; /* red background */
-                    color: white; /* text color */
-                    font-size: 16px;
-                    font-weight: bold;
-                    text-align: center;
-                    padding: 10px 16px;
-                    border-radius: 25px; /* pill shape for text + icon */
-                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-                    text-decoration: none;
-                    z-index: 9999;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px; /* space between star and text */
-                    transition: transform 0.2s ease, background 0.2s ease;
-                    white-space: nowrap; /* prevent text from breaking */
-                }
-
-                    .star-prompt:hover {
-                        background: darkred;
-                        transform: translateY(50%) scale(1.05);
-                    }
-            </style> -->
-
-
+            
             <div id="dvMap" style="display: none"></div>
             <div id="dvPanel" style="display: none"></div>
 
@@ -5673,9 +5674,9 @@
                 <a href="reservation.html" class="whiteText text-uppercase">Reservation</a>
             </section>
             <!-- fixedCallIcon -->
-            <section class="fixedCallIcon primaryBg">
+            <!-- <section class="fixedCallIcon primaryBg">
                 <a href="tel:18443403333" class="whiteText"><i class="fa fa-phone"></i></a>
-            </section>
+            </section> -->
             <!-- Modal -->
             <div class="modal fade" id="termsNconModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">

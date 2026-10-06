@@ -50,6 +50,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 <body>
+    <!-- Star Button -->
+        <a href="tel:+14433363333" class="star-prompt" title="Special Offers">
+                <i class="fa fa-phone"></i>Call Us For Special Pricing
+        </a>
+
+        <style>
+            .star-prompt {
+                position: fixed;
+                right: 20px; /* distance from right edge */
+                    bottom: 60%; /* moved a bit higher */
+                    transform: translateY(50%);
+                    background: red; /* red background */
+                    color: white; /* text color */
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 10px 16px;
+                    border-radius: 25px; /* pill shape for text + icon */
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+                    text-decoration: none;
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px; /* space between star and text */
+                    transition: transform 0.2s ease, background 0.2s ease;
+                    white-space: nowrap; /* prevent text from breaking */
+                }
+
+                    .star-prompt:hover {
+                        background: darkred;
+                        color: white !important; /* text color */
+                        transform: translateY(50%) scale(1.05);
+                    }
+        </style>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54676SGW"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -595,8 +630,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
 
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+        <div class="container">
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-698eb9d4-5822-4c89-92fb-70391ef229b1" style="margin-bottom: 30px;"></div>
+        </div>
+
         <!-- partnerSec -->
-        <section class="partnerSec py-5">
+        <section class="partnerSec py-2">
             <div class="container">
                 <div class="secHead mb-5">
                     <h5 class="mb-0 text-center level5 primaryColor text-uppercase"><span class="whiteBg px-1">Our Partners</span></h5>
@@ -638,65 +679,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
 
-        <!-- reviewSec -->
-        <section class="reviewSec py-5">
-            <div class="container">
-                <div class="reviewSlider">
-                  <div class="reviewCard py-5 px-4 rounded whiteBg m-3">
-                                 <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-                        <p class="mb-3 primaryText greyText">�AS4L has redefined what I expect from a transportation service. The drivers are not only skilled but also incredibly polite, ensuring every ride is comfortable and timely. Their attention to detail and knowledge of the best routes make them a standout choice. Booking with AS4L is a breeze, and they’ve consistently exceeded my expectations for professional limo services in the DMV area.!�</p>
-                        <ul class="list-inline mb-3 d-flex">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p class="mb-0 fw-bold level4 blackText">Akos</p>
-                    </div>
-                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
-                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-                        <p class="mb-3 primaryText greyText">�When it comes to limo services in the DMV, AS4L is unmatched. The booking process is quick and efficient, and their drivers are both friendly and highly professional. They ensure on-time arrivals and make every trip smooth and enjoyable. Whether it’s for business or leisure, AS4L has become my trusted choice for dependable transportation.!�"</p>
-                        <ul class="list-inline mb-3 d-flex">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p class="mb-0 fw-bold level4 blackText">Steve</p>
-                    </div>
-                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
-                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-                        <p class="mb-3 primaryText greyText"> �"I’ve used multiple limo services in the DMV area, but AS4L sets the standard for excellence. Their booking process is seamless, and the drivers are always punctual and courteous. Whether it’s an airport transfer or a special event, they ensure a stress-free ride with unmatched professionalism. If you’re looking for a reliable, top-tier transportation service, AS4L is the way to go!�</p>
-                        <ul class="list-inline mb-3 d-flex">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p class="mb-0 fw-bold level4 blackText">Jenny</p>
-                    </div>
-                    <div class="reviewCard py-5 px-4 rounded whiteBg  m-3">
-                        <i class="fa-solid fa-quote-left level4 mb-3 blackText"></i>
-                        <p class="mb-3 primaryText greyText">  �I've tried several limo services in the DMV, but AS4L stands out for
-                            their exceptional customer service. The booking process is smooth, and the drivers are courteous and
-                            friendly. They know the best routes and always get me to my destination on time. AS4L is my go-to for all
-                            my transportation needs!�</p>
-                        <ul class="list-inline mb-3 d-flex">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p class="mb-0 fw-bold level4 blackText">Johnson</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- footer -->
         <div id="footer"></div>
         <script>
@@ -720,9 +702,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          </section>
 
          <!-- fixedCallIcon -->
-          <section class="fixedCallIcon primaryBg">
+          <!-- <section class="fixedCallIcon primaryBg">
             <a href="tel:18443403333" class="whiteText"><i class="fa fa-phone"></i></a>
-          </section>
+          </section> -->
         <!--registerModal Modal -->
         <div class="modal fade" id="RegModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

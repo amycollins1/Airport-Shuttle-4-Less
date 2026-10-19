@@ -547,4 +547,16 @@
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
     </url>
+  <url>
+    <loc>https://airportshuttles4less.com/shuttle-service-baltimore-md/fells-point.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://airportshuttles4less.com/shuttle-service-baltimore-md/harbor-east.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
 </urlset>

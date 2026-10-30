@@ -3,7 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://airportshuttles4less.com/index.html</loc>
+    <loc>http://airportshuttles4less.com/</loc>
     <lastmod>2025-03-04</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
@@ -566,8 +566,20 @@
     <priority>0.8</priority>
     </url>
   <url>
-    <loc>https://airportshuttles4less.com/shuttle-service-baltimore-md/ellicott-city.html</loc>
+    <loc>https://airportshuttles4less.com/shuttle-service-ellicott-city-md.html</loc>
     <lastmod>2026-10-28</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://airportshuttles4less.com/shuttle-service-clarksville-md.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://airportshuttles4less.com/shuttle-service-bel-air-md.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
     </url>

@@ -47,6 +47,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="google-site-verification" content="UXz62i0K2PKd45QFDYhhfCW8K-Ma1vDdqL06SBXd6nQ" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16647266454"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16647266454'); </script>
 </script>
+
+<style>
+/* Make all location card images the same size on this page only */
+.locationCard > a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.locationCard > a > img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Keep the location overlay aligned with the image */
+.locationCard .location {
+    height: 220px !important;
+}
+
+@media (max-width: 575.98px) {
+    .locationCard > a > img {
+        height: 200px;
+    }
+
+    .locationCard .location {
+        height: 200px !important;
+    }
+}
+</style>
+
 </head>
 <body>
     <!-- Star Button -->
@@ -434,6 +467,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     <img src="assets/images/local-location-25.webp" loading="lazy" class="w-100" alt="Local Location">
                                     <div class="location position-absolute top-0 left-0 h-100 w-100 d-flex align-items-center justify-content-center">
                                         <p class="level4 whiteText mb-0">Silver Spring</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Twenty-eight card -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="locationCard position-relative">
+                                <a href="https://airportshuttles4less.com/shuttle-service-ellicott-city-md.html">
+                                    <img src="images/ellicott_city/ellicott_city.webp" loading="lazy" class="w-100" alt="Local Location">
+                                    <div class="location position-absolute top-0 left-0 h-100 w-100 d-flex align-items-center justify-content-center">
+                                        <p class="level4 whiteText mb-0">Ellicott City</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Twenty-nine card -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="locationCard position-relative">
+                                <a href="https://airportshuttles4less.com/shuttle-service-clarksville-md.html">
+                                    <img src="images/clarksville/clarksville.webp" loading="lazy" class="w-100" alt="Local Location">
+                                    <div class="location position-absolute top-0 left-0 h-100 w-100 d-flex align-items-center justify-content-center">
+                                        <p class="level4 whiteText mb-0">Clarksville</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- thirty card -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="locationCard position-relative">
+                                <a href="https://airportshuttles4less.com/shuttle-service-bel-air-md.html">
+                                    <img src="images/belair/belair.webp" loading="lazy" class="w-100" alt="Local Location">
+                                    <div class="location position-absolute top-0 left-0 h-100 w-100 d-flex align-items-center justify-content-center">
+                                        <p class="level4 whiteText mb-0">Bel Air</p>
                                     </div>
                                 </a>
                             </div>
